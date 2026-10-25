@@ -254,6 +254,35 @@ footer strong{color:var(--ink-2);font-weight:600;margin-right:4px}
 .funnel div:last-child{border-right:0}
 .funnel span{font-size:11.5px;color:var(--ink-3)}
 .funnel b{font-size:15px;color:var(--ink-3);font-weight:600}
+/* 실행 제안 */
+.act .stuck{margin:0;font-size:13.5px;font-weight:600;color:var(--ink)}
+.act .stuck b{color:var(--ink-3);font-weight:500;margin-right:6px}
+.act .ev{margin:0;font-size:12.5px;color:var(--ink-2);background:var(--surface-2);border-radius:6px;padding:8px 10px}
+.act .ev b{color:var(--green-ink)}
+.lane{display:grid;gap:6px;border-left:3px solid var(--muted-bar);padding:2px 0 2px 12px}
+.lane.in{border-left-color:var(--green)}
+.lane .ln{font-size:11.5px;font-weight:700;color:var(--ink-3)}
+.lane.in .ln{color:var(--green-ink)}
+.lane p{margin:0;font-size:13px}
+.lane ul{margin:0;padding-left:18px;display:grid;gap:4px;font-size:13px}
+.lane .toact{margin:0;font-size:12.5px;width:max-content}
+.lift{display:flex;flex-wrap:wrap;align-items:center;gap:12px;font-size:13.5px;font-weight:600;margin-bottom:14px}
+.lift input{accent-color:var(--green);width:240px}
+.lift output{font-weight:800;color:var(--green-ink);min-width:52px;font-size:16px}
+.vs th,.vs td{white-space:normal;text-align:left;vertical-align:top}
+.vs td:first-child{font-weight:700;white-space:nowrap}
+.vs td:last-child{color:var(--ink);font-weight:600;background:var(--green-tint)}
+.dont{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.dont li{display:grid;gap:2px;padding:12px 14px 12px 40px;position:relative;border:1px solid var(--warn-line);background:var(--warn-tint);border-radius:var(--r-sm);font-size:13px;color:var(--ink-2)}
+.dont li::before{content:"✕";position:absolute;left:15px;top:11px;font-weight:800;color:var(--warn-ink)}
+.dont li b{color:var(--ink);font-size:13.5px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media (max-width:960px){.steps{grid-template-columns:1fr 1fr}}
+.step{border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;display:grid;gap:6px;align-content:start}
+.step.now{border-color:var(--green-line);background:var(--green-tint)}
+.step .sn{font-size:12px;font-weight:700;color:var(--green-ink)}
+.step b{font-size:14px}
+.step p{margin:0;font-size:12.5px;color:var(--ink-2)}
 /* 데이터 점검 */
 .checks{margin:0;padding:0;list-style:none;display:grid;gap:4px}
 .checks li::before{content:"✓";color:var(--green-ink);font-weight:700;margin-right:6px}
@@ -347,12 +376,14 @@ const period = t => `<p class="period">${t}</p>`;
 const ICON = {
   summary: '<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
   timing: '<circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/>',
-  segments: '<circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14 15.5c.9-.6 1.9-1 3-1 2.8 0 5 2.2 5 5"/>'
+  segments: '<circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14 15.5c.9-.6 1.9-1 3-1 2.8 0 5 2.2 5 5"/>',
+  action: '<path d="M5 21V4M5 4h12l-2.5 4L17 12H5"/>'
 };
 const TABS = [
   {id: "summary", name: "주간 현황", sub: "주간 학습 사용자 대시보드"},
   {id: "timing", name: "이탈 시점", sub: "알림을 언제 보낼지 정할 때 보는 대시보드"},
-  {id: "segments", name: "세그먼트·우선 대상", sub: "매일 오늘 누구에게 무엇을 보낼지 정하는 대시보드"}
+  {id: "segments", name: "세그먼트·우선 대상", sub: "매일 오늘 누구에게 무엇을 보낼지 정하는 대시보드"},
+  {id: "action", name: "실행 제안", sub: "이탈을 막기 위해 무엇을 바꾸고, 어떤 순서로 실행할지 보는 대시보드"}
 ];
 const tabsEl = document.getElementById("tabs");
 tabsEl.innerHTML = TABS.map(t => `<button role="tab" id="tab-${t.id}" aria-controls="main" data-tab="${t.id}"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true">${ICON[t.id]}</svg><span>${t.name}</span></button>`).join("");
@@ -683,11 +714,98 @@ function experimentCard() {
   return `<div class="card"><h2>실험 설계: 알림 효과는 대조군과 비교해 확인한다</h2>
     <p class="sub">사용자 단위 무작위 배정 · 양측 α ${E.alpha}, 검정력 ${E.power * 100}% · 하루 대상 수가 3월 8일과 비슷하다고 가정</p>
     <div class="xgrid">${E.rows.map(box).join("")}</div>
-    <p class="note">효과는 같은 기간 대조군의 실제 값과 비교해 판단한다. 발송·열람 칸은 알림 기록이 생기면 채운다.</p></div>`;
+    <p class="note">효과는 같은 기간 대조군의 실제 값과 비교해 판단한다. 발송·열람 칸은 알림 기록이 생기면 채운다.<a href="#action" class="toact" data-goto="action">앱 안 장치·기대 효과·실행 순서 보기</a></p></div>`;
+}
+
+// ---------- 탭 4: 실행 제안
+// 알림(탭 3)과 함께 붙일 앱 안 장치. 모두 가설이며 효과는 실험으로 확인한다
+let curLift = 3;
+const ACT = {
+  "습관 형성형": {gap: 0, stuck: "주 2~3일에서 4일로 넘어가지 못한다", lever: ["꾸준형", "올릴 이동"],
+    app: ["학습을 마친 화면에 <b>이번 주 학습일 ○/4</b> 진행 막대를 보여 준다. 목표를 학습량(XP)이 아니라 학습일로 바꾼다",
+          "학습 직후 <b>다음 학습일 정하기</b> 카드를 한 번 띄우고, 고른 날 알림과 연결한다"]},
+  "최근 단발형": {gap: 1, stuck: "첫 학습 다음 날이 오지 않는다", lever: ["멈춤-저활동형", "줄일 이동"],
+    app: ["다음 날 앱을 열면 첫 화면에서 <b>3분 이어하기</b> 레슨 1개를 바로 시작한다",
+          "첫 학습을 마친 화면에서 <b>내일도 1개만</b> 버튼으로 내일 알림 시간을 직접 고르게 한다"]},
+  "멈춤-꾸준형": {gap: 0, stuck: "꾸준하던 사람이 이틀 이상 멈춘다", lever: ["최근 7일 학습 없음", "줄일 이동"],
+    app: ["돌아온 첫 화면에 <b>쉬는 동안 놓친 단어 5개 복습</b> 짧은 세션을 둔다. 처음부터 다시 하는 부담을 줄인다",
+          "연속 기록이 끊겨도 <b>이번 주 학습일</b>은 남아 있다고 보여 주고, 복귀 직후 다음 학습일 카드를 띄운다"]}
+};
+// 양측 검정 표본 수(50:50 배정)로 목표 상승폭을 판정하는 데 필요한 날 수. exp_plan의 3%p 기간과 같은 식
+function needDays(base, lift, n) {
+  const E = DATA.exp_plan, za = 1.959964, zb = E.power === 0.8 ? 0.841621 : 1.281552;
+  const a = base / 100, b = Math.min(0.999, (base + lift) / 100);
+  const per = (za + zb) ** 2 * (a * (1 - a) + b * (1 - b)) / (b - a) ** 2;
+  return Math.ceil(2 * per / n);
+}
+function actionCard(name) {
+  const A = ACT[name], a = ALERT[name], P = PLAN[name], x = DATA.exp_plan.rows.find(r => r.seg === name), g = DATA.deep[name].pairs[A.gap];
+  const M = DATA.migration, r = M.rows.find(q => q.from === name), k = M.cols.indexOf(A.lever[0]);
+  return `<div class="xcard act">
+    <h3>${name}<span class="badge">${PRIO[name]}순위</span></h3>
+    <p class="stuck"><b>끊기는 지점</b>${A.stuck}</p>
+    <p class="ev"${tipAttr(g.detail + " · 관찰된 연관이며 인과는 아니다")}>${g.label}<br><b>${g.a_label} ${p1(g.a)}</b> 대 ${g.b_label} ${p1(g.b)}</p>
+    <div class="lane"><span class="ln">앱 밖 · 알림 (탭 3)</span><p>${DATA.deep[name].timing}, <b>"${P.msg}"</b></p><a href="#segments" class="toact" data-seg="${name}">알림 대상과 근거 보기</a></div>
+    <div class="lane in"><span class="ln">앱 안 · 제품 장치 (신규)</span><ul>${A.app.map(s => `<li>${s}</li>`).join("")}</ul></div>
+    <dl>
+      <dt>하루 대상</dt><dd>${n0(a.n)}명 <small>${a.cond}</small></dd>
+      <dt>성공 지표</dt><dd>${x.metric} <small>지금 ${p1(x.base)}</small></dd>
+      <dt>${A.lever[1]}</dt><dd${tipAttr(`${name} ${n0(r.n)}명 중 4일 뒤 ${A.lever[0]}로 간 비율 · 알림 없이 관찰된 값`)}>→ ${A.lever[0] === "꾸준형" ? "꾸준형(북극성)" : A.lever[0]} <small>지금 ${p1(r.pct[k])}</small></dd>
+    </dl>
+    <span class="verdict no">효과 미확인 · 실험 필요</span></div>`;
+}
+function simHtml() {
+  const L = curLift, rows = DATA.exp_plan.rows.map(r => ({...r, add: r.n * L / 100, d: needDays(r.base, L, r.n)}));
+  const tot = rows.reduce((s, r) => s + r.add, 0);
+  return `<div class="grid g-alert">
+    <div class="kpi hero"${tipAttr("세 유형의 하루 대상 전원에게 적용하고, 각 성공 지표가 목표만큼 오른다고 가정한 값")}><span class="lab">하루 추가 복귀자</span><span class="val">+${n0(Math.round(tot))}<small>명</small></span><span class="foot">성공 지표가 +${L}%p 오를 때 · 4주 누적 약 ${n0(Math.round(tot * 28))}명(연인원)</span></div>
+    ${rows.map(r => `<div class="kpi"${tipAttr(`하루 대상 ${n0(r.n)}명 × ${L}%p · 판정 기간은 양측 α ${DATA.exp_plan.alpha}, 검정력 ${DATA.exp_plan.power * 100}%, 50:50 배정 기준`)}><span class="lab">${r.seg}<span class="badge">${PRIO[r.seg]}순위</span></span><span class="val">+${n0(Math.round(r.add))}<small>명/일</small></span><span class="foot">${r.metric} ${p1(r.base)} → ${p1(r.base + L)}</span><span class="foot">이 차이를 판정하는 데 <b>${r.d}일</b></span></div>`).join("")}
+  </div>`;
+}
+function tabAction() {
+  const K = DATA.kpi, H = DATA.H2.by_days, O = DATA.A1_one_day, A1 = DATA.A1, low = SEG["멈춤-저활동형"];
+  const accGap = Math.max(...H.map(r => Math.abs(r.up - r.down)));
+  const dd = s => DATA.exp_plan.rows.find(r => r.seg === s).days;
+  return `
+  ${head(`우선 세 유형에 <strong>알림 + 앱 안 장치</strong>를 묶어 학습일을 하루 더 늘린다. 오늘 대상은 <strong>${n0(ALERT_TOTAL)}명</strong>이고, 효과는 모두 대조군 실험으로 판정한다.`,
+    "알림의 대상·시점·근거는 「세그먼트·우선 대상」 탭에 있습니다. 이 탭의 실행안은 모두 가설이며, 아래 수치는 알림 없이 관찰된 현재 값입니다.")}
+  <div class="card"><h2>세그먼트별 실행안: 끊기는 지점마다 알림 하나, 앱 안 장치 둘</h2>
+    <p class="sub">근거는 각 세그먼트 안에서 관찰된 비교 · 수치는 탭 3과 같은 값</p>
+    <div class="xgrid">${Object.keys(ACT).map(actionCard).join("")}</div>
+    <p class="note caution">근거는 "이런 사람이 더 돌아왔다"는 관찰이다. 장치를 붙이면 돌아온다는 뜻은 아니어서 실험으로 확인한다.</p></div>
+  <div class="card"><h2>기존 리마인더와 다른 점: 누구에게, 언제, 무엇을 목표로</h2>
+    <p class="sub">알림과 연속 학습 기록은 듀오링고에 이미 있다. 이 제안의 차이는 수단이 아니라 대상·시점·목표 기준이다</p>
+    <div class="tbl"><table class="vs"><thead><tr><th>구분</th><th>일반 리마인더 (앱에 보이는 기능 기준)</th><th>이번 제안</th></tr></thead><tbody>
+      <tr><td>누구에게</td><td>학습 기록이 있는 사용자 전반</td><td>우선 세 유형 중 오늘 조건에 맞는 ${n0(ALERT_TOTAL)}명 (주간 학습자의 ${p1(ALERT_TOTAL / K.B1 * 100)})</td></tr>
+      <tr><td>언제</td><td>사용자가 정한 시각에 매일</td><td>학습 다음 날(습관 형성형·최근 단발형), 이틀 쉬어 멈춤이 된 날(멈춤-꾸준형)</td></tr>
+      <tr><td>무엇을 목표로</td><td>연속 학습 일수(스트릭). 하루 끊기면 0부터</td><td>주 4일 학습일(북극성). 하루 끊겨도 이번 주 목표는 남는다</td></tr>
+      <tr><td>어떻게 판정</td><td>공개된 기준 없음</td><td>대조군 대비 성공 지표 차이 · 수신 거부가 늘지 않는지 함께 확인</td></tr>
+    </tbody></table></div>
+    <p class="note">듀오링고 내부의 실제 발송 규칙은 공개되지 않았다. 왼쪽 열은 앱에서 보이는 일일 리마인더·스트릭 기능을 기준으로 정리했다.</p></div>
+  <div class="card"><h2>기대 효과: 성공 지표가 오르면 하루 몇 명이 더 돌아오나</h2>
+    <p class="sub">목표 상승폭을 움직이면 추가 복귀자와 판정에 필요한 기간이 바뀐다</p>
+    <label class="lift" for="lift">목표 상승폭 <input type="range" id="lift" min="1" max="10" step="1" value="${curLift}"><output id="liftv" for="lift">+${curLift}%p</output></label>
+    <div id="sim">${simHtml()}</div>
+    <p class="note">하루 대상 수가 3월 8일과 비슷하다고 가정한 단순 계산이다. 4주 누적은 같은 사람이 여러 번 셀 수 있는 연인원이다. 돌아온 사람이 주 4일(북극성)까지 채우는지는 관찰 기간이 약 12일이라 확인하지 못했다.</p></div>
+  <div class="card"><h2>하지 않을 것: 데이터가 지지하지 않는 수단</h2>
+    <p class="sub">예산과 알림 피로를 아끼기 위해 우선순위에서 뺀다</p>
+    <ul class="dont">
+      <li><b>정답률·난이도 개선을 이탈 방지 수단으로 쓰지 않는다</b>학습일이 같으면 정답률이 오른 사람과 내린 사람의 복귀율 차이가 최대 ${accGap.toFixed(1)}%p였다(가설 기각). 학습 품질 과제로는 별도로 다룬다.</li>
+      <li><b>학습량(XP) 목표로 압박하지 않는다</b>멈춘 사용자의 복귀율은 학습일 1일 → 3일 이상에서 ${pp(A1[2].ret - A1[0].ret)} 차이 났지만, 하루만 학습한 사람끼리는 학습량 상·하위 차이가 ${pp(O[1].ret - O[0].ret)}에 그쳤다.</li>
+      <li><b>멈춤-저활동형 전체에 알림을 보내지 않는다</b>${n0(low.n)}명(${p1(low.user_pct)})으로 가장 크지만 반복 복귀율은 ${p1(low.ret2)}다. 대량 발송은 수신 거부를 늘릴 수 있어, 우선 세 유형에서 효과를 확인한 뒤 넓힌다.</li>
+    </ul></div>
+  <div class="card"><h2>실행 순서: 빨리 판정되는 실험부터</h2>
+    <p class="sub">판정 기간은 탭 3 실험 설계(+${DATA.exp_plan.lift}%p, 50:50 배정) 기준</p>
+    <div class="steps">
+      <div class="step now"><span class="sn">1단계 · 알림 실험</span><b>최근 단발형 → 습관 형성형</b><p>+${DATA.exp_plan.lift}%p 판정에 최근 단발형 ${dd("최근 단발형")}일, 습관 형성형 ${dd("습관 형성형")}일. 멈춤-꾸준형은 하루 대상이 적어 ${dd("멈춤-꾸준형")}일이 걸리므로 동시에 시작해 길게 둔다.</p></div>
+      <div class="step"><span class="sn">2단계 · 앱 안 장치 실험</span><b>학습일 진행 막대 · 다음 학습일 카드</b><p>알림과 따로 배정(알림만 / 장치만 / 둘 다 / 없음)해 각각의 효과를 나눠 본다.</p></div>
+      <div class="step"><span class="sn">3단계 · 판정</span><b>채택 또는 수정</b><p>대조군보다 성공 지표가 유의하게 높고 알림 끄기·수신 거부가 늘지 않으면 채택한다. 아니면 메시지·시점을 바꿔 다시 실험한다.</p></div>
+      <div class="step"><span class="sn">4단계 · 확대·장기 측정</span><b>다른 세그먼트 · 북극성 추적</b><p>채택한 장치를 멈춤-몰입형 등으로 넓히고, 주 4일 학습자 수 변화를 몇 주에 걸쳐 본다. 지금 데이터로는 확인할 수 없는 부분이다.</p></div>
+    </div></div>`;
 }
 
 // ---------- 라우팅
-const RENDER = {summary: tabSummary, timing: tabTiming, segments: tabSegments};
+const RENDER = {summary: tabSummary, timing: tabTiming, segments: tabSegments, action: tabAction};
 let cur = "summary";
 // 화면 상태(탭, 세그먼트 필터, 탭 3 세그먼트, 이력별 보기)를 URL에 담아 링크로 같은 화면을 연다. 예: #segments?s=멈춤-꾸준형
 function stateHash() {
@@ -695,6 +813,7 @@ function stateHash() {
   if (curFilter !== "전체") q.set("f", curFilter);
   if (curSeg !== "습관 형성형") q.set("s", curSeg);
   if (showHist) q.set("h", "1");
+  if (cur === "action" && curLift !== 3) q.set("l", String(curLift));
   const s = q.toString();
   return "#" + cur + (s ? "?" + s : "");
 }
@@ -705,6 +824,8 @@ function readHash() {
   curFilter = f && SEG[f] ? f : "전체";
   curSeg = s && PRIO[s] ? s : "습관 형성형";
   showHist = q.get("h") === "1";
+  const l = Number(q.get("l"));
+  curLift = Number.isInteger(l) && l >= 1 && l <= 10 ? l : 3;
   return RENDER[id] ? id : "summary";
 }
 function show(id) {
@@ -724,6 +845,7 @@ document.getElementById("copyLink").addEventListener("click", e => {
   if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(url).then(() => done("복사했습니다"), fallback); else fallback();
 });
 document.getElementById("main").addEventListener("click", e => {
+  const g = e.target.closest("[data-goto]"); if (g) { e.preventDefault(); show(g.dataset.goto); window.scrollTo({top: 0, behavior: "auto"}); return; }
   const f = e.target.closest("[data-filter]"); if (f) { curFilter = f.dataset.filter; show("summary"); document.getElementById("f-" + curFilter)?.focus(); return; }
   const s = e.target.closest("[data-seg]");
   if (s) {
@@ -735,6 +857,13 @@ document.getElementById("main").addEventListener("click", e => {
     return;
   }
   if (e.target.closest("#histToggle")) { showHist = !showHist; show("timing"); }
+});
+document.getElementById("main").addEventListener("input", e => {
+  if (e.target.id !== "lift") return;
+  curLift = Number(e.target.value);
+  document.getElementById("liftv").textContent = "+" + curLift + "%p";
+  document.getElementById("sim").innerHTML = simHtml();
+  try { history.replaceState(null, "", stateHash()); } catch (x) {}
 });
 // ---------- 툴팁
 const tip = document.getElementById("tip");
@@ -757,7 +886,8 @@ function checksHtml() {
     ["복귀자 + 이탈 위험 = 주간 학습자 (복귀율 일치)", Math.abs((K.B1 - K.O3_n) / K.B1 * 100 - K.O1) < 0.05],
     ["운영용 3/8 북극성 = 분석용 북극성", DATA.ops_nsm[0].n === K.N1],
     ["이동표 행 합계 = 3/8 세그먼트 인원", DATA.migration.rows.slice(0, 6).every((r, i) => sum(r.to) === r.n && r.n === DATA.segments[i].n)],
-    ["실험 대상 인원 = 오늘 알림 대상 카드", DATA.exp_plan.rows.every(r => r.n === ALERT[r.seg].n)]
+    ["실험 대상 인원 = 오늘 알림 대상 카드", DATA.exp_plan.rows.every(r => r.n === ALERT[r.seg].n)],
+    ["실행 제안 탭 판정 기간(+3%p) = 실험 설계 기간", DATA.exp_plan.rows.every(r => needDays(r.base, DATA.exp_plan.lift, r.n) === r.days)]
   ];
   const ok = C.filter(c => c[1]).length;
   return `<details><summary><strong>점검</strong> 노션 대조 ${DATA.checks}개 · 화면 숫자 대조 ${ok}/${C.length} 통과${ok === C.length ? "" : " · 확인 필요"}</summary><ul class="checks">${C.map(([t, v]) => `<li class="${v ? "" : "bad"}">${t}</li>`).join("")}</ul><p class="note">빌드 ${DATA.meta.built || ""} · 노션 「듀오링고 이탈 방지 분석」 ${DATA.meta.notion_edited || ""} 수정본 기준</p></details>`;
