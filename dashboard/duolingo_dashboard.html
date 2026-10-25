@@ -197,6 +197,15 @@ tr.prio td:first-child{font-weight:700}
 .acard .meta,.acard .plan{display:grid;gap:4px;margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-2)}
 .acard .meta b,.acard .plan b{color:var(--ink-3);font-weight:500;margin-right:6px}
 .acard .plan .bv{font-weight:700;color:var(--ink);font-size:13.5px}
+.levers{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0 16px}
+.lever{display:grid;gap:4px;border:1px solid var(--line);border-radius:var(--r-sm);padding:12px 14px;background:var(--surface)}
+.lever.up{border-color:var(--green-line);background:var(--green-tint)}
+.lever.down{border-color:var(--warn-line);background:var(--warn-tint)}
+.lever .lv-lab{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--ink-3)}
+.lever.up .lv-lab{color:var(--green-ink)}.lever.down .lv-lab{color:var(--warn-ink)}
+.lever .lv-path{font-size:13px;font-weight:600;color:var(--ink-2)}
+.lever .lv-val{font-family:var(--font-num);font-size:24px;font-weight:800;color:var(--ink)}
+.lever .lv-val small{font-size:12px;font-weight:600;color:var(--ink-3);margin-left:6px}
 .verdict{display:inline-flex;font-size:12px;font-weight:600;border-radius:6px;padding:2px 8px;width:max-content;margin-top:4px}
 .verdict.ok{background:var(--green-tint);color:var(--green-ink)}
 .verdict.no{background:var(--surface-2);color:var(--ink-3)}
@@ -257,7 +266,6 @@ footer summary{font-size:12px;font-weight:500;color:var(--ink-3)}
     <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><rect x="4" y="12" width="4" height="8" rx="1.5" fill="currentColor" opacity=".55"/><rect x="10" y="8" width="4" height="12" rx="1.5" fill="currentColor" opacity=".8"/><rect x="16" y="4" width="4" height="16" rx="1.5" fill="currentColor"/></svg></span>
     <div><b>듀오링고</b><small>학습 유지·이탈 방지 대시보드</small></div>
   </div>
-  <p class="side-label">메뉴</p>
   <nav class="tabs" role="tablist" aria-label="대시보드 화면" aria-orientation="vertical" id="tabs"></nav>
   <div class="side-foot" aria-label="데이터와 분석 기간">
     <span class="sf-t">데이터와 기간</span>
@@ -290,12 +298,12 @@ const DATA = JSON.parse(document.getElementById("data").textContent);
 
 // 다음날 재학습률은 후속 기간(3/8~3/10) 기준으로 전체와 세그먼트를 같은 정의로 맞춘 값을 쓴다 (DATA.i1_later, segments[].i1_later)
 const RULES = {
-  "꾸준형": "최근 이틀 학습 · 학습일 4일+",
-  "습관 형성형": "최근 이틀 학습 · 학습일 2~3일",
-  "최근 단발형": "최근 이틀 학습 · 학습일 1일",
-  "멈춤-꾸준형": "최근 이틀 미학습 · 학습일 3일+",
-  "멈춤-몰입형": "최근 이틀 미학습 · 1~2일 · " + (DATA.meta.m_edges[3] + 1) + "문항+",
-  "멈춤-저활동형": "최근 이틀 미학습 · 1~2일 · " + DATA.meta.m_edges[3] + "문항 이하"
+  "꾸준형": "학습일 4일 이상",
+  "습관 형성형": "학습일 2~3일",
+  "최근 단발형": "학습일 1일",
+  "멈춤-꾸준형": "학습일 3일 이상",
+  "멈춤-몰입형": "학습일 1~2일 · " + (DATA.meta.m_edges[3] + 1) + "문항 이상",
+  "멈춤-저활동형": "학습일 1~2일 · " + DATA.meta.m_edges[3] + "문항 이하"
 };
 const PRIO = {"습관 형성형": 1, "최근 단발형": 2, "멈춤-꾸준형": 3};
 // 오늘 알림 대상: 3월 8일을 알림일로 보고 알림 조건에 맞는 사람만 센다
@@ -337,7 +345,7 @@ const ICON = {
   segments: '<circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14 15.5c.9-.6 1.9-1 3-1 2.8 0 5 2.2 5 5"/>'
 };
 const TABS = [
-  {id: "summary", name: "주간 현황", sub: "매주 북극성 지표와 Input 지표가 움직였는지 확인하는 화면"},
+  {id: "summary", name: "주간 현황", sub: "주간 학습 사용자 대시보드"},
   {id: "timing", name: "이탈 시점", sub: "알림을 언제 보낼지 정할 때 보는 화면"},
   {id: "segments", name: "세그먼트·우선 대상", sub: "매일 오늘 누구에게 무엇을 보낼지 정하는 화면"}
 ];
@@ -415,41 +423,37 @@ function tabSummary() {
   const stopShare = K.I2_n / K.B1 * 100;
   const hbar = (lab, v, on) => `<div${tipAttr(`${lab} · ${p1(v)}`)} style="display:grid;grid-template-columns:112px 1fr 52px;gap:8px;align-items:center;font-size:12.5px"><span>${lab}</span><span style="height:16px;border-radius:4px;background:var(--surface-2);overflow:hidden"><i style="display:block;height:100%;width:${v}%;background:${on ? "var(--green)" : "var(--muted-bar)"};border-radius:4px"></i></span><b style="font-family:var(--font-num);text-align:right;font-size:14px">${v.toFixed(1)}%</b></div>`;
   return `
-  <div class="head">
-  <p class="howto">위 지표 트리는 항상 전체 기준이라 세그먼트를 골라도 바뀌지 않습니다. 그 아래에서 세그먼트를 고르면 아래 카드만 그 유형의 값으로 바뀝니다. 카드에 마우스를 올리면 계산 방법이 나옵니다.</p></div>
+  ${head(`주간 학습자 ${n0(K.B1)}명 중 <strong>${p1(K.N1_pct)}(${n0(K.N1)}명)</strong>만 주 4일을 채웠다. 북극성을 키울 지표는 <strong>다음날 재학습률</strong>과 <strong>멈춤 사용자 복귀율</strong>이다.`,
+    "카드에 마우스를 올리면 계산 방법이 나옵니다.")}
   <div class="kgroup">
     <span class="glabel">지표 트리 <span class="chip">항상 전체 기준</span></span>
     <div>
-      <div class="kpi hero"${tipAttr(`기준 주간 학습일이 4일 이상인 사용자 수. 공식 값은 사람 수이고 비율은 참고. 세그먼트를 학습일로 나눴기 때문에 세그먼트별 값은 보여 주지 않는다`)}><span class="lab">북극성 지표 · 일주일 중 4일 이상 학습</span><span class="val">${n0(K.N1)}<small>명</small></span><span class="foot">주간 학습자 ${n0(K.B1)}명의 ${p1(K.N1_pct)}</span>
-        <span class="why"><b>왜 4일인가</b> · 2일 이상으로 잡으면 ${p1(K.two_plus)}가 해당돼 한두 번 와 본 사람과 구분되지 않고, 6일 이상은 ${p1(six)}로 너무 적다. 4일은 꾸준한 소수를 가려내면서도 늘릴 여지가 있다.</span></div>
+      <div class="kpi hero"${tipAttr(`기준 주간 학습일이 4일 이상인 사용자 수. 공식 값은 사람 수이고 비율은 참고. 세그먼트를 학습일로 나눴기 때문에 세그먼트별 값은 보여 주지 않는다`)}><span class="lab">북극성 지표 · 일주일 중 4일 이상 학습</span><span class="val">${n0(K.N1)}<small>명</small></span><span class="foot">주간 학습자 ${n0(K.B1)}명의 ${p1(K.N1_pct)} <span class="delta flat"${tipAttr(`기준일을 3/8~3/12로 하루씩 옮겨 직전 7일로 다시 센 값의 범위. 데이터가 약 12일이라 지난주 대비 비교 대신 이 범위를 비교값으로 쓴다`)}>기준일 5개 범위 ${n0(OP.lo)}~${n0(OP.hi)}명</span></span>
+        <span class="why"><b>왜 4일인가</b> · 2일 이상으로 잡으면 ${p1(K.two_plus)}가 해당돼 한두 번 와 본 사람과 구분되지 않고, 6일 이상은 ${p1(six)}로 너무 적다. 4일은 꾸준한 소수를 가려내면서도 늘릴 여지가 있다.</span>
+        ${more("기준일별 북극성 값 보기", `<p class="sub" style="margin-top:8px">기준일마다 직전 7일 중 4일 이상 학습한 사용자 수 · 초록 막대가 위 북극성 지표</p>${OP.svg}<p class="note">요일 구성에 따라 값이 흔들리므로 추세는 같은 요일끼리 비교한다. 여러 주에 걸친 추세는 아직 볼 수 없다.</p>`)}</div>
       <div class="tree-stem" aria-hidden="true"></div>
       <div class="grid g-input">
-        <div class="kpi"${tipAttr(`기준 주간 3/1~3/6에 학습한 날 ${n0(K.I1_n)}건 중 다음 날에도 학습한 비율. 사람이 아니라 학습한 날 단위로 센다`)}><span class="id">Input 지표 I1</span><span class="lab">다음날 재학습률<small>기준 주간</small></span><span class="val">${K.I1.toFixed(1)}<small>%</small></span><span class="foot">3/1~3/6에 학습한 날 ${n0(K.I1_n)}건 중 다음 날에도 학습한 비율</span>
+        <div class="kpi"${tipAttr(`기준 주간 3/1~3/6에 학습한 날 ${n0(K.I1_n)}건 중 다음 날에도 학습한 비율. 사람이 아니라 학습한 날 단위로 센다`)}><span class="lab">다음날 재학습률<small>기준 주간</small></span><span class="val">${K.I1.toFixed(1)}<small>%</small></span><span class="foot">3/1~3/6에 학습한 날 ${n0(K.I1_n)}건 중 다음 날에도 학습한 비율</span>
           <span class="link obs"${tipAttr(`3/1에 처음 학습한 사람 중 다음 날 다시 온 사람은 ${p1(F.came_4d)}, 안 온 사람은 ${p1(F.not_4d)}가 주 4일을 채웠다(다음 날 하루를 빼도 ${p1(F.came_4d_excl)} 대 ${p1(F.not_4d)}). 관찰된 연관이며 인과는 검증하지 않았다`)}>북극성과의 연결: 데이터에서 관찰됨</span></div>
-        <div class="kpi"${tipAttr(`최근 이틀(3/6·3/7) 학습하지 않은 ${n0(K.I2_n)}명 중 후속 4일(3/8~3/11)에 하루라도 학습한 비율`)}><span class="id">Input 지표 I2</span><span class="lab">멈춤 사용자 복귀율<span class="role">알림 효과 비교 기준</span></span><span class="val">${K.I2.toFixed(1)}<small>%</small></span><span class="foot">3/6~3/7 이틀 동안 학습하지 않은 ${n0(K.I2_n)}명(전체의 ${p1(stopShare)}) 중 3/8~3/11에 돌아온 비율. 알림 전 비교 기준이며, 실제 효과는 실험의 대조군과 비교해 판단한다</span>
+        <div class="kpi"${tipAttr(`최근 이틀(3/6·3/7) 학습하지 않은 ${n0(K.I2_n)}명 중 후속 4일(3/8~3/11)에 하루라도 학습한 비율`)}><span class="lab">멈춤 사용자 복귀율<span class="role">알림 효과 비교 기준</span></span><span class="val">${K.I2.toFixed(1)}<small>%</small></span><span class="foot">3/6~3/7 이틀 동안 학습하지 않은 ${n0(K.I2_n)}명(전체의 ${p1(stopShare)}) 중 3/8~3/11에 돌아온 비율</span>
           <span class="link hyp"${tipAttr(`멈춘 사람이 돌아오면 학습일이 다시 쌓인다는 연결은 아직 가정이다. 데이터가 약 12일이라 돌아온 사람이 다시 주 4일을 채우는지는 확인하지 못했다`)}>북극성과의 연결: 관찰 기간이 짧아 아직 가정</span></div>
       </div>
     </div>
   </div>
   <div class="kgroup">
-    <span class="glabel">세그먼트별로 보기 <span class="chip">선택&nbsp;<b>${curFilter}</b></span></span>
+    <span class="glabel">세그먼트별로 보기</span>
     <div class="seg-pick" role="group" aria-label="세그먼트 선택">${["전체", ...DATA.segments.map(s => s.name)].map(k => `<button type="button" id="f-${k}" data-filter="${k}" aria-pressed="${k === curFilter}">${k}</button>`).join("")}</div>
     ${sel}
     <div class="grid g-kpi5">
       <div class="kpi"${tipAttr("기준 주간(3/1~3/7)에 하루라도 학습한 사용자 수")}><span class="lab">주간 학습자</span><span class="val">${n0(v.n)}<small>명</small></span><span class="foot">${isAll ? "모든 비율의 분모" : `전체의 ${p1(v.share)}`}</span></div>
       <div class="kpi"${tipAttr("후속 4일(3/8~3/11) 중 하루라도 다시 학습한 비율")}><span class="lab">복귀율</span><span class="val">${v.ret.toFixed(1)}<small>%</small></span><span class="foot">후속 4일 중 1일 이상${vs(p1(all.ret))}${dl(v.ret, all.ret)}</span></div>
       <div class="kpi"${tipAttr("후속 4일 중 이틀 이상 학습한 비율. 한 번 들렀다 가는 복귀와 구분한다")}><span class="lab">반복 복귀율</span><span class="val">${v.ret2.toFixed(1)}<small>%</small></span><span class="foot">후속 4일 중 2일 이상${vs(p1(all.ret2))}${dl(v.ret2, all.ret2)}</span></div>
-      <div class="kpi"${tipAttr("후속 4일 동안 다음 날에도 학습한 비율. 3/8~3/10에 학습한 날 기준이며, 전체와 세그먼트를 같은 기간으로 맞췄다. 기준 주간으로 잰 전체 값은 35.8%")}><span class="lab">다음날 재학습률<small>후속 기간 기준</small></span><span class="val">${v.next.toFixed(1)}<small>%</small></span><span class="foot">3/8~3/10 학습한 날 기준${vs(p1(all.next))}${dl(v.next, all.next)} · 위 I1(${p1(K.I1)}, 기준 주간)과 기간이 다름</span></div>
+      <div class="kpi"${tipAttr("후속 4일 동안 다음 날에도 학습한 비율. 3/8~3/10에 학습한 날 기준이며, 전체와 세그먼트를 같은 기간으로 맞췄다. 기준 주간으로 잰 전체 값은 35.8%")}><span class="lab">다음날 재학습률<small>후속 기간 기준</small></span><span class="val">${v.next.toFixed(1)}<small>%</small></span><span class="foot">3/8~3/10 학습한 날 기준${vs(p1(all.next))}${dl(v.next, all.next)}</span></div>
       <div class="kpi warn"${tipAttr("후속 4일 동안 한 번도 학습하지 않은 사용자. 관측이 짧아 영구 이탈로 보지 않는다")}><span class="lab">이탈 위험</span><span class="val">${n0(v.risk_n)}<small>명</small></span><span class="foot">${isAll ? "" : "이 세그먼트의 "}${p1(v.risk)}${vs(p1(all.risk))}${dl(v.risk, all.risk, false)}</span></div>
     </div>
   </div>
-  <div class="card"><h2>기준일을 하루씩 옮겨 봐도 주 4일 이상 학습자는 ${n0(OP.lo)}~${n0(OP.hi)}명으로 거의 같다</h2>
-    <p class="sub">기준일마다 직전 7일 중 4일 이상 학습한 사용자 수 · 전체 기준 · 초록 막대가 위 북극성 지표와 같은 값</p>
-    ${OP.svg}
-    <p class="note">요일 구성에 따라 값이 흔들리므로 추세는 같은 요일끼리 비교한다. 데이터가 약 12일이라 여러 주에 걸친 추세는 아직 볼 수 없다.</p>
-  </div>
   <div class="card"><h2>왜 북극성을 학습일로 세웠나: 학습량보다 학습일이 복귀를 가른다</h2>
-    <p class="sub">기준 주간 학습일 수별 후속 4일 복귀율 · 전체 기준 · 학습일이 하루 늘 때마다 오르고, ${A.from}일에서 ${A.to}일로 갈 때 가장 크게 오른다(${pp(A.jump)})</p>
+    <p class="sub">기준 주간 학습일 수별 후속 4일 복귀율</p>
     ${A.svg}
     <div class="cmp">
       <div class="box"><h3>학습량이 많아도, 학습일이 늘어야 복귀율이 오른다</h3>
@@ -461,7 +465,7 @@ function tabSummary() {
         ${hbar("학습량 하위 20%", O[0].ret, false)}${hbar("학습량 상위 20%", O[1].ret, false)}
         <p class="note" style="margin:2px 0 0">차이 ${pp(O[1].ret - O[0].ret)}로, 학습일을 늘릴 때보다 작다</p></div>
     </div>
-    <p class="note">그래서 북극성 지표는 학습량이 아니라 학습일 수로 세웠다. 주 4일 이상 학습한 사람은 후속 4일에 ${p1(K.nsm_ret)}, 나머지는 ${p1(K.rest_ret)}가 돌아왔다. 모두 관찰된 연관성이다.</p>
+    <p class="note">그래서 북극성 지표는 학습량이 아니라 학습일 수로 세웠다. 주 4일 이상 학습한 사람은 후속 4일에 ${p1(K.nsm_ret)}, 나머지는 ${p1(K.rest_ret)}가 돌아왔다.</p>
   </div>`;
 }
 
@@ -521,14 +525,14 @@ function hazardChart() {
   }
   lab.forEach((t, k) => { s += `<text x="${xs(k)}" y="${H - B + 20}" text-anchor="middle" font-size="12">${t}</text>`; });
   s += `<line class="axis" x1="${L}" x2="${W - R}" y1="${y(0)}" y2="${y(0)}"/>`;
-  s += `<text x="${L + iw / 2}" y="${H - 6}" text-anchor="middle" font-size="11.5" style="fill:var(--ink-3)">마지막 학습 뒤 쉰 날 수 · 그 시점부터 4일 안에 다시 학습한 비율</text></svg>`;
+  s += `<text x="${L + iw / 2}" y="${H - 6}" text-anchor="middle" font-size="11.5" style="fill:var(--ink-3)">마지막 학습 뒤 쉰 날 수</text></svg>`;
   return s;
 }
 function tabTiming() {
   const Hz = DATA.hazard, a = Hz.all;
   return `
   ${head(`쉬는 날이 하루 늘 때마다 다시 돌아올 가능성이 약 4분의 1씩 줄고, 가장 크게 줄어드는 것은 <strong>쉬는 첫날</strong>이다.`,
-    "'학습 이력별 보기'를 누르면 이력 1일·2일·3일 이상 곡선을 나눠 봅니다. 점에 마우스를 올리면 인원과 다음 날 복귀율이 나옵니다.")}
+    "점에 마우스를 올리면 인원과 다음 날 복귀율이 나옵니다.")}
   <div class="card"><div style="display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:space-between;align-items:flex-start">
       <div><h2>${showHist ? "학습 이력이 많아도 쉬는 날이 늘면 같은 비율로 떨어진다" : "쉬는 날이 늘수록 돌아오기 어렵다"}</h2>
       <p class="sub">그 시점부터 4일 안에 다시 학습한 비율</p></div>
@@ -546,7 +550,7 @@ function tabTiming() {
     ${dailyChart()}
     <p class="note">날짜별 하락의 일부는 요일 효과다. 멈춤-꾸준형은 4일 내내 비슷해 돌아오는 시점이 흩어져 있다. 3/8은 세그먼트마다 마지막 학습 후 지난 날이 달라, 높낮이를 세그먼트끼리 직접 비교하지 않고 위 이탈 곡선을 쓴다.</p>
   </div>
-  ${period("이탈 곡선: 기준 주간 3/1~3/4의 학습 건 기준, 관측 기간 4일 · 날짜별 재학습률: 후속 4일 2013-03-08~11")}`;
+`;
 }
 
 // ---------- 탭 3: 세그먼트·우선 대상
@@ -567,13 +571,13 @@ function pairBars(p) {
     ${row(p.a_label, p.a, p.a_n, true)}${row(p.b_label, p.b, p.b_n, false)}</div>`;
 }
 function alertCard(name) {
-  const a = ALERT[name], on = name === curSeg;
+  const a = ALERT[name], on = name === curSeg, x = DATA.exp_plan.rows.find(r => r.seg === name);
   return `<button type="button" class="kpi acard" data-seg="${name}" aria-pressed="${on}">
     <span class="lab">${name}<span class="badge">${PRIO[name]}순위</span></span>
     <span class="val">${n0(a.n)}<small>명</small></span>
     <span class="foot">${a.cond}</span>
-    <span class="meta"><span><b>개입 시점</b> ${DATA.deep[name].timing}</span><span><b>갈리는 지점</b> ${a.split}</span></span>
-    <span class="plan"><span><b>메시지 방향</b> ${PLAN[name].msg}</span><span><b>목표 지표</b> ${PLAN[name].metric}</span><span${tipAttr(PLAN[name].tip)}><b>기준선(세그먼트 전체)</b> <span class="bv">${p1(PLAN[name].base)}</span></span><span class="verdict no">효과 미확인 · 실험 필요</span></span></button>`;
+    <span class="meta"><span><b>보낼 때</b> ${DATA.deep[name].timing}</span><span><b>메시지</b> ${PLAN[name].msg}</span></span>
+    <span class="plan"${tipAttr(`기준선은 알림 없이 이 대상 집단에서 관측된 값(아래 실험 설계의 대조군 예상치와 같음). 효과는 대조군과 비교해 판단한다`)}><span><b>성공 지표</b> ${x.metric}</span><span><b>기준선</b> <span class="bv">${p1(x.base)}</span></span><span><b>상태</b> 효과 미확인 · 실험 필요</span></span></button>`;
 }
 function shareBars() {
   const C = DATA.concentration, top = ["꾸준형", "습관 형성형", "멈춤-몰입형"];
@@ -594,7 +598,7 @@ function tabSegments() {
   return `
   ${head(`우선 대상은 <strong>습관 형성형, 최근 단발형, 멈춤-꾸준형</strong>이며, 오늘 알림 대상은 <strong>${n0(ALERT_TOTAL)}명</strong>이다.`,
     "초록 타일이나 알림 카드를 누르면 아래에 그 세그먼트의 상세가 열립니다.")}
-  <div class="card"><h2>세그먼트 맵</h2><p class="sub">6개 합계 ${n0(DATA.segments.reduce((a, s) => a + s.n, 0))}명 = 주간 학습자 전체 · 위 줄은 학습일 수로, 아래 줄은 학습일 3일 이상인지와 1~2일이면 학습량(109문항)으로 나눴다 · 막대 길이는 인원</p>
+  <div class="card"><h2>세그먼트 맵</h2><p class="sub">타일 아래 막대 길이는 인원</p>
     <div class="tiles">
             <span class="rh">최근 이틀 학습</span>${tile("꾸준형")}${tile("습관 형성형")}${tile("최근 단발형")}
       <span class="rh">최근 이틀 미학습 (멈춤)</span>${tile("멈춤-꾸준형")}${tile("멈춤-몰입형")}${tile("멈춤-저활동형")}
@@ -605,14 +609,14 @@ function tabSegments() {
   </div>
   ${migrationCard()}
   <div class="kgroup">
-    <span class="glabel">오늘 알림 대상 <span class="chip">3월 8일 기준</span></span>
+    <span class="glabel">오늘 알림 대상</span>
     <div class="grid g-alert">
-      <div class="kpi hero"><span class="lab">오늘 알림 대상</span><span class="val">${n0(ALERT_TOTAL)}<small>명</small></span><span class="foot">우선 세 유형 합계 · 3월 8일 기준</span></div>
+      <div class="kpi hero"><span class="lab">합계</span><span class="val">${n0(ALERT_TOTAL)}<small>명</small></span><span class="foot">우선 세 유형</span></div>
       ${Object.keys(ALERT).map(alertCard).join("")}
     </div>
-    <p class="howto">알림 조건(어제 학습, 이틀 쉼 등)에 오늘 맞는 사람만 셌다. 우선 대상 전체(습관 형성형 학습일 3일 ${n0(DATA.deep["습관 형성형"].target_n)}명, 멈춤-꾸준형 주 4일 경험 ${n0(DATA.deep["멈춤-꾸준형"].target_n)}명)에는 이미 알림일이 지난 사람이 섞여 있다.</p>
+    <p class="howto">알림 조건(어제 학습, 이틀 쉼 등)에 오늘 맞는 사람만 셌다.</p>
   </div>
-  <div class="card" id="detail"><h2>${WHY[curSeg].title}</h2><p class="sub">${curSeg} 안에서 갈리는 지점 · 같은 세그먼트 안의 비교 · 막대 축 0~100% 고정</p>
+  <div class="card" id="detail"><h2>${WHY[curSeg].title}</h2><p class="sub">${curSeg} 안에서의 비교</p>
     ${d.pairs.slice(0, 2).map(pairBars).join("")}
     <p class="concl">${WHY[curSeg].concl((d.pairs[0].a / d.pairs[0].b).toFixed(1), d.pairs[0])}</p>
     ${more(`비교 ${d.pairs.length - 2}개 더 보기`, d.pairs.slice(2).map(pairBars).join("") + extra)}
@@ -630,9 +634,16 @@ function migrationCard() {
     const a = Math.min(85, v * 1.1), hi = v >= 45;
     return `<td class="c${hi ? " hi" : ""}"${tipAttr(`${fromLabel(from)} → ${label(to)} · ${n0(n)}명 (${p1(v)})`)} style="background:color-mix(in srgb, var(--green) ${a.toFixed(0)}%, transparent)">${v ? v.toFixed(1) : "–"}</td>`;
   };
+  // 듀오링고 Growth Model처럼 우선 세그먼트마다 "움직일 이동" 하나를 레버로 본다
+  const LEVER = [["습관 형성형", "꾸준형", "up", "올릴 이동"], ["최근 단발형", "멈춤-저활동형", "down", "줄일 이동"], ["멈춤-꾸준형", "최근 7일 학습 없음", "down", "줄일 이동"]];
+  const lever = ([f, t, dir, lab]) => {
+    const r = M.rows.find(x => x.from === f), k = M.cols.indexOf(t);
+    return `<div class="lever ${dir}"${tipAttr(`${f} ${n0(r.n)}명 중 ${n0(r.to[k])}명이 4일 뒤 ${label(t)}로 이동 · 알림 없이 관찰된 값`)}><span class="lv-lab">${lab}<span class="badge">${PRIO[f]}순위</span></span><span class="lv-path">${f} → ${t === "꾸준형" ? "꾸준형 (북극성)" : label(t)}</span><span class="lv-val">${p1(r.pct[k])}<small>${n0(r.to[k])}명</small></span></div>`;
+  };
   const rows = M.rows.map(r => `<tr class="${PRIO[r.from] ? "prio" : ""}"><td>${fromLabel(r.from)}${PRIO[r.from] ? `<span class="badge">${PRIO[r.from]}</span>` : ""}</td><td class="n">${n0(r.n)}</td>${r.pct.map((v, k) => cell(v, r.to[k], r.from, M.cols[k])).join("")}</tr>`).join("");
   return `<div class="card"><h2>4일 뒤 습관 형성형의 ${p1(h.pct[goal])}(${n0(h.to[goal])}명)가 꾸준형으로 올라갔다</h2>
     <p class="sub">${M.from_d} 기준 세그먼트(최근 7일 3/1~3/7) → ${M.to_d} 기준 세그먼트(최근 7일 3/5~3/11) · 행마다 합계 100% · 알림 없이 일어난 이동</p>
+    <div class="levers">${LEVER.map(lever).join("")}</div>
     <div class="tbl"><table class="mig"><thead><tr><th>${M.from_d} 세그먼트</th><th>인원</th>${M.cols.map((c, k) => `<th class="${k === goal ? "goal" : ""}">${k === goal ? "꾸준형 (북극성)" : label(c)}</th>`).join("")}</tr></thead><tbody>${rows}</tbody></table></div>
     <p class="note">운영용 정의(노션 4-5)로 기준일마다 최근 7일을 다시 분류했다. 실험에서는 "대조군보다 꾸준형으로 더 많이 올라갔는가"를 보조 지표로 볼 수 있다. 관찰된 이동이며 개입 효과가 아니다.</p></div>`;
 }
@@ -647,19 +658,19 @@ function experimentCard() {
       <dl>
         <dt>대상</dt><dd>${r.target} <small>하루 ${n0(r.n)}명</small></dd>
         <dt>성공 지표</dt><dd>${r.metric}</dd>
-        <dt>대조군 예상치</dt><dd${tipAttr("알림 없이 이 대상 집단에서 관측된 값. 알림 카드의 기준선(세그먼트 전체)과 대상이 달라 값이 다르다")}>${p1(r.base)} <small>실제 알림 대상 기준</small></dd>
+        <dt>지금 값(대조군 예상)</dt><dd${tipAttr("알림 없이 이 대상 집단에서 관측된 값")}>${p1(r.base)}</dd>
         <dt>하루 치로 구분 가능한 차이</dt><dd${tipAttr("하루 대상만으로 실험했을 때 우연과 구분할 수 있는 최소 차이(검출 가능 최소 효과)")}>${r.mde50.toFixed(1)}%p 이상 <small>50:50 배정 · 대조군 10%면 ${r.mde10.toFixed(1)}%p</small></dd>
-        <dt>+${E.lift}%p 확인 기간</dt><dd>${r.days}일 <small>매일 비슷한 인원이 대상이 된다고 가정</small></dd>
+        <dt>+${E.lift}%p 확인 기간</dt><dd>${r.days}일</dd>
       </dl>
       <div class="funnel" aria-label="실험 후 채울 알림 성과">
         <div><span>발송</span><b>–</b></div><div><span>열람</span><b>–</b></div><div><span>${r.metric.split(" ")[0]} 달성</span><b>–</b></div>
       </div>
-      <span class="verdict no">실험 전 · 결과는 실행 후 기록</span></div>`;
+      <span class="verdict no">실험 전</span></div>`;
   };
   return `<div class="card"><h2>실험 설계: 알림 효과는 대조군과 비교해 확인한다</h2>
     <p class="sub">사용자 단위 무작위 배정 · 양측 α ${E.alpha}, 검정력 ${E.power * 100}% · 하루 대상 수가 3월 8일과 비슷하다고 가정</p>
     <div class="xgrid">${E.rows.map(box).join("")}</div>
-    <p class="note">대조군 예상치는 실제 알림 대상 집단의 값이라 위 알림 카드의 기준선(세그먼트 전체)과 다르다. 효과 판단에는 이 값이 아니라 같은 기간 대조군의 실제 값을 쓴다. 발송·열람 칸은 알림 기록이 생기면 채운다.</p></div>`;
+    <p class="note">효과는 같은 기간 대조군의 실제 값과 비교해 판단한다. 발송·열람 칸은 알림 기록이 생기면 채운다.</p></div>`;
 }
 
 // ---------- 라우팅
@@ -736,13 +747,12 @@ function checksHtml() {
     ["실험 대상 인원 = 오늘 알림 대상 카드", DATA.exp_plan.rows.every(r => r.n === ALERT[r.seg].n)]
   ];
   const ok = C.filter(c => c[1]).length;
-  return `<details><summary><strong>점검</strong> 화면 숫자 대조 ${ok}/${C.length} 통과${ok === C.length ? "" : " · 확인 필요"}</summary><ul class="checks">${C.map(([t, v]) => `<li class="${v ? "" : "bad"}">${t}</li>`).join("")}</ul></details>`;
+  return `<details><summary><strong>점검</strong> 노션 대조 ${DATA.checks}개 · 화면 숫자 대조 ${ok}/${C.length} 통과${ok === C.length ? "" : " · 확인 필요"}</summary><ul class="checks">${C.map(([t, v]) => `<li class="${v ? "" : "bad"}">${t}</li>`).join("")}</ul><p class="note">빌드 ${DATA.meta.built || ""} · 노션 「듀오링고 이탈 방지 분석」 ${DATA.meta.notion_edited || ""} 수정본 기준</p></details>`;
 }
 document.getElementById("foot").innerHTML = `
-  <span><strong>데이터</strong> Settles &amp; Meeder(2016) 듀오링고 학습 기록, 2013-02-28~03-12. 중복 81행 제거. 가입일·유입·결제·알림 정보 없음. 날짜는 UTC 기준.</span>
-  <span><strong>빌드</strong> ${DATA.meta.built || ""} · 노션 「듀오링고 이탈 방지 분석」(${DATA.meta.notion_edited || ""} 수정본)과 ${DATA.checks}개 항목 대조 통과</span>
-  ${checksHtml()}
-  <span><strong>해석</strong> 모든 결과는 관찰된 연관성이다. "멈춤"과 "이탈 위험"은 영구 이탈이 아니다. 알림 대상은 실제 발송 기록이 아니라 알림 조건에 맞는 인원이다.</span>`;
+  <span><strong>데이터</strong> 가입일·유입·결제·알림 정보가 없는 공개 학습 기록이다. 중복 81행을 지웠다.</span>
+  <span><strong>해석</strong> 모든 결과는 관찰된 연관성이다. "멈춤"과 "이탈 위험"은 영구 이탈이 아니다. 알림 대상은 실제 발송 기록이 아니라 알림 조건에 맞는 인원이다.</span>
+  ${checksHtml()}`;
 
 window.addEventListener("hashchange", () => { if (decodeURIComponent(location.hash) !== decodeURIComponent(stateHash())) show(readHash()); });
 show(readHash());
