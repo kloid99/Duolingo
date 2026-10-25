@@ -12,7 +12,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parent
 SOURCE = ROOT.parent / 'learning_traces.13m.csv' / 'learning_traces.13m.csv'
-REFERENCE = ROOT.parent / 'BDAI_3주차_정여진_공유.pdf'
+REFERENCE = ROOT.parent / '세그먼트 분석' / '세그먼트1.pdf'
 COLS = ['p_recall','timestamp','delta','user_id','learning_language','ui_language',
         'lexeme_id','lexeme_string','history_seen','history_correct','session_seen','session_correct']
 DTYPES = {c:'int64' for c in ['timestamp','delta','history_seen','history_correct','session_seen','session_correct']}

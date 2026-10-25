@@ -504,7 +504,7 @@ Settles & Meeder(2016)가 공개한 듀오링고 학습 기록 `learning_traces.
 
 ```
 learning_traces.13m.csv (원본, Settles & Meeder 2016 Duolingo SpacedRepetition 데이터)
- ├─ cohort_v1/analyze_cohort.py ─────────────────→ v1/user_cohort.csv, user_daily_activity.csv  (기준 자료: BDAI_3주차_정여진_공유.pdf)
+ ├─ cohort_v1/analyze_cohort.py ─────────────────→ v1/user_cohort.csv, user_daily_activity.csv  (기준 자료: 세그먼트 분석/세그먼트1.pdf)
  ├─ cohort_v2/run_segment_revision.py (v1 결과 + 원본)
  │    ├─ 내부에서 segmentation/segment_code_local.py 실행 → segmentation/user_rfm.csv
  │    └─→ cohort_inputs/*.csv
@@ -549,7 +549,7 @@ python dashboard/build_dashboard_data.py           # 5. 대시보드 생성     
 | `퍼널 코드.py`, `segment_and_hypothesis.py` | 팀 퍼널·세그먼트 가설 분석 (원본 경로를 루트 상대경로로 수정) |
 | `docs/` | 데이터 사전, 품질 점검표, 지표 정의서, 대시보드 구성안·계획, 최종 보고서 v2, 핵심결론 v2, 대시보드 피드백 |
 | `reports/` | 최신 보고서 PDF: 코호트분석 통합본 수정판, 퍼널 총합, 세그먼트 기본, 3팀 분석 흐름 정리 |
-| `BDAI_3주차_정여진_공유.pdf` | v1 세그먼트 기준 자료 |
+| `세그먼트 분석/세그먼트1.pdf` | v1 세그먼트 기준 자료 (`cohort_v1/analyze_cohort.py`가 해시를 기록하므로 삭제·이름 변경 시 코드도 함께 수정) |
 | `learning_traces.13m.csv/` | 원본 데이터 (git 제외) |
 
 ### 제외한 것
