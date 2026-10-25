@@ -2,6 +2,7 @@
 
 듀오링고 사용자의 **학습 이탈을 막기 위한 분석**과, 그 결과를 보여 주는 대시보드입니다.
 
+- 📊 **대시보드 바로가기: https://duolingo-dashboard.vercel.app**
 - 메인 결과물: `dashboard/duolingo_dashboard.html` (데이터가 HTML 안에 들어 있어 서버 없이 브라우저에서 바로 열림)
 - 분석 원문: [노션 「듀오링고 이탈 방지 분석」](https://app.notion.com/p/3fe0b7d59eee81729d65cbf999fed013)
 
