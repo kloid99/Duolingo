@@ -751,8 +751,7 @@ function checksHtml() {
 }
 document.getElementById("foot").innerHTML = `
   <span><strong>데이터</strong> 가입일·유입·결제·알림 정보가 없는 공개 학습 기록이다. 중복 81행을 지웠다.</span>
-  <span><strong>해석</strong> 모든 결과는 관찰된 연관성이다. "멈춤"과 "이탈 위험"은 영구 이탈이 아니다. 알림 대상은 실제 발송 기록이 아니라 알림 조건에 맞는 인원이다.</span>
-  ${checksHtml()}`;
+  <span><strong>해석</strong> 모든 결과는 관찰된 연관성이다. "멈춤"과 "이탈 위험"은 영구 이탈이 아니다. 알림 대상은 실제 발송 기록이 아니라 알림 조건에 맞는 인원이다.</span>`;
 
 window.addEventListener("hashchange", () => { if (decodeURIComponent(location.hash) !== decodeURIComponent(stateHash())) show(readHash()); });
 show(readHash());
