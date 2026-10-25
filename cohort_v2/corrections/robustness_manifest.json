@@ -1,0 +1,21 @@
+{
+  "source_hashes": {
+    "regularity\\user_regularity.csv": "c2978b680d76e2e4a65b29b0f107e7002fe95ab1407c16a0baaa87609a2a20e8",
+    "accuracy_change\\user_accuracy_change.csv": "3c92007b04d0f1c6d74b67b6ba3f57ebdf04c383ef804a1b0ac4b838d449645c",
+    "word_performance\\user_word_improvement.csv": "7800a394f9a86a41291954b28b2198ecf556efcdb6de431c5e5c50bbf414d4b9",
+    "word_performance\\review_word_pairs.csv": "02c6cc23de2b8882ad1e3b936974687f16b5229b454c78bac9cbae992f67f00b",
+    "user_retention_cohort.csv": "1070c769c8f1d6bc1914e223c19469b9ceb127c929257ba05a2ba1d80fc57bb7",
+    "corrections\\analyze_robustness.py": "5764adfeb9a25b9591396d7c24c13f65b0eab9cd641a69afe26f2826eb05acc5"
+  },
+  "files": {
+    "analyze_robustness.py": "5764adfeb9a25b9591396d7c24c13f65b0eab9cd641a69afe26f2826eb05acc5",
+    "baseline_language_profiles.csv": "471d0dd96b60821ff38198cd3eae9c8464e573821cb12d24dfe691dd9891dab1",
+    "extreme_users.csv": "9d65066b73eba50670a4cb2a9a3df9cfa9eff391d3ff31a81d6efdf35fa1bc5c",
+    "pair_user_weights.csv": "1342aade2f2192352fee6beb43393812734ea867a8576ab6b618895d2d5c742e",
+    "raw_profile_extraction.json": "ce43fdaab6f40ef1505770b52f29f571d90c275cc6c094a59838fc5257deb634",
+    "robustness_models.csv": "7beb300d8ad0b1c763fa0c93284ef388021208b574e3a494c5b20bc288a7fca7",
+    "robustness_results.json": "8f39a95c78227673c07d64bdbadc01b90db07360b77b97951eec965cff2c49fd",
+    "selection_language_time_profiles.csv": "3e55ca1a76b6d16822f55b21fcba311d71e7844a6beb8186fcad26f88e846ab4",
+    "민감도_추가설계.md": "103acc063d1bb749ca33ba5fa62b2ec356663dad1e722b5128ceeacb473fbe9a"
+  }
+}

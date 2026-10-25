@@ -1,0 +1,723 @@
+{
+  "analysis_date": "2026-10-13",
+  "baseline": "2013-03-01..07 UTC",
+  "followup": "2013-03-08..11 UTC",
+  "source_hashes": {
+    "raw_csv": "609b4a602665b1cf5fa693b1ebfcd1d5f9a2b7bad623e3d935436abcc7b74c21",
+    "user_retention_cohort.csv": "1070c769c8f1d6bc1914e223c19469b9ceb127c929257ba05a2ba1d80fc57bb7",
+    "definition_document": "987446c4298241ac5fda3b7b047ca0fa354afbd4037f14b993f497f6aee5b475",
+    "analysis_protocol": "faaea84c2693a99a1516953f3158012ced5e97d3f7fb29c4a70126943ddb2208"
+  },
+  "extraction": {
+    "raw_rows": 12854226,
+    "baseline_rows_before_dedup": 7782123,
+    "duplicates_removed": 81,
+    "raw_sha256": "609b4a602665b1cf5fa693b1ebfcd1d5f9a2b7bad623e3d935436abcc7b74c21",
+    "all_baseline_totals_match": true,
+    "ambiguous_matched_words": 7,
+    "ambiguous_review_pairs": 0,
+    "cache_hashes": {
+      "matched_word_pairs.csv": "b365e35a212612c7abd720bff47b6b3ed2789ca2e405e5e721f03f823c0caf1c",
+      "review_word_pairs.csv": "02c6cc23de2b8882ad1e3b936974687f16b5229b454c78bac9cbae992f67f00b",
+      "validation_sample_rows.csv": "1516ac141c950f87c1ac70669182e2ed60c2e53a85e7262126b3c47a28588e3c",
+      "gap_bins.json": "f6d5330cb98d76d17294d3be0edf5492e01a503fe9d69257e70a92a3ab033096"
+    }
+  },
+  "coverage": [
+    {
+      "segment": "전체",
+      "baseline_users": 82467,
+      "no_matched_words": 55426,
+      "one_to_four_words": 4018,
+      "eligible_users": 23023,
+      "model_users": 23022,
+      "ambiguous_history_users": 1,
+      "eligible_10_users": 17931,
+      "review_eligible_users": 23019,
+      "mean_improvement": 0.02529654014823473
+    },
+    {
+      "segment": "멈춤-몰입형",
+      "baseline_users": 9303,
+      "no_matched_words": 5875,
+      "one_to_four_words": 577,
+      "eligible_users": 2851,
+      "model_users": 2851,
+      "ambiguous_history_users": 0,
+      "eligible_10_users": 1997,
+      "review_eligible_users": 2850,
+      "mean_improvement": 0.0214944770324809
+    },
+    {
+      "segment": "꾸준형",
+      "baseline_users": 8882,
+      "no_matched_words": 458,
+      "one_to_four_words": 319,
+      "eligible_users": 8105,
+      "model_users": 8104,
+      "ambiguous_history_users": 1,
+      "eligible_10_users": 7372,
+      "review_eligible_users": 8105,
+      "mean_improvement": 0.029665019791847387
+    },
+    {
+      "segment": "멈춤-꾸준형",
+      "baseline_users": 3627,
+      "no_matched_words": 520,
+      "one_to_four_words": 326,
+      "eligible_users": 2781,
+      "model_users": 2781,
+      "ambiguous_history_users": 0,
+      "eligible_10_users": 2236,
+      "review_eligible_users": 2780,
+      "mean_improvement": 0.023422241999705298
+    },
+    {
+      "segment": "멈춤-저활동형",
+      "baseline_users": 30670,
+      "no_matched_words": 29013,
+      "one_to_four_words": 725,
+      "eligible_users": 932,
+      "model_users": 932,
+      "ambiguous_history_users": 0,
+      "eligible_10_users": 445,
+      "review_eligible_users": 932,
+      "mean_improvement": 0.023409909308763736
+    },
+    {
+      "segment": "습관 형성형",
+      "baseline_users": 14583,
+      "no_matched_words": 4158,
+      "one_to_four_words": 2071,
+      "eligible_users": 8354,
+      "model_users": 8354,
+      "ambiguous_history_users": 0,
+      "eligible_10_users": 5881,
+      "review_eligible_users": 8352,
+      "mean_improvement": 0.023190233890751
+    },
+    {
+      "segment": "최근 단발형",
+      "baseline_users": 15402,
+      "no_matched_words": 15402,
+      "one_to_four_words": 0,
+      "eligible_users": 0,
+      "model_users": 0,
+      "ambiguous_history_users": 0,
+      "eligible_10_users": 0,
+      "review_eligible_users": 0,
+      "mean_improvement": null
+    }
+  ],
+  "quartiles": [
+    {
+      "gain_quartile": "Q1 낮은 개선",
+      "n": 2089,
+      "repeated": 557,
+      "gain_min": -0.75,
+      "gain_max": -0.037037037037037035,
+      "initial_mean": 0.9401830701740889,
+      "final_mean": 0.8309614743925106,
+      "words_median": 14.0,
+      "repeat_rate": 0.2666347534705601
+    },
+    {
+      "gain_quartile": "Q2",
+      "n": 2088,
+      "repeated": 575,
+      "gain_min": -0.03703703703703703,
+      "gain_max": 0.014555555555555552,
+      "initial_mean": 0.9278444508527767,
+      "final_mean": 0.9194220919098082,
+      "words_median": 18.0,
+      "repeat_rate": 0.2753831417624521
+    },
+    {
+      "gain_quartile": "Q3",
+      "n": 2096,
+      "repeated": 570,
+      "gain_min": 0.01457142857142857,
+      "gain_max": 0.07692307692307693,
+      "initial_mean": 0.8852396090799555,
+      "final_mean": 0.9284015038364436,
+      "words_median": 19.0,
+      "repeat_rate": 0.2719465648854962
+    },
+    {
+      "gain_quartile": "Q4 높은 개선",
+      "n": 2081,
+      "repeated": 574,
+      "gain_min": 0.07694638694638693,
+      "gain_max": 1.0,
+      "initial_mean": 0.7621149352101858,
+      "final_mean": 0.92982934250205,
+      "words_median": 14.0,
+      "repeat_rate": 0.27582892839980777
+    }
+  ],
+  "gap_bins": [
+    {
+      "gap_bin": "1분~1시간 미만",
+      "records": 3005790,
+      "users": 49812,
+      "attempts": 5420208,
+      "correct": 4973481,
+      "accuracy": 0.917581207215664
+    },
+    {
+      "gap_bin": "1시간~1일 미만",
+      "records": 1117783,
+      "users": 32595,
+      "attempts": 2030597,
+      "correct": 1832830,
+      "accuracy": 0.90260647484459
+    },
+    {
+      "gap_bin": "1~3일 미만",
+      "records": 1118675,
+      "users": 34430,
+      "attempts": 2071636,
+      "correct": 1866562,
+      "accuracy": 0.9010086714075253
+    },
+    {
+      "gap_bin": "3~7일 미만",
+      "records": 930512,
+      "users": 34220,
+      "attempts": 1745966,
+      "correct": 1568332,
+      "accuracy": 0.8982603326754358
+    },
+    {
+      "gap_bin": "7일 이상",
+      "records": 1583286,
+      "users": 49286,
+      "attempts": 2769595,
+      "correct": 2462568,
+      "accuracy": 0.8891437195691066
+    }
+  ],
+  "models": [
+    {
+      "model": "습관 형성형 · 5단어 이상 · 반복학습",
+      "kind": "logistic",
+      "outcome": "returned_2plus_days",
+      "n": 8354,
+      "events": 2276,
+      "estimate": 1.0203195123286979,
+      "ci_low": 0.9581346486218386,
+      "ci_high": 1.0865402986272334,
+      "p": 0.5306718721575046,
+      "unit": "개선 +10%p당 반복학습 OR",
+      "condition_number": 7.304492017251298,
+      "coefficients": [
+        {
+          "term": "intercept",
+          "beta": -1.0364021704617958,
+          "se": 0.055254785988632774
+        },
+        {
+          "term": "gain_per_10pp",
+          "beta": 0.02011582562553847,
+          "se": 0.032083642970983275
+        },
+        {
+          "term": "initial_accuracy",
+          "beta": 0.052510136619583606,
+          "se": 0.0452518728406708
+        },
+        {
+          "term": "initial_accuracy_squared",
+          "beta": 0.039486907006997286,
+          "se": 0.03240347768694195
+        },
+        {
+          "term": "prior_accuracy",
+          "beta": 0.011795235515569753,
+          "se": 0.02648842149094223
+        },
+        {
+          "term": "active_days_3",
+          "beta": 0.4261825696192284,
+          "se": 0.06914141991684822
+        },
+        {
+          "term": "recency_2",
+          "beta": -0.5474418372734207,
+          "se": 0.06124515983996805
+        },
+        {
+          "term": "log1p_words_seen",
+          "beta": -0.10852737038061146,
+          "se": 0.05717741980567206
+        },
+        {
+          "term": "log1p_sessions",
+          "beta": 0.3342238828547775,
+          "se": 0.05301328965251553
+        },
+        {
+          "term": "log1p_matched_words",
+          "beta": 0.028361902875178445,
+          "se": 0.030846836661341557
+        },
+        {
+          "term": "first_observed_day",
+          "beta": 0.06736845574161415,
+          "se": 0.05688535519658597
+        },
+        {
+          "term": "mean_elapsed_days",
+          "beta": -0.06790120961789743,
+          "se": 0.050401560494024354
+        }
+      ],
+      "p_holm": 1.0
+    },
+    {
+      "model": "전체 · 5단어 이상 · 반복학습",
+      "kind": "logistic",
+      "outcome": "returned_2plus_days",
+      "n": 23022,
+      "events": 8032,
+      "estimate": 1.030492505293209,
+      "ci_low": 0.9894695662110621,
+      "ci_high": 1.0732162359796715,
+      "p": 0.14728093864608752,
+      "unit": "개선 +10%p당 반복학습 OR",
+      "condition_number": 24.5149330921473,
+      "coefficients": [
+        {
+          "term": "intercept",
+          "beta": -1.0762918218497761,
+          "se": 0.058013906934386204
+        },
+        {
+          "term": "gain_per_10pp",
+          "beta": 0.030036848438095037,
+          "se": 0.020726462274660466
+        },
+        {
+          "term": "initial_accuracy",
+          "beta": 0.04422714571025424,
+          "se": 0.02788243146656138
+        },
+        {
+          "term": "initial_accuracy_squared",
+          "beta": 0.03615035307760217,
+          "se": 0.020131997397201534
+        },
+        {
+          "term": "prior_accuracy",
+          "beta": 0.029157834407766196,
+          "se": 0.016687158510460477
+        },
+        {
+          "term": "active_days_3",
+          "beta": 0.4750316475183947,
+          "se": 0.04991603480914137
+        },
+        {
+          "term": "active_days_4",
+          "beta": 0.8818153738871737,
+          "se": 0.06425372574681874
+        },
+        {
+          "term": "active_days_5",
+          "beta": 1.3648922830635124,
+          "se": 0.07932055911302649
+        },
+        {
+          "term": "active_days_6",
+          "beta": 1.886689289492357,
+          "se": 0.09686392515477978
+        },
+        {
+          "term": "active_days_7",
+          "beta": 2.640069222133682,
+          "se": 0.1330307362410636
+        },
+        {
+          "term": "recency_2",
+          "beta": -0.4410114085372898,
+          "se": 0.04104404827925358
+        },
+        {
+          "term": "recency_3",
+          "beta": -0.6392493465807084,
+          "se": 0.061047274118677955
+        },
+        {
+          "term": "recency_4",
+          "beta": -0.7175918611575637,
+          "se": 0.08438423750539284
+        },
+        {
+          "term": "recency_5",
+          "beta": -0.7314387257393108,
+          "se": 0.11200324365343799
+        },
+        {
+          "term": "recency_6",
+          "beta": -1.0275575292831096,
+          "se": 0.16883783898793064
+        },
+        {
+          "term": "log1p_words_seen",
+          "beta": -0.03656060065710875,
+          "se": 0.042330844515419616
+        },
+        {
+          "term": "log1p_sessions",
+          "beta": 0.26061080642669493,
+          "se": 0.039613084009884406
+        },
+        {
+          "term": "log1p_matched_words",
+          "beta": 0.02791015646380346,
+          "se": 0.022870398106536998
+        },
+        {
+          "term": "first_observed_day",
+          "beta": 0.10406975837817008,
+          "se": 0.030956501142726536
+        },
+        {
+          "term": "mean_elapsed_days",
+          "beta": -0.012861371589501664,
+          "se": 0.023623289344027822
+        }
+      ],
+      "p_holm": 0.5891237545843501
+    },
+    {
+      "model": "습관 형성형 · 10단어 이상 · 반복학습",
+      "kind": "logistic",
+      "outcome": "returned_2plus_days",
+      "n": 5881,
+      "events": 1650,
+      "estimate": 1.0244296637922223,
+      "ci_low": 0.9407463255631378,
+      "ci_high": 1.1155569865545136,
+      "p": 0.5788153482676516,
+      "unit": "개선 +10%p당 반복학습 OR",
+      "condition_number": 6.990614913598012,
+      "coefficients": [
+        {
+          "term": "intercept",
+          "beta": -1.0061426830209064,
+          "se": 0.06881240987055155
+        },
+        {
+          "term": "gain_per_10pp",
+          "beta": 0.024136032159652328,
+          "se": 0.04347926196964253
+        },
+        {
+          "term": "initial_accuracy",
+          "beta": 0.014713456622809292,
+          "se": 0.05474050517909981
+        },
+        {
+          "term": "initial_accuracy_squared",
+          "beta": 0.013930896676824176,
+          "se": 0.03916794405681673
+        },
+        {
+          "term": "prior_accuracy",
+          "beta": -0.007567049345401255,
+          "se": 0.031992417565440655
+        },
+        {
+          "term": "active_days_3",
+          "beta": 0.4102575665581277,
+          "se": 0.08200164289778106
+        },
+        {
+          "term": "recency_2",
+          "beta": -0.5656312080275469,
+          "se": 0.07272852478064844
+        },
+        {
+          "term": "log1p_words_seen",
+          "beta": -0.14736472789678934,
+          "se": 0.0683876259634547
+        },
+        {
+          "term": "log1p_sessions",
+          "beta": 0.38322285354154223,
+          "se": 0.06584178347581675
+        },
+        {
+          "term": "log1p_matched_words",
+          "beta": 0.06926440151083088,
+          "se": 0.034944347280110484
+        },
+        {
+          "term": "first_observed_day",
+          "beta": 0.07744043997118953,
+          "se": 0.068820808348367
+        },
+        {
+          "term": "mean_elapsed_days",
+          "beta": -0.05398086885767211,
+          "se": 0.06073173684799392
+        }
+      ],
+      "p_holm": 1.0
+    },
+    {
+      "model": "습관 형성형 · 5단어 이상 · 재학습",
+      "kind": "logistic",
+      "outcome": "returned_4d",
+      "n": 8354,
+      "events": 4672,
+      "estimate": 1.0528338311789798,
+      "ci_low": 0.9971862908435146,
+      "ci_high": 1.1115867579139789,
+      "p": 0.06313131961911375,
+      "unit": "개선 +10%p당 재학습 OR",
+      "condition_number": 7.304492017251298,
+      "coefficients": [
+        {
+          "term": "intercept",
+          "beta": 0.21738466124016925,
+          "se": 0.050338643605907264
+        },
+        {
+          "term": "gain_per_10pp",
+          "beta": 0.051485415551128594,
+          "se": 0.027706167591142052
+        },
+        {
+          "term": "initial_accuracy",
+          "beta": 0.06351285686257908,
+          "se": 0.040859041023966126
+        },
+        {
+          "term": "initial_accuracy_squared",
+          "beta": 0.029077707692153367,
+          "se": 0.0310613216218697
+        },
+        {
+          "term": "prior_accuracy",
+          "beta": -0.00021311509769300619,
+          "se": 0.023889654965932205
+        },
+        {
+          "term": "active_days_3",
+          "beta": 0.3997210997343169,
+          "se": 0.06335353559623151
+        },
+        {
+          "term": "recency_2",
+          "beta": -0.45386903845984844,
+          "se": 0.05485675474521956
+        },
+        {
+          "term": "log1p_words_seen",
+          "beta": -0.06752486244774283,
+          "se": 0.051220866445913255
+        },
+        {
+          "term": "log1p_sessions",
+          "beta": 0.27888640239078144,
+          "se": 0.048054140706437605
+        },
+        {
+          "term": "log1p_matched_words",
+          "beta": 0.05756289426503909,
+          "se": 0.028028739762730015
+        },
+        {
+          "term": "first_observed_day",
+          "beta": 0.05190006466132686,
+          "se": 0.05489646946414812
+        },
+        {
+          "term": "mean_elapsed_days",
+          "beta": -0.013862556475100643,
+          "se": 0.04772736190226418
+        }
+      ],
+      "p_holm": 0.3156565980955688
+    },
+    {
+      "model": "동일 사용자·단어 · 마지막 노출 가중",
+      "kind": "paired_wls",
+      "weighted": true,
+      "n": 745195,
+      "users": 23019,
+      "estimate": 0.08807528057495859,
+      "ci_low": 0.042492816747827414,
+      "ci_high": 0.13365774440208977,
+      "p": 0.0001524288319201312,
+      "unit": "간격비 2배당 정답률 차이 %p",
+      "condition_number": 824.3598323304768,
+      "coefficients": [
+        {
+          "term": "intercept",
+          "beta": 0.03235832414881907,
+          "se": 0.0008905747309443668
+        },
+        {
+          "term": "change_log2_gap",
+          "beta": 0.0008807528057495859,
+          "se": 0.0002325678644438423
+        },
+        {
+          "term": "first_accuracy",
+          "beta": -0.23324259646663795,
+          "se": 0.001110717090159086
+        },
+        {
+          "term": "first_accuracy_squared",
+          "beta": 0.00910750441596984,
+          "se": 0.0010070189303613552
+        },
+        {
+          "term": "first_loggap",
+          "beta": 0.0016630222345555977,
+          "se": 0.0012145556583684292
+        },
+        {
+          "term": "prior_accuracy",
+          "beta": 0.014614052459004304,
+          "se": 0.0007703622235649729
+        },
+        {
+          "term": "change_loghistory",
+          "beta": 0.006632809823836557,
+          "se": 0.0006256637396837773
+        },
+        {
+          "term": "elapsed_days",
+          "beta": -0.006686988275963156,
+          "se": 0.0009692080139098863
+        },
+        {
+          "term": "first_day_2",
+          "beta": -0.003375904268045356,
+          "se": 0.0012724489361333681
+        },
+        {
+          "term": "first_day_3",
+          "beta": -0.005625841049986994,
+          "se": 0.0014102679760482802
+        },
+        {
+          "term": "first_day_4",
+          "beta": -0.006681577123438928,
+          "se": 0.0014243420520197747
+        },
+        {
+          "term": "first_day_5",
+          "beta": -0.008194540208717424,
+          "se": 0.0015299138220906685
+        },
+        {
+          "term": "first_day_6",
+          "beta": -0.011187686002395654,
+          "se": 0.002506433095468978
+        }
+      ],
+      "p_holm": 0.0009145729915207871
+    },
+    {
+      "model": "동일 사용자·단어 · 단어 쌍 동일 가중",
+      "kind": "paired_wls",
+      "weighted": false,
+      "n": 745195,
+      "users": 23019,
+      "estimate": 0.006612576386629238,
+      "ci_low": -0.02906992239913753,
+      "ci_high": 0.042295075172396,
+      "p": 0.7164444347340821,
+      "unit": "간격비 2배당 정답률 차이 %p",
+      "condition_number": 751.7093414198126,
+      "coefficients": [
+        {
+          "term": "intercept",
+          "beta": 0.026406195444760985,
+          "se": 0.0009885636421816805
+        },
+        {
+          "term": "change_log2_gap",
+          "beta": 6.612576386629238e-05,
+          "se": 0.0001820569105719633
+        },
+        {
+          "term": "first_accuracy",
+          "beta": -0.23478062742199113,
+          "se": 0.0009712975009670298
+        },
+        {
+          "term": "first_accuracy_squared",
+          "beta": 0.006450688521967208,
+          "se": 0.0010986132367535862
+        },
+        {
+          "term": "first_loggap",
+          "beta": -0.0018738641799421302,
+          "se": 0.000880427091586442
+        },
+        {
+          "term": "prior_accuracy",
+          "beta": 0.01620388444376577,
+          "se": 0.0007098189305662829
+        },
+        {
+          "term": "change_loghistory",
+          "beta": 0.008773032541468419,
+          "se": 0.0005915296332915725
+        },
+        {
+          "term": "elapsed_days",
+          "beta": -0.0077299830043537476,
+          "se": 0.0008900994864203689
+        },
+        {
+          "term": "first_day_2",
+          "beta": -0.003765753850752206,
+          "se": 0.0014217531081623148
+        },
+        {
+          "term": "first_day_3",
+          "beta": -0.006188854481782746,
+          "se": 0.001504120068252702
+        },
+        {
+          "term": "first_day_4",
+          "beta": -0.008480881586472006,
+          "se": 0.0016180703996461845
+        },
+        {
+          "term": "first_day_5",
+          "beta": -0.009919311603408731,
+          "se": 0.0016569855683827635
+        },
+        {
+          "term": "first_day_6",
+          "beta": -0.012617710343005049,
+          "se": 0.0020638240979059495
+        }
+      ],
+      "p_holm": 1.0
+    }
+  ],
+  "pair_counts": {
+    "matched_word_pairs": 754299,
+    "review_word_pairs_all": 754229,
+    "review_pairs_model": 745195,
+    "review_users_model": 23019
+  },
+  "checks": {
+    "original_metric_formula_reproduced": true,
+    "baseline_only": true,
+    "all_baseline_user_totals_match": true,
+    "pair_keys_unique": true,
+    "different_calendar_days": true,
+    "initial_history_before_first_observation": true,
+    "all_models_full_rank_converged": true
+  }
+}

@@ -1,0 +1,8 @@
+﻿segment,pdf_users,actual_users,pdf_return_pct,actual_return_pct,count_matches,return_matches_at_1dp
+핵심 학습자,8882,8882,80.3,80.3310065301,True,True
+습관 형성 중,14583,14583,52.2,52.170335322,True,True
+최근 1일 학습,15402,15402,32.5,32.5022724322,True,True
+중단 위험,3627,3627,45.7,45.7127102288,True,True
+몰입 후 이탈,9359,9359,26.3,26.3275991025,True,True
+초반 이탈,6350,6350,13.6,13.6062992126,True,True
+중반 이탈,24264,24264,18.6,18.5666007254,True,True

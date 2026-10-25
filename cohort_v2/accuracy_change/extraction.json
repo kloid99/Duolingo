@@ -1,0 +1,8 @@
+{
+  "raw_rows": 12854226,
+  "baseline_rows_before_dedup": 7782123,
+  "baseline_duplicates_removed": 81,
+  "raw_sha256": "609b4a602665b1cf5fa693b1ebfcd1d5f9a2b7bad623e3d935436abcc7b74c21",
+  "daily_sha256": "1a57507c4d6784d78f0f4d988cd0c2b66b77ccd377d02cf11d10d5d817195d9f",
+  "dedup": "64-bit full-row pandas hash; existing user totals crosschecked"
+}

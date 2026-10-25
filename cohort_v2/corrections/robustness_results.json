@@ -1,0 +1,1698 @@
+{
+  "protocol_sha256": "103acc063d1bb749ca33ba5fa62b2ec356663dad1e722b5128ceeacb473fbe9a",
+  "raw_extraction": {
+    "raw_sha256": "609b4a602665b1cf5fa693b1ebfcd1d5f9a2b7bad623e3d935436abcc7b74c21",
+    "raw_rows": 12854226,
+    "extreme_users": 104,
+    "baseline_extreme_users": 92,
+    "dedup_removed": 81,
+    "profile_sha256": "471d0dd96b60821ff38198cd3eae9c8464e573821cb12d24dfe691dd9891dab1",
+    "extreme_sha256": "9d65066b73eba50670a4cb2a9a3df9cfa9eff391d3ff31a81d6efdf35fa1bc5c"
+  },
+  "baseline_models": [
+    {
+      "model": "CV 주 분석 재현",
+      "n": 10633,
+      "events": 2887,
+      "adjusted": true,
+      "odds_ratio": 0.7048511382291108,
+      "ci_low": 0.6476533167464993,
+      "ci_high": 0.7671004134721873,
+      "p": 5.484080210950582e-16,
+      "logcv_sd": 0.25181794248879746,
+      "cv_q25": 1.6367400041754956,
+      "cv_q75": 2.571055684528261,
+      "iterations": 6,
+      "condition_number": 6.346876988855528,
+      "coefficients": [
+        {
+          "term": "intercept",
+          "beta": -0.8681431769165708,
+          "robust_se": 0.04487363999675153
+        },
+        {
+          "term": "log1p_cv_per_sd",
+          "beta": -0.34976864991354367,
+          "robust_se": 0.04317991635099732
+        },
+        {
+          "term": "active_days_3",
+          "beta": 0.11506290367015652,
+          "robust_se": 0.06424161831949993
+        },
+        {
+          "term": "recency_2",
+          "beta": -0.580589252685186,
+          "robust_se": 0.049249570431351794
+        },
+        {
+          "term": "log1p_words_seen",
+          "beta": -0.014900741460506304,
+          "robust_se": 0.03724917702024227
+        },
+        {
+          "term": "log1p_n_sessions",
+          "beta": 0.5738474949918052,
+          "robust_se": 0.05256194227930163
+        },
+        {
+          "term": "first_hour",
+          "beta": 0.053028448591757364,
+          "robust_se": 0.027264786541739354
+        }
+      ]
+    },
+    {
+      "model": "전체 정확도 주 분석 재현",
+      "outcome": "returned_2plus_days",
+      "adjusted": true,
+      "categorical": false,
+      "term": "change_per_10pp",
+      "n": 4653,
+      "events": 1202,
+      "odds_ratio": 1.069018531430067,
+      "ci_low": 0.9570851751781011,
+      "ci_high": 1.1940427562554574,
+      "p": 0.23693268461213945,
+      "condition_number": 117.40179259655632,
+      "iterations": 6,
+      "coefficients": [
+        {
+          "term": "intercept",
+          "beta": -1.1922649085871657,
+          "robust_se": 0.07124757501328134
+        },
+        {
+          "term": "change_per_10pp",
+          "beta": 0.06674096718738426,
+          "robust_se": 0.056431575923587905
+        },
+        {
+          "term": "early_accuracy_centered",
+          "beta": 1.4707971726124756,
+          "robust_se": 0.7235574823681976
+        },
+        {
+          "term": "early_accuracy_squared",
+          "beta": 0.6953937426929789,
+          "robust_se": 2.566570696817536
+        },
+        {
+          "term": "active_days_3",
+          "beta": 0.4715330637903262,
+          "robust_se": 0.07778819848409915
+        },
+        {
+          "term": "recency_2",
+          "beta": -0.3956676643594568,
+          "robust_se": 0.0690421036825076
+        },
+        {
+          "term": "log1p_early_seen",
+          "beta": -0.0185762002590374,
+          "robust_se": 0.046164572234615245
+        },
+        {
+          "term": "log1p_late_seen",
+          "beta": 0.048080504408155124,
+          "robust_se": 0.04674588640841773
+        },
+        {
+          "term": "log1p_sessions",
+          "beta": 0.16665607594407722,
+          "robust_se": 0.0612222135514911
+        },
+        {
+          "term": "first_observed_day",
+          "beta": 0.08489654325697119,
+          "robust_se": 0.03391777759131832
+        }
+      ]
+    },
+    {
+      "model": "같은 단어 주 분석 재현",
+      "kind": "logistic",
+      "outcome": "returned_2plus_days",
+      "n": 8354,
+      "events": 2276,
+      "estimate": 1.0203195123286979,
+      "ci_low": 0.9581346486218385,
+      "ci_high": 1.0865402986272334,
+      "p": 0.5306718721575052,
+      "unit": "개선 +10%p당 반복학습 OR",
+      "condition_number": 7.3044920172513015,
+      "coefficients": [
+        {
+          "term": "intercept",
+          "beta": -1.0364021704617956,
+          "se": 0.0552547859886327
+        },
+        {
+          "term": "gain_per_10pp",
+          "beta": 0.02011582562553845,
+          "se": 0.03208364297098329
+        },
+        {
+          "term": "initial_accuracy",
+          "beta": 0.05251013661958356,
+          "se": 0.04525187284067081
+        },
+        {
+          "term": "initial_accuracy_squared",
+          "beta": 0.03948690700699724,
+          "se": 0.032403477686941955
+        },
+        {
+          "term": "prior_accuracy",
+          "beta": 0.01179523551556981,
+          "se": 0.02648842149094222
+        },
+        {
+          "term": "active_days_3",
+          "beta": 0.4261825696192282,
+          "se": 0.06914141991684816
+        },
+        {
+          "term": "recency_2",
+          "beta": -0.5474418372734208,
+          "se": 0.061245159839968005
+        },
+        {
+          "term": "log1p_words_seen",
+          "beta": -0.10852737038061169,
+          "se": 0.05717741980567208
+        },
+        {
+          "term": "log1p_sessions",
+          "beta": 0.3342238828547777,
+          "se": 0.05301328965251553
+        },
+        {
+          "term": "log1p_matched_words",
+          "beta": 0.028361902875178497,
+          "se": 0.03084683666134157
+        },
+        {
+          "term": "first_observed_day",
+          "beta": 0.0673684557416139,
+          "se": 0.056885355196585906
+        },
+        {
+          "term": "mean_elapsed_days",
+          "beta": -0.06790120961789767,
+          "se": 0.050401560494024285
+        }
+      ]
+    },
+    {
+      "model": "가중 간격 주 분석 재현",
+      "kind": "paired_wls",
+      "weighted": true,
+      "n": 745195,
+      "users": 23019,
+      "estimate": 0.08807528057495802,
+      "ci_low": 0.04249281674782684,
+      "ci_high": 0.1336577444020892,
+      "p": 0.0001524288319201462,
+      "unit": "간격비 2배당 정답률 차이 %p",
+      "condition_number": 824.3598323304756,
+      "coefficients": [
+        {
+          "term": "intercept",
+          "beta": 0.03235832414881901,
+          "se": 0.0008905747309443672
+        },
+        {
+          "term": "change_log2_gap",
+          "beta": 0.0008807528057495802,
+          "se": 0.0002325678644438423
+        },
+        {
+          "term": "first_accuracy",
+          "beta": -0.23324259646663795,
+          "se": 0.0011107170901590842
+        },
+        {
+          "term": "first_accuracy_squared",
+          "beta": 0.009107504415969848,
+          "se": 0.0010070189303613504
+        },
+        {
+          "term": "first_loggap",
+          "beta": 0.0016630222345555723,
+          "se": 0.0012145556583684292
+        },
+        {
+          "term": "prior_accuracy",
+          "beta": 0.014614052459004304,
+          "se": 0.0007703622235649729
+        },
+        {
+          "term": "change_loghistory",
+          "beta": 0.006632809823836552,
+          "se": 0.0006256637396837775
+        },
+        {
+          "term": "elapsed_days",
+          "beta": -0.006686988275963135,
+          "se": 0.0009692080139098864
+        },
+        {
+          "term": "first_day_2",
+          "beta": -0.0033759042680453,
+          "se": 0.001272448936133368
+        },
+        {
+          "term": "first_day_3",
+          "beta": -0.005625841049986933,
+          "se": 0.0014102679760482812
+        },
+        {
+          "term": "first_day_4",
+          "beta": -0.006681577123438872,
+          "se": 0.0014243420520197749
+        },
+        {
+          "term": "first_day_5",
+          "beta": -0.00819454020871736,
+          "se": 0.001529913822090669
+        },
+        {
+          "term": "first_day_6",
+          "beta": -0.011187686002395567,
+          "se": 0.002506433095468978
+        }
+      ]
+    },
+    {
+      "model": "동일 가중 주 분석 재현",
+      "kind": "paired_wls",
+      "weighted": false,
+      "n": 745195,
+      "users": 23019,
+      "estimate": 0.00661257638662911,
+      "ci_low": -0.029069922399137662,
+      "ci_high": 0.042295075172395884,
+      "p": 0.7164444347340873,
+      "unit": "간격비 2배당 정답률 차이 %p",
+      "condition_number": 751.709341419813,
+      "coefficients": [
+        {
+          "term": "intercept",
+          "beta": 0.026406195444760982,
+          "se": 0.0009885636421816813
+        },
+        {
+          "term": "change_log2_gap",
+          "beta": 6.61257638662911e-05,
+          "se": 0.00018205691057196334
+        },
+        {
+          "term": "first_accuracy",
+          "beta": -0.23478062742199113,
+          "se": 0.0009712975009670299
+        },
+        {
+          "term": "first_accuracy_squared",
+          "beta": 0.0064506885219672095,
+          "se": 0.0010986132367535864
+        },
+        {
+          "term": "first_loggap",
+          "beta": -0.0018738641799421296,
+          "se": 0.0008804270915864423
+        },
+        {
+          "term": "prior_accuracy",
+          "beta": 0.01620388444376577,
+          "se": 0.0007098189305662829
+        },
+        {
+          "term": "change_loghistory",
+          "beta": 0.00877303254146842,
+          "se": 0.0005915296332915725
+        },
+        {
+          "term": "elapsed_days",
+          "beta": -0.007729983004353747,
+          "se": 0.000890099486420369
+        },
+        {
+          "term": "first_day_2",
+          "beta": -0.0037657538507522076,
+          "se": 0.0014217531081623148
+        },
+        {
+          "term": "first_day_3",
+          "beta": -0.006188854481782748,
+          "se": 0.0015041200682527022
+        },
+        {
+          "term": "first_day_4",
+          "beta": -0.008480881586472007,
+          "se": 0.0016180703996461847
+        },
+        {
+          "term": "first_day_5",
+          "beta": -0.009919311603408735,
+          "se": 0.0016569855683827637
+        },
+        {
+          "term": "first_day_6",
+          "beta": -0.012617710343005049,
+          "se": 0.0020638240979059495
+        }
+      ]
+    }
+  ],
+  "models": [
+    {
+      "model": "CV · 104명 제외",
+      "n": 10627,
+      "events": 2883,
+      "adjusted": true,
+      "odds_ratio": 0.7056783027575122,
+      "ci_low": 0.6484461784757048,
+      "ci_high": 0.7679617576794474,
+      "p": 6.587445265035507e-16,
+      "logcv_sd": 0.2516631735280626,
+      "cv_q25": 1.6362332560613142,
+      "cv_q75": 2.5707453650930114,
+      "iterations": 6,
+      "condition_number": 6.342473028345885,
+      "coefficients": [
+        {
+          "term": "intercept",
+          "beta": -0.8688443836629827,
+          "robust_se": 0.044867801218378286
+        },
+        {
+          "term": "log1p_cv_per_sd",
+          "beta": -0.3485958071508423,
+          "robust_se": 0.043154091634093034
+        },
+        {
+          "term": "active_days_3",
+          "beta": 0.11511015821879772,
+          "robust_se": 0.06423872906466138
+        },
+        {
+          "term": "recency_2",
+          "beta": -0.5808323506187854,
+          "robust_se": 0.04926493347803884
+        },
+        {
+          "term": "log1p_words_seen",
+          "beta": -0.013835355163335502,
+          "robust_se": 0.03725313353822926
+        },
+        {
+          "term": "log1p_n_sessions",
+          "beta": 0.5696442222785507,
+          "robust_se": 0.05253080917235497
+        },
+        {
+          "term": "first_hour",
+          "beta": 0.053450722698473285,
+          "robust_se": 0.027269727726207935
+        }
+      ],
+      "unit": "log1p(CV) 1SD당 OR",
+      "p_holm": 5.269956212028406e-15
+    },
+    {
+      "model": "전체 정확도 · 104명 제외",
+      "outcome": "returned_2plus_days",
+      "adjusted": true,
+      "categorical": false,
+      "term": "change_per_10pp",
+      "n": 4649,
+      "events": 1200,
+      "odds_ratio": 1.0671811215915439,
+      "ci_low": 0.9554495369607394,
+      "ci_high": 1.1919787515980378,
+      "p": 0.24919508805291674,
+      "condition_number": 117.32954615275783,
+      "iterations": 6,
+      "coefficients": [
+        {
+          "term": "intercept",
+          "beta": -1.1923977288002547,
+          "robust_se": 0.07123728444825146
+        },
+        {
+          "term": "change_per_10pp",
+          "beta": 0.06502070635966217,
+          "robust_se": 0.056426565567732914
+        },
+        {
+          "term": "early_accuracy_centered",
+          "beta": 1.447211265581981,
+          "robust_se": 0.7238716097037492
+        },
+        {
+          "term": "early_accuracy_squared",
+          "beta": 0.6872099774492354,
+          "robust_se": 2.563307448825107
+        },
+        {
+          "term": "active_days_3",
+          "beta": 0.47048038101871736,
+          "robust_se": 0.0778107735110378
+        },
+        {
+          "term": "recency_2",
+          "beta": -0.39522701677678257,
+          "robust_se": 0.0690766157044372
+        },
+        {
+          "term": "log1p_early_seen",
+          "beta": -0.02037376348237712,
+          "robust_se": 0.046139866977910934
+        },
+        {
+          "term": "log1p_late_seen",
+          "beta": 0.04838011968331221,
+          "robust_se": 0.046807103981276646
+        },
+        {
+          "term": "log1p_sessions",
+          "beta": 0.1640248703988208,
+          "robust_se": 0.06124084759038355
+        },
+        {
+          "term": "first_observed_day",
+          "beta": 0.08343038961466052,
+          "robust_se": 0.033941752004942996
+        }
+      ],
+      "unit": "정답률 변화 +10%p당 OR",
+      "p_holm": 0.9967803522116669
+    },
+    {
+      "model": "같은 단어 · 104명 제외",
+      "kind": "logistic",
+      "outcome": "returned_2plus_days",
+      "n": 8347,
+      "events": 2273,
+      "estimate": 1.0198976668776023,
+      "ci_low": 0.9577732718368229,
+      "ci_high": 1.0860516590815823,
+      "p": 0.5389205019952208,
+      "unit": "개선 +10%p당 반복학습 OR",
+      "condition_number": 7.302862119081962,
+      "coefficients": [
+        {
+          "term": "intercept",
+          "beta": -1.0361065278461212,
+          "se": 0.05525898914832425
+        },
+        {
+          "term": "gain_per_10pp",
+          "beta": 0.019702295672544806,
+          "se": 0.03206512640981112
+        },
+        {
+          "term": "initial_accuracy",
+          "beta": 0.05164540698806027,
+          "se": 0.045259459699434304
+        },
+        {
+          "term": "initial_accuracy_squared",
+          "beta": 0.03931590930078898,
+          "se": 0.032418938167612474
+        },
+        {
+          "term": "prior_accuracy",
+          "beta": 0.011630689292479795,
+          "se": 0.02649010637711627
+        },
+        {
+          "term": "active_days_3",
+          "beta": 0.4254830484012351,
+          "se": 0.06916392846222237
+        },
+        {
+          "term": "recency_2",
+          "beta": -0.5478154808240848,
+          "se": 0.06126366683292378
+        },
+        {
+          "term": "log1p_words_seen",
+          "beta": -0.10603613795676707,
+          "se": 0.0571735390418191
+        },
+        {
+          "term": "log1p_sessions",
+          "beta": 0.3305247969665766,
+          "se": 0.053026198099323754
+        },
+        {
+          "term": "log1p_matched_words",
+          "beta": 0.027018163171399337,
+          "se": 0.030832629366707085
+        },
+        {
+          "term": "first_observed_day",
+          "beta": 0.06723196946960205,
+          "se": 0.05689645044500205
+        },
+        {
+          "term": "mean_elapsed_days",
+          "beta": -0.06823488635374134,
+          "se": 0.050406375138618044
+        }
+      ],
+      "p_holm": 1.0
+    },
+    {
+      "model": "간격 · 104명 제외 · 노출 가중",
+      "kind": "paired_wls",
+      "weighted": true,
+      "n": 733577,
+      "users": 22934,
+      "estimate": 0.07287582480161989,
+      "ci_low": 0.0376898454933673,
+      "ci_high": 0.10806180410987247,
+      "p": 4.9198806988900656e-05,
+      "unit": "간격비 2배당 정답률 차이 %p",
+      "condition_number": 828.1486268501445,
+      "coefficients": [
+        {
+          "term": "intercept",
+          "beta": 0.03185262207746802,
+          "se": 0.000886368698895974
+        },
+        {
+          "term": "change_log2_gap",
+          "beta": 0.0007287582480161989,
+          "se": 0.0001795236013814339
+        },
+        {
+          "term": "first_accuracy",
+          "beta": -0.23277273001544369,
+          "se": 0.001049422583177873
+        },
+        {
+          "term": "first_accuracy_squared",
+          "beta": 0.009280432902402392,
+          "se": 0.0009439538222408773
+        },
+        {
+          "term": "first_loggap",
+          "beta": 0.0008315540126719326,
+          "se": 0.0008650777181153396
+        },
+        {
+          "term": "prior_accuracy",
+          "beta": 0.013347426462244497,
+          "se": 0.0005074245969607648
+        },
+        {
+          "term": "change_loghistory",
+          "beta": 0.005804647836173413,
+          "se": 0.0004077664507452673
+        },
+        {
+          "term": "elapsed_days",
+          "beta": -0.005610395359621117,
+          "se": 0.000670584374296818
+        },
+        {
+          "term": "first_day_2",
+          "beta": -0.0033940530449842773,
+          "se": 0.0012805194403197905
+        },
+        {
+          "term": "first_day_3",
+          "beta": -0.004925934880885378,
+          "se": 0.0013120277789648376
+        },
+        {
+          "term": "first_day_4",
+          "beta": -0.006148194219778142,
+          "se": 0.0013958045410528974
+        },
+        {
+          "term": "first_day_5",
+          "beta": -0.007633132744683374,
+          "se": 0.0014980029334083008
+        },
+        {
+          "term": "first_day_6",
+          "beta": -0.010446196500855851,
+          "se": 0.0025067981488477954
+        }
+      ],
+      "p_holm": 0.00024599403494450327
+    },
+    {
+      "model": "간격 · 104명 제외 · 동일 가중",
+      "kind": "paired_wls",
+      "weighted": false,
+      "n": 733577,
+      "users": 22934,
+      "estimate": -0.008064057517748064,
+      "ci_low": -0.0381511115560735,
+      "ci_high": 0.02202299652057737,
+      "p": 0.5993623485566331,
+      "unit": "간격비 2배당 정답률 차이 %p",
+      "condition_number": 753.8156328879164,
+      "coefficients": [
+        {
+          "term": "intercept",
+          "beta": 0.026208661495054218,
+          "se": 0.0009873177452794102
+        },
+        {
+          "term": "change_log2_gap",
+          "beta": -8.064057517748064e-05,
+          "se": 0.00015350819849573312
+        },
+        {
+          "term": "first_accuracy",
+          "beta": -0.233745174192347,
+          "se": 0.0009596412563149332
+        },
+        {
+          "term": "first_accuracy_squared",
+          "beta": 0.006742753984084622,
+          "se": 0.0010573254075170544
+        },
+        {
+          "term": "first_loggap",
+          "beta": -0.0026351206226653745,
+          "se": 0.0007173181035946835
+        },
+        {
+          "term": "prior_accuracy",
+          "beta": 0.015121742353372833,
+          "se": 0.0005583254940815694
+        },
+        {
+          "term": "change_loghistory",
+          "beta": 0.00792165948746694,
+          "se": 0.0004550410874790772
+        },
+        {
+          "term": "elapsed_days",
+          "beta": -0.006710837613925858,
+          "se": 0.0007579280151223384
+        },
+        {
+          "term": "first_day_2",
+          "beta": -0.0038210275741219868,
+          "se": 0.0014213870301556543
+        },
+        {
+          "term": "first_day_3",
+          "beta": -0.005728590909595702,
+          "se": 0.0014314063052159691
+        },
+        {
+          "term": "first_day_4",
+          "beta": -0.007979804870664409,
+          "se": 0.0015664773020576017
+        },
+        {
+          "term": "first_day_5",
+          "beta": -0.009514375071792845,
+          "se": 0.00162904942973915
+        },
+        {
+          "term": "first_day_6",
+          "beta": -0.012007105746513516,
+          "se": 0.0020424346376913772
+        }
+      ],
+      "p_holm": 1.0
+    },
+    {
+      "model": "간격 · 상위1% 제외 · 노출 가중",
+      "kind": "paired_wls",
+      "weighted": true,
+      "n": 696069,
+      "users": 22788,
+      "estimate": 0.08597899661961238,
+      "ci_low": 0.05243019809319882,
+      "ci_high": 0.11952779514602593,
+      "p": 5.086958264945759e-07,
+      "unit": "간격비 2배당 정답률 차이 %p",
+      "condition_number": 839.1626376210901,
+      "coefficients": [
+        {
+          "term": "intercept",
+          "beta": 0.030705504054334122,
+          "se": 0.0008513254543181188
+        },
+        {
+          "term": "change_log2_gap",
+          "beta": 0.0008597899661961238,
+          "se": 0.00017117048471830667
+        },
+        {
+          "term": "first_accuracy",
+          "beta": -0.23375469442472338,
+          "se": 0.0009455708703166022
+        },
+        {
+          "term": "first_accuracy_squared",
+          "beta": 0.00913466981037584,
+          "se": 0.0008956072539319603
+        },
+        {
+          "term": "first_loggap",
+          "beta": 0.001497346937816224,
+          "se": 0.0007667963428896663
+        },
+        {
+          "term": "prior_accuracy",
+          "beta": 0.01304222494213566,
+          "se": 0.00042482945408937124
+        },
+        {
+          "term": "change_loghistory",
+          "beta": 0.0062108440991692935,
+          "se": 0.00039215448733777926
+        },
+        {
+          "term": "elapsed_days",
+          "beta": -0.005620877273351843,
+          "se": 0.0006081294643545558
+        },
+        {
+          "term": "first_day_2",
+          "beta": -0.0019082312637722179,
+          "se": 0.0012423310732253149
+        },
+        {
+          "term": "first_day_3",
+          "beta": -0.003838063910886798,
+          "se": 0.001288054432866363
+        },
+        {
+          "term": "first_day_4",
+          "beta": -0.0050935677020850735,
+          "se": 0.0013911266328507444
+        },
+        {
+          "term": "first_day_5",
+          "beta": -0.006332553311439494,
+          "se": 0.0014806638715363196
+        },
+        {
+          "term": "first_day_6",
+          "beta": -0.008361608935641161,
+          "se": 0.0021081944174778347
+        }
+      ],
+      "p_holm": 3.052174958967455e-06
+    },
+    {
+      "model": "간격 · 상위1% 제외 · 동일 가중",
+      "kind": "paired_wls",
+      "weighted": false,
+      "n": 696069,
+      "users": 22788,
+      "estimate": -0.013653043775487934,
+      "ci_low": -0.04331029715376411,
+      "ci_high": 0.016004209602788238,
+      "p": 0.3669022824504805,
+      "unit": "간격비 2배당 정답률 차이 %p",
+      "condition_number": 754.1416442850795,
+      "coefficients": [
+        {
+          "term": "intercept",
+          "beta": 0.025678608073611303,
+          "se": 0.0009400034832250368
+        },
+        {
+          "term": "change_log2_gap",
+          "beta": -0.00013653043775487935,
+          "se": 0.00015131529769021076
+        },
+        {
+          "term": "first_accuracy",
+          "beta": -0.2340505619046955,
+          "se": 0.0009681222485203937
+        },
+        {
+          "term": "first_accuracy_squared",
+          "beta": 0.007320274842102418,
+          "se": 0.0010341716700762217
+        },
+        {
+          "term": "first_loggap",
+          "beta": -0.0027286363383173,
+          "se": 0.0006983450969302462
+        },
+        {
+          "term": "prior_accuracy",
+          "beta": 0.015103238240539163,
+          "se": 0.0005436958953311824
+        },
+        {
+          "term": "change_loghistory",
+          "beta": 0.00829028497334684,
+          "se": 0.00045663549960108543
+        },
+        {
+          "term": "elapsed_days",
+          "beta": -0.0067673092905272975,
+          "se": 0.0006539934817112369
+        },
+        {
+          "term": "first_day_2",
+          "beta": -0.003103779539445812,
+          "se": 0.0013540152385952378
+        },
+        {
+          "term": "first_day_3",
+          "beta": -0.005148202102331822,
+          "se": 0.001400248814702074
+        },
+        {
+          "term": "first_day_4",
+          "beta": -0.0076864703963606925,
+          "se": 0.0015856460699539589
+        },
+        {
+          "term": "first_day_5",
+          "beta": -0.008792751130556106,
+          "se": 0.0016274411347226621
+        },
+        {
+          "term": "first_day_6",
+          "beta": -0.01164588353127725,
+          "se": 0.0020570959562252783
+        }
+      ],
+      "p_holm": 1.0
+    },
+    {
+      "model": "CV 언어 추가 보정",
+      "n": 10633,
+      "estimate": 0.7158597439809323,
+      "ci_low": 0.6578540699105799,
+      "ci_high": 0.7789800147046326,
+      "p": 8.956364204458981e-15,
+      "unit": "log1p(CV) 1SD당 OR",
+      "logcv_sd": 0.25181794248879746,
+      "iterations": 6,
+      "coefficients": [
+        {
+          "term": "intercept",
+          "beta": -0.8184005723498456,
+          "se": 0.07415475323565365
+        },
+        {
+          "term": "log1p_cv_per_sd",
+          "beta": -0.3342710195048967,
+          "se": 0.04311361416142902
+        },
+        {
+          "term": "active_days_3",
+          "beta": 0.12094163219667227,
+          "se": 0.06410826482356215
+        },
+        {
+          "term": "recency_2",
+          "beta": -0.5875491161973457,
+          "se": 0.049363069771629686
+        },
+        {
+          "term": "log1p_words_seen",
+          "beta": 0.010655667914304905,
+          "se": 0.03813307598352804
+        },
+        {
+          "term": "log1p_n_sessions",
+          "beta": 0.5448285350172583,
+          "se": 0.05289752042264655
+        },
+        {
+          "term": "first_hour",
+          "beta": 0.05231507193929659,
+          "se": 0.02735991051457184
+        },
+        {
+          "term": "language_en",
+          "beta": -0.1992144232304258,
+          "se": 0.0741958187091699
+        },
+        {
+          "term": "language_es",
+          "beta": 0.022867238803020835,
+          "se": 0.0766310562576727
+        },
+        {
+          "term": "language_fr",
+          "beta": 0.02390816714761291,
+          "se": 0.08752096695519371
+        },
+        {
+          "term": "language_it",
+          "beta": 0.32994282746429887,
+          "se": 0.1089670481638106
+        },
+        {
+          "term": "language_pt",
+          "beta": -0.1371506171277655,
+          "se": 0.1614358565443461
+        }
+      ],
+      "p_holm": 6.269454943121287e-14
+    }
+  ],
+  "shape_diagnostic": {
+    "model": "CV 언어 보정 + 제곱항 진단",
+    "n": 10633,
+    "estimate": -0.03842868635862405,
+    "ci_low": -0.06624360913790144,
+    "ci_high": -0.010613763579346666,
+    "p": 0.00677191363047247,
+    "unit": "제곱항 log-odds 계수",
+    "logcv_sd": 0.25181794248879746,
+    "iterations": 6,
+    "coefficients": [
+      {
+        "term": "intercept",
+        "beta": -0.7748753487484414,
+        "se": 0.0759096320527031
+      },
+      {
+        "term": "log1p_cv_per_sd",
+        "beta": -0.3611344640041018,
+        "se": 0.04426847907147125
+      },
+      {
+        "term": "active_days_3",
+        "beta": 0.09730466051801866,
+        "se": 0.06460126255360803
+      },
+      {
+        "term": "recency_2",
+        "beta": -0.5871069533876093,
+        "se": 0.049380499991735584
+      },
+      {
+        "term": "log1p_words_seen",
+        "beta": -0.0032209100303106923,
+        "se": 0.0385090426170426
+      },
+      {
+        "term": "log1p_n_sessions",
+        "beta": 0.5986479746698383,
+        "se": 0.056412383375148104
+      },
+      {
+        "term": "first_hour",
+        "beta": 0.04617840746687398,
+        "se": 0.027431722773635335
+      },
+      {
+        "term": "language_en",
+        "beta": -0.19117318878735548,
+        "se": 0.07436468664375538
+      },
+      {
+        "term": "language_es",
+        "beta": 0.028414900917154547,
+        "se": 0.07678859013930828
+      },
+      {
+        "term": "language_fr",
+        "beta": 0.031390565935798025,
+        "se": 0.08764328152731476
+      },
+      {
+        "term": "language_it",
+        "beta": 0.3399677791876782,
+        "se": 0.10899408621885391
+      },
+      {
+        "term": "language_pt",
+        "beta": -0.13557246705321577,
+        "se": 0.1622277666849659
+      },
+      {
+        "term": "cv_squared",
+        "beta": -0.03842868635862405,
+        "se": 0.014191547905307808
+      }
+    ]
+  },
+  "extreme_overlap": [
+    {
+      "analysis": "CV",
+      "n": 10633,
+      "extreme_users": 6
+    },
+    {
+      "analysis": "전체 정확도",
+      "n": 4653,
+      "extreme_users": 4
+    },
+    {
+      "analysis": "같은 단어",
+      "n": 8354,
+      "extreme_users": 7
+    },
+    {
+      "analysis": "간격 사용자",
+      "n": 23019,
+      "extreme_users": 85
+    }
+  ],
+  "top_users": 231,
+  "top_weight_share": 0.0890294578219727,
+  "selection_profiles": [
+    {
+      "analysis": "CV",
+      "included": false,
+      "dimension": "dominant_language",
+      "value": "de",
+      "users": 531,
+      "share": 0.13443037974683544,
+      "repeat_rate": 0.1657250470809793
+    },
+    {
+      "analysis": "CV",
+      "included": false,
+      "dimension": "dominant_language",
+      "value": "en",
+      "users": 1276,
+      "share": 0.3230379746835443,
+      "repeat_rate": 0.1700626959247649
+    },
+    {
+      "analysis": "CV",
+      "included": false,
+      "dimension": "dominant_language",
+      "value": "es",
+      "users": 1065,
+      "share": 0.26962025316455696,
+      "repeat_rate": 0.1596244131455399
+    },
+    {
+      "analysis": "CV",
+      "included": false,
+      "dimension": "dominant_language",
+      "value": "fr",
+      "users": 762,
+      "share": 0.1929113924050633,
+      "repeat_rate": 0.18503937007874016
+    },
+    {
+      "analysis": "CV",
+      "included": false,
+      "dimension": "dominant_language",
+      "value": "it",
+      "users": 226,
+      "share": 0.05721518987341772,
+      "repeat_rate": 0.19469026548672566
+    },
+    {
+      "analysis": "CV",
+      "included": false,
+      "dimension": "dominant_language",
+      "value": "pt",
+      "users": 90,
+      "share": 0.02278481012658228,
+      "repeat_rate": 0.16666666666666666
+    },
+    {
+      "analysis": "CV",
+      "included": false,
+      "dimension": "first_active",
+      "value": "2013-03-01",
+      "users": 622,
+      "share": 0.15746835443037974,
+      "repeat_rate": 0.17363344051446947
+    },
+    {
+      "analysis": "CV",
+      "included": false,
+      "dimension": "first_active",
+      "value": "2013-03-02",
+      "users": 455,
+      "share": 0.11518987341772152,
+      "repeat_rate": 0.17802197802197803
+    },
+    {
+      "analysis": "CV",
+      "included": false,
+      "dimension": "first_active",
+      "value": "2013-03-03",
+      "users": 474,
+      "share": 0.12,
+      "repeat_rate": 0.16877637130801687
+    },
+    {
+      "analysis": "CV",
+      "included": false,
+      "dimension": "first_active",
+      "value": "2013-03-04",
+      "users": 734,
+      "share": 0.1858227848101266,
+      "repeat_rate": 0.14850136239782016
+    },
+    {
+      "analysis": "CV",
+      "included": false,
+      "dimension": "first_active",
+      "value": "2013-03-05",
+      "users": 974,
+      "share": 0.24658227848101266,
+      "repeat_rate": 0.15503080082135523
+    },
+    {
+      "analysis": "CV",
+      "included": false,
+      "dimension": "first_active",
+      "value": "2013-03-06",
+      "users": 691,
+      "share": 0.1749367088607595,
+      "repeat_rate": 0.21128798842257598
+    },
+    {
+      "analysis": "CV",
+      "included": true,
+      "dimension": "dominant_language",
+      "value": "de",
+      "users": 1292,
+      "share": 0.12150851123859682,
+      "repeat_rate": 0.2801857585139319
+    },
+    {
+      "analysis": "CV",
+      "included": true,
+      "dimension": "dominant_language",
+      "value": "en",
+      "users": 4184,
+      "share": 0.3934919589955798,
+      "repeat_rate": 0.24378585086042065
+    },
+    {
+      "analysis": "CV",
+      "included": true,
+      "dimension": "dominant_language",
+      "value": "es",
+      "users": 2861,
+      "share": 0.26906799586193925,
+      "repeat_rate": 0.28556448794127925
+    },
+    {
+      "analysis": "CV",
+      "included": true,
+      "dimension": "dominant_language",
+      "value": "fr",
+      "users": 1468,
+      "share": 0.1380607542556193,
+      "repeat_rate": 0.28201634877384196
+    },
+    {
+      "analysis": "CV",
+      "included": true,
+      "dimension": "dominant_language",
+      "value": "it",
+      "users": 579,
+      "share": 0.05445311765259099,
+      "repeat_rate": 0.35751295336787564
+    },
+    {
+      "analysis": "CV",
+      "included": true,
+      "dimension": "dominant_language",
+      "value": "pt",
+      "users": 249,
+      "share": 0.023417661995673845,
+      "repeat_rate": 0.26907630522088355
+    },
+    {
+      "analysis": "CV",
+      "included": true,
+      "dimension": "first_active",
+      "value": "2013-03-01",
+      "users": 2069,
+      "share": 0.1945829022853381,
+      "repeat_rate": 0.23924601256645722
+    },
+    {
+      "analysis": "CV",
+      "included": true,
+      "dimension": "first_active",
+      "value": "2013-03-02",
+      "users": 1380,
+      "share": 0.12978463274710805,
+      "repeat_rate": 0.2746376811594203
+    },
+    {
+      "analysis": "CV",
+      "included": true,
+      "dimension": "first_active",
+      "value": "2013-03-03",
+      "users": 1327,
+      "share": 0.12480015047493652,
+      "repeat_rate": 0.2727957799547852
+    },
+    {
+      "analysis": "CV",
+      "included": true,
+      "dimension": "first_active",
+      "value": "2013-03-04",
+      "users": 2016,
+      "share": 0.18959842001316657,
+      "repeat_rate": 0.2564484126984127
+    },
+    {
+      "analysis": "CV",
+      "included": true,
+      "dimension": "first_active",
+      "value": "2013-03-05",
+      "users": 2326,
+      "share": 0.21875293896360387,
+      "repeat_rate": 0.26354256233877904
+    },
+    {
+      "analysis": "CV",
+      "included": true,
+      "dimension": "first_active",
+      "value": "2013-03-06",
+      "users": 1515,
+      "share": 0.14248095551584689,
+      "repeat_rate": 0.3438943894389439
+    },
+    {
+      "analysis": "전체 정확도",
+      "included": false,
+      "dimension": "dominant_language",
+      "value": "de",
+      "users": 1299,
+      "share": 0.13081570996978853,
+      "repeat_rate": 0.24018475750577367
+    },
+    {
+      "analysis": "전체 정확도",
+      "included": false,
+      "dimension": "dominant_language",
+      "value": "en",
+      "users": 3620,
+      "share": 0.364551863041289,
+      "repeat_rate": 0.22209944751381216
+    },
+    {
+      "analysis": "전체 정확도",
+      "included": false,
+      "dimension": "dominant_language",
+      "value": "es",
+      "users": 2551,
+      "share": 0.2568982880161128,
+      "repeat_rate": 0.24500196001568011
+    },
+    {
+      "analysis": "전체 정확도",
+      "included": false,
+      "dimension": "dominant_language",
+      "value": "fr",
+      "users": 1634,
+      "share": 0.16455186304128902,
+      "repeat_rate": 0.23684210526315788
+    },
+    {
+      "analysis": "전체 정확도",
+      "included": false,
+      "dimension": "dominant_language",
+      "value": "it",
+      "users": 584,
+      "share": 0.05881168177240685,
+      "repeat_rate": 0.3013698630136986
+    },
+    {
+      "analysis": "전체 정확도",
+      "included": false,
+      "dimension": "dominant_language",
+      "value": "pt",
+      "users": 242,
+      "share": 0.024370594159113797,
+      "repeat_rate": 0.23140495867768596
+    },
+    {
+      "analysis": "전체 정확도",
+      "included": false,
+      "dimension": "first_active",
+      "value": "2013-03-01",
+      "users": 685,
+      "share": 0.0689828801611279,
+      "repeat_rate": 0.1635036496350365
+    },
+    {
+      "analysis": "전체 정확도",
+      "included": false,
+      "dimension": "first_active",
+      "value": "2013-03-02",
+      "users": 481,
+      "share": 0.048439073514602214,
+      "repeat_rate": 0.19542619542619544
+    },
+    {
+      "analysis": "전체 정확도",
+      "included": false,
+      "dimension": "first_active",
+      "value": "2013-03-03",
+      "users": 508,
+      "share": 0.05115810674723061,
+      "repeat_rate": 0.19094488188976377
+    },
+    {
+      "analysis": "전체 정확도",
+      "included": false,
+      "dimension": "first_active",
+      "value": "2013-03-04",
+      "users": 2750,
+      "share": 0.2769385699899295,
+      "repeat_rate": 0.22763636363636364
+    },
+    {
+      "analysis": "전체 정확도",
+      "included": false,
+      "dimension": "first_active",
+      "value": "2013-03-05",
+      "users": 3300,
+      "share": 0.3323262839879154,
+      "repeat_rate": 0.2315151515151515
+    },
+    {
+      "analysis": "전체 정확도",
+      "included": false,
+      "dimension": "first_active",
+      "value": "2013-03-06",
+      "users": 2206,
+      "share": 0.22215508559919436,
+      "repeat_rate": 0.3023572076155938
+    },
+    {
+      "analysis": "전체 정확도",
+      "included": true,
+      "dimension": "dominant_language",
+      "value": "de",
+      "users": 524,
+      "share": 0.11261551687083601,
+      "repeat_rate": 0.2633587786259542
+    },
+    {
+      "analysis": "전체 정확도",
+      "included": true,
+      "dimension": "dominant_language",
+      "value": "en",
+      "users": 1840,
+      "share": 0.39544379969911886,
+      "repeat_rate": 0.23532608695652174
+    },
+    {
+      "analysis": "전체 정확도",
+      "included": true,
+      "dimension": "dominant_language",
+      "value": "es",
+      "users": 1375,
+      "share": 0.29550827423167847,
+      "repeat_rate": 0.26327272727272727
+    },
+    {
+      "analysis": "전체 정확도",
+      "included": true,
+      "dimension": "dominant_language",
+      "value": "fr",
+      "users": 596,
+      "share": 0.12808940468514937,
+      "repeat_rate": 0.28187919463087246
+    },
+    {
+      "analysis": "전체 정확도",
+      "included": true,
+      "dimension": "dominant_language",
+      "value": "it",
+      "users": 221,
+      "share": 0.04749623898560069,
+      "repeat_rate": 0.3393665158371041
+    },
+    {
+      "analysis": "전체 정확도",
+      "included": true,
+      "dimension": "dominant_language",
+      "value": "pt",
+      "users": 97,
+      "share": 0.020846765527616593,
+      "repeat_rate": 0.26804123711340205
+    },
+    {
+      "analysis": "전체 정확도",
+      "included": true,
+      "dimension": "first_active",
+      "value": "2013-03-01",
+      "users": 2006,
+      "share": 0.4311197077154524,
+      "repeat_rate": 0.24476570289132601
+    },
+    {
+      "analysis": "전체 정확도",
+      "included": true,
+      "dimension": "first_active",
+      "value": "2013-03-02",
+      "users": 1354,
+      "share": 0.29099505695250377,
+      "repeat_rate": 0.27031019202363366
+    },
+    {
+      "analysis": "전체 정확도",
+      "included": true,
+      "dimension": "first_active",
+      "value": "2013-03-03",
+      "users": 1293,
+      "share": 0.27788523533204385,
+      "repeat_rate": 0.2668213457076566
+    },
+    {
+      "analysis": "같은 단어",
+      "included": false,
+      "dimension": "dominant_language",
+      "value": "de",
+      "users": 940,
+      "share": 0.1509070476802055,
+      "repeat_rate": 0.1946808510638298
+    },
+    {
+      "analysis": "같은 단어",
+      "included": false,
+      "dimension": "dominant_language",
+      "value": "en",
+      "users": 2076,
+      "share": 0.33327982019585806,
+      "repeat_rate": 0.20279383429672446
+    },
+    {
+      "analysis": "같은 단어",
+      "included": false,
+      "dimension": "dominant_language",
+      "value": "es",
+      "users": 1627,
+      "share": 0.2611976240166961,
+      "repeat_rate": 0.21020282728948986
+    },
+    {
+      "analysis": "같은 단어",
+      "included": false,
+      "dimension": "dominant_language",
+      "value": "fr",
+      "users": 1062,
+      "share": 0.17049285599614705,
+      "repeat_rate": 0.20527306967984935
+    },
+    {
+      "analysis": "같은 단어",
+      "included": false,
+      "dimension": "dominant_language",
+      "value": "it",
+      "users": 365,
+      "share": 0.05859688553539894,
+      "repeat_rate": 0.2273972602739726
+    },
+    {
+      "analysis": "같은 단어",
+      "included": false,
+      "dimension": "dominant_language",
+      "value": "pt",
+      "users": 159,
+      "share": 0.025525766575694334,
+      "repeat_rate": 0.24528301886792453
+    },
+    {
+      "analysis": "같은 단어",
+      "included": false,
+      "dimension": "first_active",
+      "value": "2013-03-01",
+      "users": 1038,
+      "share": 0.16663991009792903,
+      "repeat_rate": 0.17726396917148363
+    },
+    {
+      "analysis": "같은 단어",
+      "included": false,
+      "dimension": "first_active",
+      "value": "2013-03-02",
+      "users": 719,
+      "share": 0.11542783753411462,
+      "repeat_rate": 0.21279554937413073
+    },
+    {
+      "analysis": "같은 단어",
+      "included": false,
+      "dimension": "first_active",
+      "value": "2013-03-03",
+      "users": 770,
+      "share": 0.1236153475678279,
+      "repeat_rate": 0.21688311688311687
+    },
+    {
+      "analysis": "같은 단어",
+      "included": false,
+      "dimension": "first_active",
+      "value": "2013-03-04",
+      "users": 1152,
+      "share": 0.1849414031144646,
+      "repeat_rate": 0.18229166666666666
+    },
+    {
+      "analysis": "같은 단어",
+      "included": false,
+      "dimension": "first_active",
+      "value": "2013-03-05",
+      "users": 1509,
+      "share": 0.24225397335045754,
+      "repeat_rate": 0.18820410868124585
+    },
+    {
+      "analysis": "같은 단어",
+      "included": false,
+      "dimension": "first_active",
+      "value": "2013-03-06",
+      "users": 1041,
+      "share": 0.1671215283352063,
+      "repeat_rate": 0.276657060518732
+    },
+    {
+      "analysis": "같은 단어",
+      "included": true,
+      "dimension": "dominant_language",
+      "value": "de",
+      "users": 883,
+      "share": 0.10569786928417524,
+      "repeat_rate": 0.3023782559456399
+    },
+    {
+      "analysis": "같은 단어",
+      "included": true,
+      "dimension": "dominant_language",
+      "value": "en",
+      "users": 3384,
+      "share": 0.40507541297581995,
+      "repeat_rate": 0.24113475177304963
+    },
+    {
+      "analysis": "같은 단어",
+      "included": true,
+      "dimension": "dominant_language",
+      "value": "es",
+      "users": 2299,
+      "share": 0.27519751017476657,
+      "repeat_rate": 0.2805567638103523
+    },
+    {
+      "analysis": "같은 단어",
+      "included": true,
+      "dimension": "dominant_language",
+      "value": "fr",
+      "users": 1168,
+      "share": 0.13981326310749342,
+      "repeat_rate": 0.288527397260274
+    },
+    {
+      "analysis": "같은 단어",
+      "included": true,
+      "dimension": "dominant_language",
+      "value": "it",
+      "users": 440,
+      "share": 0.05266937993775437,
+      "repeat_rate": 0.38181818181818183
+    },
+    {
+      "analysis": "같은 단어",
+      "included": true,
+      "dimension": "dominant_language",
+      "value": "pt",
+      "users": 180,
+      "share": 0.021546564519990423,
+      "repeat_rate": 0.2388888888888889
+    },
+    {
+      "analysis": "같은 단어",
+      "included": true,
+      "dimension": "first_active",
+      "value": "2013-03-01",
+      "users": 1653,
+      "share": 0.19786928417524538,
+      "repeat_rate": 0.2534785238959468
+    },
+    {
+      "analysis": "같은 단어",
+      "included": true,
+      "dimension": "first_active",
+      "value": "2013-03-02",
+      "users": 1116,
+      "share": 0.13358870002394063,
+      "repeat_rate": 0.27508960573476704
+    },
+    {
+      "analysis": "같은 단어",
+      "included": true,
+      "dimension": "first_active",
+      "value": "2013-03-03",
+      "users": 1031,
+      "share": 0.12341393344505626,
+      "repeat_rate": 0.2667313288069835
+    },
+    {
+      "analysis": "같은 단어",
+      "included": true,
+      "dimension": "first_active",
+      "value": "2013-03-04",
+      "users": 1598,
+      "share": 0.1912856116830261,
+      "repeat_rate": 0.26032540675844806
+    },
+    {
+      "analysis": "같은 단어",
+      "included": true,
+      "dimension": "first_active",
+      "value": "2013-03-05",
+      "users": 1791,
+      "share": 0.21438831697390473,
+      "repeat_rate": 0.26800670016750416
+    },
+    {
+      "analysis": "같은 단어",
+      "included": true,
+      "dimension": "first_active",
+      "value": "2013-03-06",
+      "users": 1165,
+      "share": 0.1394541536988269,
+      "repeat_rate": 0.32532188841201715
+    }
+  ],
+  "external_validation": "time-out replication, signup/channel and complete-service coverage require new data",
+  "checks": {
+    "primary_refits_match": true,
+    "all_models_full_rank_converged_score_checked": true,
+    "baseline_language_attempts_match": true
+  }
+}

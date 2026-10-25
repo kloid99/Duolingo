@@ -1,0 +1,35 @@
+{
+ "source_rows": 12854226,
+ "baseline_users": 82467,
+ "nsm": 9834,
+ "input_metrics": {
+  "elig": 44495,
+  "regular": 25.935498370603437,
+  "improved": 51.612540734914035,
+  "review_med": 9.25925925925926,
+  "next": 35.76056867240758
+ },
+ "segment_n": {
+  "꾸준형": 8882,
+  "습관 형성형": 14583,
+  "최근 단발형": 15402,
+  "멈춤-꾸준형": 3627,
+  "멈춤-몰입형": 9303,
+  "멈춤-저활동형": 30670
+ },
+ "chi2": 14581.188295912672,
+ "pages": 12,
+ "files": [
+  "01_kpi_summary.csv",
+  "02_cohort_active_days.csv",
+  "03_cohort_nsm_daily.csv",
+  "04_segment_summary.csv",
+  "05_segment_daily.csv",
+  "06_first_active_cohort.csv",
+  "07_recency_curve.csv",
+  "08_resume_compare.csv",
+  "09_input_metric_hypothesis.csv",
+  "10_action_baselines.csv",
+  "11_user_level.csv"
+ ]
+}

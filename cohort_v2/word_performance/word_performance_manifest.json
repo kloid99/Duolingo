@@ -1,0 +1,110 @@
+{
+  "analysis_date": "2026-10-13",
+  "workbook_validation": {
+    "model_rows_verified": 6,
+    "quartile_rows_verified": 4,
+    "gap_bin_rows_verified": 5,
+    "coverage_rows_verified": 7,
+    "formula_errors": 0,
+    "three_sheets_visually_reviewed": true
+  },
+  "analysis_validation": {
+    "sample_users": 200,
+    "independent_pair_rows": 3216,
+    "user_formula_reconciled": true,
+    "missing_scores_preserved": true,
+    "logistic_models_BFGS": 4,
+    "logistic_max_error": 1.199288874806359e-08,
+    "paired_models_SVD": 2,
+    "paired_coefficient_max_error": 1.0084294510548375e-13,
+    "cluster_se_max_error": 1.5027042110649091e-16,
+    "coverage_reconciled": true,
+    "source_cohort_unchanged": true
+  },
+  "source_hashes": {
+    "raw_csv": "609b4a602665b1cf5fa693b1ebfcd1d5f9a2b7bad623e3d935436abcc7b74c21",
+    "user_retention_cohort.csv": "1070c769c8f1d6bc1914e223c19469b9ceb127c929257ba05a2ba1d80fc57bb7",
+    "definition_document": "987446c4298241ac5fda3b7b047ca0fa354afbd4037f14b993f497f6aee5b475",
+    "analysis_protocol": "faaea84c2693a99a1516953f3158012ced5e97d3f7fb29c4a70126943ddb2208"
+  },
+  "files": {
+    "analysis_validation.json": {
+      "bytes": 417,
+      "sha256": "29661148f61dcdbd19df4bacb11e33f131dee930bb67c8bf74ae81210813cd91"
+    },
+    "build_word_workbook.mjs": {
+      "bytes": 9619,
+      "sha256": "0c2c9d385495aac74835c82571ee6ec0a2958d62131a610a4b2363ce2802a54f"
+    },
+    "coverage.csv": {
+      "bytes": 645,
+      "sha256": "aae42787511e1be9909bafd8fb23553abc7dbda7afb1de73b406df66896e2c17"
+    },
+    "extraction.json": {
+      "bytes": 703,
+      "sha256": "c66ed1cdd97a9b996a91c52c920d35efaf063d3ebacaba503fb556066d9978fb"
+    },
+    "gap_bins.csv": {
+      "bytes": 375,
+      "sha256": "f7b3a87242586cbeee794c048345330e9d03b7507add097f76b738da091f9bf7"
+    },
+    "gap_bins.json": {
+      "bytes": 894,
+      "sha256": "f6d5330cb98d76d17294d3be0edf5492e01a503fe9d69257e70a92a3ab033096"
+    },
+    "habit_improvement_quartiles.csv": {
+      "bytes": 554,
+      "sha256": "3e33627a546159e17f1eaba7620b82679d0848faf85345e7188e5e0de3c1111d"
+    },
+    "matched_word_pairs.csv": {
+      "bytes": 79904786,
+      "sha256": "b365e35a212612c7abd720bff47b6b3ed2789ca2e405e5e721f03f823c0caf1c"
+    },
+    "model_effects.csv": {
+      "bytes": 1481,
+      "sha256": "7786b2bb237460a8e0fbab2860e7088d6981321cee014db68a658d0718967535"
+    },
+    "review_word_pairs.csv": {
+      "bytes": 220616409,
+      "sha256": "02c6cc23de2b8882ad1e3b936974687f16b5229b454c78bac9cbae992f67f00b"
+    },
+    "user_word_improvement.csv": {
+      "bytes": 10276131,
+      "sha256": "7800a394f9a86a41291954b28b2198ecf556efcdb6de431c5e5c50bbf414d4b9"
+    },
+    "validation_sample_rows.csv": {
+      "bytes": 1592238,
+      "sha256": "1516ac141c950f87c1ac70669182e2ed60c2e53a85e7262126b3c47a28588e3c"
+    },
+    "verify_word_workbook.py": {
+      "bytes": 3887,
+      "sha256": "16732bb4a74e09a557d2cba13e6bd5a5b33a3b70efe2017c5d8ab35bdf930c46"
+    },
+    "word_performance_results.json": {
+      "bytes": 20943,
+      "sha256": "f615b16fe22c832055242b076bdd870a1daa20dee3f9d179ad318caa51d58e8a"
+    },
+    "workbook_error_scan.json": {
+      "bytes": 60,
+      "sha256": "acc0111e19cf44d2753fc9ecd164bf1b27fbd65597463a25cf48bd1c65e90146"
+    },
+    "같은단어_성과개선과_복습간격.xlsx": {
+      "bytes": 12925,
+      "sha256": "66af3317cbb16efb128d543bc8aeebaa4081b907b036f0bea49c45f331a3f89e"
+    },
+    "같은단어_성과개선과_복습간격_결과와해석.md": {
+      "bytes": 7172,
+      "sha256": "a5dc919a5184382cc12b3c21054991a538406680f07071e91ee04dbb19158531"
+    },
+    "분석_설계_사전기록.md": {
+      "bytes": 5258,
+      "sha256": "faaea84c2693a99a1516953f3158012ced5e97d3f7fb29c4a70126943ddb2208"
+    }
+  },
+  "project_files": {
+    "analyze_word_performance.py": "e285028720fa082ab55a4060dce01ac873f4d6decb815f27dcda46e5b68b3184",
+    "verify_word_performance.py": "0116c60ec6132582934aa4dfd37cfd298abd803b5644084c77a9123f39c232ab",
+    "가설과_지표_정의_대조표.md": "644a06bd698223841b1cad2fdeecfae54583894ae1f0848d9de8fb8c1a6bf867",
+    "가설별_결론표.md": "044bf3a280a644a502f552f117a1d37659f176e742a95117336d09de252092b4"
+  }
+}

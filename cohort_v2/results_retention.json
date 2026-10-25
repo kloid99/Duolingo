@@ -1,0 +1,419 @@
+{
+  "purpose": "Learning repetition and short-term inactivity prevention using frozen Yeojin segments",
+  "baseline_window": "2013-03-01 through 2013-03-07 UTC",
+  "followup_window": "2013-03-08 through 2013-03-11 UTC",
+  "landmark": "2013-03-08 00:00 UTC",
+  "baseline_users": 82467,
+  "source_files": {
+    "user_cohort.csv": {
+      "path": "D:\\STUDY\\마케팅\\cohort_v2\\cohort_inputs\\user_cohort.csv",
+      "sha256": "60c2c7781ef1b0ba3f76eb4e9d27773170122636ff99aeb141f9f8376889bef7"
+    },
+    "user_daily_activity.csv": {
+      "path": "D:\\STUDY\\마케팅\\cohort_v2\\cohort_inputs\\user_daily_activity.csv",
+      "sha256": "e2ac731e056c1bc26c2d5534d566ac1c9b99d63decb4fcef3f5ee6deac122dc6"
+    },
+    "segment_cohort_summary.csv": {
+      "path": "D:\\STUDY\\마케팅\\cohort_v2\\cohort_inputs\\segment_cohort_summary.csv",
+      "sha256": "02d4f596bf3ce3ef140378eb36cb8e4711d63f136a8f7ce049ee49018408fa22"
+    }
+  },
+  "segment_reference": "D:\\STUDY\\마케팅\\cohort_v2\\segmentation\\segment_code_provided.py",
+  "checks": {
+    "source_hashes_unchanged": true,
+    "segments_unchanged": true,
+    "updated_segment_return_counts_match": true,
+    "updated_segment_repeat_counts_match": true,
+    "fixed_daily_denominators": true,
+    "cumulative_return_monotonic": true,
+    "cumulative_repeat_monotonic": true,
+    "repeat_is_subset_of_return": true,
+    "first_return_cohorts_partition_returners": true,
+    "D0_is_100pct": true,
+    "unobserved_cells_are_missing": true,
+    "late_returners_excluded_from_2day_denominator": true,
+    "end_states_partition_baseline": true,
+    "end_inactive_equals_no_return_plus_return_then_inactive": true,
+    "daily_gap_state_flow_reconciles": true,
+    "source_user_day_activity_matches": true,
+    "panel_user_dates_unique": true
+  },
+  "definitions": {
+    "behavior_cohort": "fixed baseline segment; all baseline users remain in each denominator",
+    "return_cohort": "first observed relearning date within followup; D0 is that return event, not signup",
+    "daily_relearning_rate": "active users on date / all fixed baseline segment users",
+    "cumulative_return_rate": "users active at least once up to date / all fixed baseline segment users",
+    "cumulative_repeat_rate": "users active on at least two distinct dates up to date / all fixed baseline segment users",
+    "return_cohort_Dk": "users active exactly k calendar days after their first followup return / original return-date cohort users",
+    "within_2days_repeat": "users learning again on D+1 or D+2 / returners with both dates fully observed (first return Mar 08 or 09)",
+    "inactive_3day_flag": "no trace on three or more consecutive calendar dates, counting from the last baseline/followup active date",
+    "reactivation_after_3day_gap": "active today among users already inactive for at least three calendar days at end of yesterday",
+    "inactivity_threshold": "3 calendar days, aligned with the PDF risk theme; analyst operational assumption; 2-day sensitivity also reported"
+  },
+  "limitations": [
+    "Four followup days cannot establish next-week NSM, D7/D30 retention, permanent churn or campaign lift.",
+    "An observed trace extract may not represent every activity in the service.",
+    "Later first-return cohorts are right-censored; unobserved offsets are missing, not zero.",
+    "Conditional repeat metrics exclude non-returners and late-returners; cannot compare directly with unconditional rates.",
+    "Segments differ in baseline recency, activity and amount; comparisons are descriptive, not a causal test.",
+    "Calendar-day boundaries use UTC; inactivity flags are not exact 72-hour elapsed-time rules."
+  ],
+  "segment_summary": [
+    {
+      "segment": "꾸준형",
+      "cohort_users": 8882,
+      "returned_users": 7135,
+      "return_4day_rate": 0.803310065300608,
+      "repeat_users": 4963,
+      "repeat_4day_rate": 0.5587705471740599,
+      "mean_active_days": 1.8142310290475119,
+      "nextday_eligible_returners": 6552,
+      "nextday_repeat_users": 3424,
+      "nextday_repeat_rate": 0.5225885225885226,
+      "two_day_eligible_returners": 5897,
+      "two_day_repeat_users": 4152,
+      "two_day_repeat_rate": 0.7040868238087163,
+      "inactive_3day_users_at_end": 2559,
+      "inactive_3day_rate_at_end": 0.28811078585904076,
+      "no_return_users": 1747,
+      "one_return_then_inactive_users": 812,
+      "one_return_users_other": 1360
+    },
+    {
+      "segment": "습관 형성형",
+      "cohort_users": 14583,
+      "returned_users": 7608,
+      "return_4day_rate": 0.5217033532195021,
+      "repeat_users": 3562,
+      "repeat_4day_rate": 0.2442570115888363,
+      "mean_active_days": 0.8805458410477954,
+      "nextday_eligible_returners": 6650,
+      "nextday_repeat_users": 2133,
+      "nextday_repeat_rate": 0.3207518796992481,
+      "two_day_eligible_returners": 5679,
+      "two_day_repeat_users": 2704,
+      "two_day_repeat_rate": 0.476140165522099,
+      "inactive_3day_users_at_end": 8549,
+      "inactive_3day_rate_at_end": 0.586230542412398,
+      "no_return_users": 6975,
+      "one_return_then_inactive_users": 1574,
+      "one_return_users_other": 2472
+    },
+    {
+      "segment": "최근 단발형",
+      "cohort_users": 15402,
+      "returned_users": 5006,
+      "return_4day_rate": 0.3250227243215167,
+      "repeat_users": 1862,
+      "repeat_4day_rate": 0.12089339046877029,
+      "mean_active_days": 0.4964939618231399,
+      "nextday_eligible_returners": 4344,
+      "nextday_repeat_users": 1119,
+      "nextday_repeat_rate": 0.2575966850828729,
+      "two_day_eligible_returners": 3677,
+      "two_day_repeat_users": 1406,
+      "two_day_repeat_rate": 0.3823769377209682,
+      "inactive_3day_users_at_end": 11734,
+      "inactive_3day_rate_at_end": 0.7618491105051292,
+      "no_return_users": 10396,
+      "one_return_then_inactive_users": 1338,
+      "one_return_users_other": 1806
+    },
+    {
+      "segment": "멈춤-꾸준형",
+      "cohort_users": 3627,
+      "returned_users": 1658,
+      "return_4day_rate": 0.4571271022883926,
+      "repeat_users": 808,
+      "repeat_4day_rate": 0.22277364212848083,
+      "mean_active_days": 0.7852219465122691,
+      "nextday_eligible_returners": 1425,
+      "nextday_repeat_users": 539,
+      "nextday_repeat_rate": 0.3782456140350877,
+      "two_day_eligible_returners": 1158,
+      "two_day_repeat_users": 633,
+      "two_day_repeat_rate": 0.5466321243523317,
+      "inactive_3day_users_at_end": 2207,
+      "inactive_3day_rate_at_end": 0.6084918665563827,
+      "no_return_users": 1969,
+      "one_return_then_inactive_users": 238,
+      "one_return_users_other": 612
+    },
+    {
+      "segment": "멈춤-몰입형",
+      "cohort_users": 9303,
+      "returned_users": 2456,
+      "return_4day_rate": 0.26400085993765454,
+      "repeat_users": 841,
+      "repeat_4day_rate": 0.09040094593141997,
+      "mean_active_days": 0.3832097172954961,
+      "nextday_eligible_returners": 2010,
+      "nextday_repeat_users": 546,
+      "nextday_repeat_rate": 0.2716417910447761,
+      "two_day_eligible_returners": 1526,
+      "two_day_repeat_users": 611,
+      "two_day_repeat_rate": 0.40039318479685454,
+      "inactive_3day_users_at_end": 7313,
+      "inactive_3day_rate_at_end": 0.7860905084381382,
+      "no_return_users": 6847,
+      "one_return_then_inactive_users": 466,
+      "one_return_users_other": 1149
+    },
+    {
+      "segment": "멈춤-저활동형",
+      "cohort_users": 30670,
+      "returned_users": 5377,
+      "return_4day_rate": 0.17531790022823607,
+      "repeat_users": 1430,
+      "repeat_4day_rate": 0.046625366807955655,
+      "mean_active_days": 0.23553961525921097,
+      "nextday_eligible_returners": 4333,
+      "nextday_repeat_users": 915,
+      "nextday_repeat_rate": 0.2111700900069236,
+      "two_day_eligible_returners": 3150,
+      "two_day_repeat_users": 1032,
+      "two_day_repeat_rate": 0.32761904761904764,
+      "inactive_3day_users_at_end": 26396,
+      "inactive_3day_rate_at_end": 0.8606455820019563,
+      "no_return_users": 25293,
+      "one_return_then_inactive_users": 1103,
+      "one_return_users_other": 2844
+    }
+  ],
+  "overall_daily": [
+    {
+      "date": "2013-03-08",
+      "followup_day": 1,
+      "cohort_users": 82467,
+      "active_users": 14846,
+      "daily_relearning_rate": 0.1800235245613397,
+      "cumulative_returned_users": 14846,
+      "cumulative_return_rate": 0.1800235245613397,
+      "cumulative_repeat_users": 0,
+      "cumulative_repeat_rate": 0.0,
+      "inactive_2day_users": 52176,
+      "inactive_2day_rate": 0.6326894394121285,
+      "inactive_3day_users": 40098,
+      "inactive_3day_rate": 0.48623085597875515,
+      "new_3day_inactive_users": 9874,
+      "start_3day_inactive_users": 32323,
+      "relearned_after_3day_inactivity_users": 2099,
+      "relearning_rate_among_start_3day_inactive": 0.06493827924388207
+    },
+    {
+      "date": "2013-03-09",
+      "followup_day": 2,
+      "cohort_users": 82467,
+      "active_users": 11716,
+      "daily_relearning_rate": 0.14206894879163787,
+      "cumulative_returned_users": 21087,
+      "cumulative_return_rate": 0.25570228091236497,
+      "cumulative_repeat_users": 5475,
+      "cumulative_repeat_rate": 0.0663901924406126,
+      "inactive_2day_users": 61380,
+      "inactive_2day_rate": 0.7442977190876351,
+      "inactive_3day_users": 48558,
+      "inactive_3day_rate": 0.5888173451198662,
+      "new_3day_inactive_users": 10792,
+      "start_3day_inactive_users": 40098,
+      "relearned_after_3day_inactivity_users": 2332,
+      "relearning_rate_among_start_3day_inactive": 0.05815751409047833
+    },
+    {
+      "date": "2013-03-10",
+      "followup_day": 3,
+      "cohort_users": 82467,
+      "active_users": 11252,
+      "daily_relearning_rate": 0.13644245577018685,
+      "cumulative_returned_users": 25314,
+      "cumulative_return_rate": 0.30695914729528173,
+      "cumulative_repeat_users": 9588,
+      "cumulative_repeat_rate": 0.11626468769325912,
+      "inactive_2day_users": 64468,
+      "inactive_2day_rate": 0.7817430002303952,
+      "inactive_3day_users": 57153,
+      "inactive_3day_rate": 0.6930408527047183,
+      "new_3day_inactive_users": 11412,
+      "start_3day_inactive_users": 48558,
+      "relearned_after_3day_inactivity_users": 2817,
+      "relearning_rate_among_start_3day_inactive": 0.05801309773878661
+    },
+    {
+      "date": "2013-03-11",
+      "followup_day": 4,
+      "cohort_users": 82467,
+      "active_users": 12425,
+      "daily_relearning_rate": 0.15066632713691538,
+      "cumulative_returned_users": 29240,
+      "cumulative_return_rate": 0.35456606885178316,
+      "cumulative_repeat_users": 13466,
+      "cumulative_repeat_rate": 0.16328955824754143,
+      "inactive_2day_users": 63556,
+      "inactive_2day_rate": 0.7706840311882329,
+      "inactive_3day_users": 58758,
+      "inactive_3day_rate": 0.7125031830914184,
+      "new_3day_inactive_users": 5531,
+      "start_3day_inactive_users": 57153,
+      "relearned_after_3day_inactivity_users": 3926,
+      "relearning_rate_among_start_3day_inactive": 0.06869280702675275
+    }
+  ],
+  "first_return_cohorts_overall": [
+    {
+      "segment": "전체",
+      "first_return_date": "2013-03-08",
+      "return_cohort_users": 14846,
+      "D0_observable": true,
+      "D0_active_users": 14846,
+      "D0_relearning_rate": 1.0,
+      "D1_observable": true,
+      "D1_active_users": 5475.0,
+      "D1_relearning_rate": 0.36878620503839415,
+      "D2_observable": true,
+      "D2_active_users": 4968.0,
+      "D2_relearning_rate": 0.3346355920786744,
+      "D3_observable": true,
+      "D3_active_users": 5528.0,
+      "D3_relearning_rate": 0.37235619021958777,
+      "within_2days_observable": true,
+      "within_2days_repeat_users": 7531.0,
+      "within_2days_repeat_rate": 0.507274686784319
+    },
+    {
+      "segment": "전체",
+      "first_return_date": "2013-03-09",
+      "return_cohort_users": 6241,
+      "D0_observable": true,
+      "D0_active_users": 6241,
+      "D0_relearning_rate": 1.0,
+      "D1_observable": true,
+      "D1_active_users": 2057.0,
+      "D1_relearning_rate": 0.3295946162473963,
+      "D2_observable": true,
+      "D2_active_users": 1827.0,
+      "D2_relearning_rate": 0.29274154782887357,
+      "D3_observable": false,
+      "D3_active_users": null,
+      "D3_relearning_rate": null,
+      "within_2days_observable": true,
+      "within_2days_repeat_users": 3007.0,
+      "within_2days_repeat_rate": 0.4818138118891203
+    },
+    {
+      "segment": "전체",
+      "first_return_date": "2013-03-10",
+      "return_cohort_users": 4227,
+      "D0_observable": true,
+      "D0_active_users": 4227,
+      "D0_relearning_rate": 1.0,
+      "D1_observable": true,
+      "D1_active_users": 1144.0,
+      "D1_relearning_rate": 0.2706411166311805,
+      "D2_observable": false,
+      "D2_active_users": null,
+      "D2_relearning_rate": null,
+      "D3_observable": false,
+      "D3_active_users": null,
+      "D3_relearning_rate": null,
+      "within_2days_observable": false,
+      "within_2days_repeat_users": null,
+      "within_2days_repeat_rate": null
+    },
+    {
+      "segment": "전체",
+      "first_return_date": "2013-03-11",
+      "return_cohort_users": 3926,
+      "D0_observable": true,
+      "D0_active_users": 3926,
+      "D0_relearning_rate": 1.0,
+      "D1_observable": false,
+      "D1_active_users": null,
+      "D1_relearning_rate": null,
+      "D2_observable": false,
+      "D2_active_users": null,
+      "D2_relearning_rate": null,
+      "D3_observable": false,
+      "D3_active_users": null,
+      "D3_relearning_rate": null,
+      "within_2days_observable": false,
+      "within_2days_repeat_users": null,
+      "within_2days_repeat_rate": null
+    }
+  ],
+  "states": [
+    "관측기간 미복귀",
+    "1회 재학습 후 3일 비활동",
+    "1회 재학습·추적 종료",
+    "2일 이상 재학습"
+  ],
+  "review_pools": [
+    {
+      "review_pool": "습관 형성형·1~2일 비활동",
+      "users": 2902,
+      "baseline_exposures": 687091,
+      "repeat_users_in_followup": 1388
+    },
+    {
+      "review_pool": "습관 형성형·3일 이상 비활동",
+      "users": 8549,
+      "baseline_exposures": 1617672,
+      "repeat_users_in_followup": 0
+    },
+    {
+      "review_pool": "기존 학습 이력·3일 이상 비활동",
+      "users": 9520,
+      "baseline_exposures": 2299798,
+      "repeat_users_in_followup": 0
+    },
+    {
+      "review_pool": "꾸준형·1~2일 비활동",
+      "users": 2280,
+      "baseline_exposures": 1301806,
+      "repeat_users_in_followup": 1503
+    }
+  ],
+  "overall_summary": {
+    "users": 82467,
+    "returned_users": 29240,
+    "repeated_users": 13466,
+    "repeat_share_among_returners": 0.4605335157318741,
+    "eligible_2day_returners": 21087,
+    "within_2day_repeat_users": 10538,
+    "within_2day_repeat_rate": 0.4997391757955138,
+    "one_return_then_inactive_users": 5531
+  },
+  "outputs": {
+    "user_retention_cohort.csv": {
+      "rows": 82467,
+      "sha256": "1070c769c8f1d6bc1914e223c19469b9ceb127c929257ba05a2ba1d80fc57bb7"
+    },
+    "user_daily_retention.csv": {
+      "rows": 329868,
+      "sha256": "59021e29f6caab88b2e750547d366a99660bbf8b0c0ba763c8c13ad9a6f5f1dd"
+    },
+    "segment_retention_summary.csv": {
+      "rows": 6,
+      "sha256": "6608ad571d5266c515e88113afa01fda1ba350d3aea082abc3bccad24bd308c7"
+    },
+    "segment_daily_retention.csv": {
+      "rows": 24,
+      "sha256": "3d8f58415c89e24bfc02a206f13d2b1ed57698080e56dc579062fe6f211e3ca3"
+    },
+    "first_return_cohorts.csv": {
+      "rows": 28,
+      "sha256": "c2d693d3e6ed292b792e275edd16dbd201ae1c3b5023566303a62af3ef22fc5a"
+    },
+    "segment_followup_states.csv": {
+      "rows": 24,
+      "sha256": "c55f1b28d11834c686ad0aeead3a7fd847c543aeba05ab13e399ff85ea12aacf"
+    },
+    "overall_daily_retention.csv": {
+      "rows": 4,
+      "sha256": "c66876570540b0e2495554539a45ff08007b1e143405367cdb8e74eb586153bf"
+    },
+    "crm_review_candidates.csv": {
+      "rows": 23251,
+      "sha256": "927dacc645827236cfdf32116fe571884f38fc3feb46569f4b92826d11b80760"
+    }
+  }
+}

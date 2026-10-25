@@ -1,0 +1,11 @@
+{
+  "all_users_recomputed": 82467,
+  "candidate_events_verified": 19288,
+  "date_prefixes_without_future_activity_verified": 4,
+  "baseline_flows_verified": 7,
+  "aligned_patterns_verified": 28,
+  "candidate_summary_rows_verified": 12,
+  "unobserved_results_blank": true,
+  "eligibility_has_no_outcome_columns": true,
+  "source_hashes_unchanged": true
+}

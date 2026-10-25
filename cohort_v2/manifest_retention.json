@@ -1,0 +1,156 @@
+{
+  "version": "v3",
+  "updated_code_applied": true,
+  "segmentation_rules": "6 segments; pd.qcut(words_seen) without rank",
+  "cohort_data_checks_passed": true,
+  "independent_segmentation_and_cohort_checks": "passed",
+  "saved_excel_formula_errors": 0,
+  "saved_excel_formula_count": 333,
+  "saved_excel_unobserved_offsets_blank": true,
+  "files": {
+    "analyze_retention.py": {
+      "bytes": 17136,
+      "sha256": "cdd0e4e309ee71ed335ef946247b7cbe2b1f04a1f3e5f53c686128176fc4f1c4"
+    },
+    "build_retention_workbook.mjs": {
+      "bytes": 15438,
+      "sha256": "c63ce5f1cb8a803d6b57b4b4978bbd3868976649a1b48b7e9be76194aca3b525"
+    },
+    "crm_review_candidates.csv": {
+      "bytes": 2646854,
+      "sha256": "927dacc645827236cfdf32116fe571884f38fc3feb46569f4b92826d11b80760"
+    },
+    "first_return_cohorts.csv": {
+      "bytes": 3327,
+      "sha256": "c2d693d3e6ed292b792e275edd16dbd201ae1c3b5023566303a62af3ef22fc5a"
+    },
+    "overall_daily_retention.csv": {
+      "bytes": 983,
+      "sha256": "c66876570540b0e2495554539a45ff08007b1e143405367cdb8e74eb586153bf"
+    },
+    "plot_retention.py": {
+      "bytes": 9444,
+      "sha256": "0407a5bcc14410ae13971df8ab8bb3707721cfe71e4e8e65e5a15ad0cf57d9a5"
+    },
+    "results_retention.json": {
+      "bytes": 16521,
+      "sha256": "ca1e06cde3c2382150317b0158136c099f8ab90ec2119d0b7c0b639fda4dd247"
+    },
+    "run_segment_revision.py": {
+      "bytes": 5178,
+      "sha256": "8c94fc4e66e369af9e2b480f1f5c3ac8230231e3ba062aba269d7955adbf4e1a"
+    },
+    "segment_daily_retention.csv": {
+      "bytes": 4072,
+      "sha256": "3d8f58415c89e24bfc02a206f13d2b1ed57698080e56dc579062fe6f211e3ca3"
+    },
+    "segment_followup_states.csv": {
+      "bytes": 1726,
+      "sha256": "c55f1b28d11834c686ad0aeead3a7fd847c543aeba05ab13e399ff85ea12aacf"
+    },
+    "segment_retention_summary.csv": {
+      "bytes": 1332,
+      "sha256": "6608ad571d5266c515e88113afa01fda1ba350d3aea082abc3bccad24bd308c7"
+    },
+    "user_daily_retention.csv": {
+      "bytes": 18582910,
+      "sha256": "59021e29f6caab88b2e750547d366a99660bbf8b0c0ba763c8c13ad9a6f5f1dd"
+    },
+    "user_retention_cohort.csv": {
+      "bytes": 17541745,
+      "sha256": "1070c769c8f1d6bc1914e223c19469b9ceb127c929257ba05a2ba1d80fc57bb7"
+    },
+    "workbook_inputs.json": {
+      "bytes": 36070,
+      "sha256": "73010b55cdb9bafca167d69ab9cf66afbad0863211d511b935c4bb4b215d081d"
+    },
+    "분석_설계와_해석.txt": {
+      "bytes": 5249,
+      "sha256": "80cf5ca20becfb3a236ed3abe1d4f98bf23f9862664c19dddeef6fea75150b62"
+    },
+    "코호트_이탈방지_분석_수정세그먼트_v3.xlsx": {
+      "bytes": 27024,
+      "sha256": "704b900e5ea83fcf91bf01e06e0e9ea77af825aa4e4d37cdbcd69c0c733af21e"
+    },
+    "figures\\01_시점별_재학습과_반복학습.png": {
+      "bytes": 307196,
+      "sha256": "07c29de15d19aaace180e487003f28da60fc2352b2759af2e1257924a97c7193"
+    },
+    "figures\\01_시점별_재학습과_반복학습.svg": {
+      "bytes": 31086,
+      "sha256": "a5b1bcf08159c5a8aa19695d03db72098c9af3dcde9742691f904b752c0d2f5e"
+    },
+    "figures\\02_복귀일_기준_재학습_코호트.png": {
+      "bytes": 165261,
+      "sha256": "56f3ea631e1be885b9cac54dad27d54f6b025546fa81e29847d8b491d5c604d2"
+    },
+    "figures\\02_복귀일_기준_재학습_코호트.svg": {
+      "bytes": 16415,
+      "sha256": "1d78a44dc1926396dbc12c0fe2953a331dcc76e8620bd5644025e2d5b688460c"
+    },
+    "figures\\03_세그먼트별_반복학습과_비활동양상.png": {
+      "bytes": 234282,
+      "sha256": "db66b9d14fa4932d81caaa2e95f431ed7b3d26c728e2aaa477ca6e2770b4b9da"
+    },
+    "figures\\03_세그먼트별_반복학습과_비활동양상.svg": {
+      "bytes": 17899,
+      "sha256": "7c2a5f8ac4fc9f9b9fa6f0c98465353fdd288b24367e63ca7b88df9b37979742"
+    },
+    "figures\\04_시점별_재학습과_비활동신호.png": {
+      "bytes": 187191,
+      "sha256": "0b8f3ad9cc48081ad3d22ccaeb443a671beac81c536d7d45bf7e37971eb7988f"
+    },
+    "figures\\04_시점별_재학습과_비활동신호.svg": {
+      "bytes": 16619,
+      "sha256": "f43e9499fefe75c0d4579633b0325c4182c27e5e72d607618b12e696dd85f2a2"
+    },
+    "segmentation\\cluster_profile.csv": {
+      "bytes": 254,
+      "sha256": "805313a8877568d31d73e61982e147ce3807409e12f22de743ae7aae8b4838ec"
+    },
+    "segmentation\\code_provenance.json": {
+      "bytes": 384,
+      "sha256": "de2b8986b47dd8b6268e4e2942a0a30a3f589d8e4147314a479e531ee2d768b9"
+    },
+    "segmentation\\execution_log.txt": {
+      "bytes": 8791,
+      "sha256": "1efd855bbbcc5edb3203a2c64265b7b272831c3756f36ad9d2fc03c7da5e0a2f"
+    },
+    "segmentation\\kmeans_k_compare.csv": {
+      "bytes": 96,
+      "sha256": "79e390405f31d0fc7d04cd4f7947e232823d98de2164555e2123ddcab59467e9"
+    },
+    "segmentation\\revision_validation.json": {
+      "bytes": 1733,
+      "sha256": "5b8e4112267d701cae2090e0ad1273831eaa9bd55a452873a9236038e728fdc3"
+    },
+    "segmentation\\segment_change_audit.csv": {
+      "bytes": 4049279,
+      "sha256": "703b2be9d9f440deb7309c1b29eafff95c5301d7d654bef4fd94387ed112c6b0"
+    },
+    "segmentation\\segment_cluster_counts.csv": {
+      "bytes": 190,
+      "sha256": "fbe9ec407a1c7c3d3f3add70fdb1f6b0435588e1f68e18937ff7be2ec1c37b53"
+    },
+    "segmentation\\segment_cluster_pct.csv": {
+      "bytes": 206,
+      "sha256": "a43a1f3027240bf2d86899e131b9cbf9fe6e77e227c93ccda2f3e0ea7dc154c0"
+    },
+    "segmentation\\segment_code_local.py": {
+      "bytes": 13061,
+      "sha256": "7928ccbe55e779feec0f2b5c75d08da60090b4a65e87da8741f09a6f5a2df939"
+    },
+    "segmentation\\segment_code_provided.py": {
+      "bytes": 13043,
+      "sha256": "ca99f9f6e415df7d0e31d09a2454b32eeec234c053d832d1adc7c3d7f51c7860"
+    },
+    "segmentation\\segment_summary.csv": {
+      "bytes": 446,
+      "sha256": "636bf5b257a9bd4a153b38914310b263f52d5d7a97b9d32e29016eaf13246c56"
+    },
+    "segmentation\\user_rfm.csv": {
+      "bytes": 8435666,
+      "sha256": "2c2fc214a9aae3faf8109e33fab272e735e6003d34fc2c8fcc3820f10126fd90"
+    }
+  }
+}

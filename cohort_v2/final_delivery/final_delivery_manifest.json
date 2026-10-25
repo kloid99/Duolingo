@@ -1,0 +1,262 @@
+{
+  "schema_version": 2,
+  "analysis_date": "2026-10-13",
+  "completion": "historical analysis and review corrections complete; live execution blocked pending external validation",
+  "validation": {
+    "saved_workbook_scenarios_verified": 6,
+    "saved_duration_rows_verified": 3,
+    "blank_actual_inflow_and_duration_preserved": true,
+    "formula_errors": 0,
+    "spreadsheet_visually_reviewed": true,
+    "figure_visually_reviewed": true,
+    "artifact_engine_recalculation_boundaries_verified": true,
+    "native_excel_execution_not_tested": true,
+    "report_claim_displays_verified": 53,
+    "local_document_links_verified": 33,
+    "historical_event_times_verified": 4809,
+    "preserved_manifest_files_verified": 80,
+    "preserved_project_files_verified": 4,
+    "actual_service_assignments": 0,
+    "actual_service_effect_not_claimed": true,
+    "tables_verified": 8,
+    "labeled_rows_verified": 41,
+    "scope_period_and_denominator_contracts_verified": 7,
+    "latest_config_and_primary_hash_verified": true,
+    "robustness_manifest_verified": true,
+    "mode": "build_manifest"
+  },
+  "numerical_validation": {
+    "power_scenarios_verified": 9,
+    "independent_integer_search": true,
+    "monte_carlo_simulations": 100000,
+    "monte_carlo_is_synthetic_validation_only": true,
+    "monte_carlo_power": 0.7986,
+    "monte_carlo_type1": 0.04974,
+    "report_source_values_verified": 53,
+    "duration_scenarios_verified": 3,
+    "actual_launch_and_inflow_unavailable_preserved": true,
+    "validated_source_hashes": {
+      "verify_planning_calculations.py": "2881c481cc84a7a7079290af5dadb2840d8256ab3fa5a935d3d65ba99e357e33",
+      "prepare_final_delivery.py": "02a27cc5d4063dc31b60f2b07abee629dafea1f862c408157e558acff88a93e6",
+      "sample_size_results.json": "a8b53578772d5e07b3145d844ad9a55ec7e6683c08e0f2c725e426125ab14a6b",
+      "report_claims.csv": "3d3567b105611fabafa54fe5f809bd003e35c2601b443df74d7ff78443e8fb59",
+      "experiment_config.json": "65f509e2b3fce9da0e1fbb802891963ec22d311f3ed59afbb1c862824bfb7300"
+    }
+  },
+  "measurement_validation": {
+    "synthetic_validation_only": true,
+    "boundary_and_integrity_cases_passed": 38,
+    "actual_experiment_assignments": 0,
+    "actual_experiment_effect_estimated": false,
+    "validated_source_hashes": {
+      "measurement_reference.py": "03e120fdce2105bcde5e2eb0181d05140ca3aa87e45a2c366feaf9f69afb3286",
+      "verify_measurement_reference.py": "45cf0c4edb7494a64ef4b99a951d3ba426d38bb1de0cb97f844e244a7e5f2b54",
+      "experiment_config.json": "65f509e2b3fce9da0e1fbb802891963ec22d311f3ed59afbb1c862824bfb7300"
+    }
+  },
+  "semantic_validation": {
+    "negative_mutations_rejected": 15,
+    "valid_report_and_fresh_config_accepted": true,
+    "launch_blocked_on_missing_external_inputs": true,
+    "validated_source_hashes": {
+      "verify_semantic_integrity.py": "41c7dad8976a0102b647100aeb538d5c98f4085526a925be45de9075af11b751",
+      "report_semantics.py": "34ea38d961da69fac90ca137b76bf359c77655e51332a3842558694215671268",
+      "validate_experiment_config.py": "aaa3311b774569c2b5798559ab4e546f45b968617ee398882a562b346d66399e",
+      "verify_final_delivery.py": "eb8fb8df2ef9e5f9cb411f907489acf59e0c94780625c0a71f75e3aecc0f86e9",
+      "experiment_config.json": "65f509e2b3fce9da0e1fbb802891963ec22d311f3ed59afbb1c862824bfb7300",
+      "최종_코호트분석_보고서.md": "61202cb3ee3a4d1e0acc49c21c18a7acf8131832db6207311a27f47f1a5523b2"
+    }
+  },
+  "launch_readiness": {
+    "ready": false,
+    "pending": [
+      "service_event_contract_verified",
+      "coverage_and_identity_verified",
+      "target_baseline_recalibrated",
+      "business_mde_approved",
+      "guardrail_thresholds_approved",
+      "actual_pool_and_inflow_verified",
+      "card_usability_and_date_choices_verified",
+      "assignment_and_exposure_integration_verified",
+      "actual_launch_date",
+      "actual_new_eligible_users_per_day"
+    ],
+    "status": "blocked_pending_external_validation"
+  },
+  "event_time_extraction": {
+    "raw_rows": 12854226,
+    "candidate_users": 4809,
+    "raw_sha256": "609b4a602665b1cf5fa693b1ebfcd1d5f9a2b7bad623e3d935436abcc7b74c21",
+    "candidate_sha256": "7c5c1fefcaee68979776c734c275575981843a13533cb825a874c9d5d215cdc5",
+    "output_sha256": "8cbab44e1b99fddb27a7bfa686d7d6ec5ec66bf9b13d0e4d6d8e3fc38980c5f1",
+    "checks": {
+      "all_candidate_ids_resolved": true,
+      "first_event_dates_match": true,
+      "previous_event_dates_match": true,
+      "previous_events_before_trigger": true
+    },
+    "timestamp_semantics": "minimum raw learning timestamp within fixed followup, not lesson completion or assignment"
+  },
+  "report_source_hashes": {
+    "behavior_flow/behavior_flow_results.json": "9721e7e3e04bb3e900fce9accc553af07595804c283d2c8a0f721f17c494cdab",
+    "regularity/regularity_results.json": "ea109b68c7a7f7c8c91d42b6b47f28fa048e44f9b1729235aea1b774b60caff4",
+    "accuracy_change/accuracy_results.json": "ab443e45fd0ba2638d7c0784d7984e9fe8113a12e53aad5ea2333f95de387aed",
+    "word_performance/word_performance_results.json": "f615b16fe22c832055242b076bdd870a1daa20dee3f9d179ad318caa51d58e8a",
+    "user_retention_cohort.csv": "1070c769c8f1d6bc1914e223c19469b9ceb127c929257ba05a2ba1d80fc57bb7",
+    "sensitivity/sensitivity_results.json": "34264aef44128814b9958ddf46d0e934445780039194eb9972d6e104921d6809",
+    "corrections/robustness_results.json": "8f39a95c78227673c07d64bdbadc01b90db07360b77b97951eec965cff2c49fd",
+    "corrections/robustness_manifest.json": "0962820f59746d929053f5dbaeb9a8f765577872e7610441241246e5160b5f4e",
+    "corrections/검토사항_수정결과.md": "69f8d694e0b4ab24f8d0826e3fb6e4c8cbb43a63da23caef5a6f2b75d3a4cbe5",
+    "corrections/관측지표_현행정의.md": "41f559ea2201cb4478e701290272daf930d3bd372684870c32cefc1389b4bd8d",
+    "corrections/selection_language_time_profiles.csv": "3e55ca1a76b6d16822f55b21fcba311d71e7844a6beb8186fcad26f88e846ab4",
+    "review/a1_date_and_gap_coverage.csv": "1a027d3344ff244d00708659f681c9f4561df84a6f1da1faecf9c8a1caf430da",
+    "review/analysis_selection_profiles.csv": "8c46b3f7a96cb919ba2c202edfb7245fede42b47547befd956f5c590364b2cf6"
+  },
+  "files": {
+    "A1_실험명세서.md": {
+      "bytes": 13634,
+      "sha256": "ae5c2a5771d605e701f24c95ea4cfd813be0bd5d60dd05904f4379b8e533831d"
+    },
+    "A1_실험표본수와_기간산정.xlsx": {
+      "bytes": 8138,
+      "sha256": "9dfa8c83c8dcd1a194a8f40958b19db96e7f2c90a7e5101f057a6794ea73903b"
+    },
+    "A1_실험표본수와_기간산정.xlsx.inspect.ndjson": {
+      "bytes": 61208,
+      "sha256": "e45a9c4b805902887e9965f26a4004977ea1dedb0be5461946341ae235346982"
+    },
+    "baseline_sensitivity.csv": {
+      "bytes": 345,
+      "sha256": "f492456a02fb96fd096b1ce41b49dffd54ed8501d3dc06d23b63a1961856f328"
+    },
+    "build_final_report.py": {
+      "bytes": 24129,
+      "sha256": "fb8a7b1953f215b07280161a909cb8d27ba50a026f396d5b8cb9d886277287e7"
+    },
+    "build_sample_workbook.mjs": {
+      "bytes": 10534,
+      "sha256": "8982f529011888edd40e191e5305a753270b46b61f9d1b7768f7dbc7894d5fa6"
+    },
+    "duration_scenarios.csv": {
+      "bytes": 229,
+      "sha256": "74515480c3d38eb4f8d714dc78b5fa2a6f9c4835e0407cad6b2b3615f6725307"
+    },
+    "event_time_extraction.json": {
+      "bytes": 624,
+      "sha256": "fa19830376ecdf26c241a47a26a4cdd054a9155e4182032ce64db3e49a70277f"
+    },
+    "experiment_config.json": {
+      "bytes": 2951,
+      "sha256": "65f509e2b3fce9da0e1fbb802891963ec22d311f3ed59afbb1c862824bfb7300"
+    },
+    "extract_primary_event_times.py": {
+      "bytes": 3606,
+      "sha256": "8c9f04dd9f67a0ba9eec4b6d816bebc1d961505c06c66b5dee66bf6a109e6cf1"
+    },
+    "measurement_reference.py": {
+      "bytes": 8163,
+      "sha256": "03e120fdce2105bcde5e2eb0181d05140ca3aa87e45a2c366feaf9f69afb3286"
+    },
+    "measurement_validation.json": {
+      "bytes": 519,
+      "sha256": "89a8a0c4fd9dd9b96fd56da2fc3ea540f1b78294a35d2294fc14f710c70c1659"
+    },
+    "OneDrive_재실행_안내.md": {
+      "bytes": 7521,
+      "sha256": "f099ae3d01ca73093c7b3e4ed8d6fa8380b7292984ef6676ad924d525fce59e1"
+    },
+    "planning_validation.json": {
+      "bytes": 909,
+      "sha256": "2b56a2e8cfdb786e4ddfae445f6bb5d31dd64708fb170eab22d5b8892880ac9f"
+    },
+    "prepare_final_delivery.py": {
+      "bytes": 7235,
+      "sha256": "02a27cc5d4063dc31b60f2b07abee629dafea1f862c408157e558acff88a93e6"
+    },
+    "preview_sample_size.png": {
+      "bytes": 257853,
+      "sha256": "eca18fc9d865b12626cbf952e9e8ff08b13103abe1d520b2b79b0540ced9513b"
+    },
+    "primary_candidate_event_times.csv": {
+      "bytes": 1736022,
+      "sha256": "8cbab44e1b99fddb27a7bfa686d7d6ec5ec66bf9b13d0e4d6d8e3fc38980c5f1"
+    },
+    "report_claims.csv": {
+      "bytes": 6773,
+      "sha256": "3d3567b105611fabafa54fe5f809bd003e35c2601b443df74d7ff78443e8fb59"
+    },
+    "report_metrics.json": {
+      "bytes": 14516,
+      "sha256": "f12db4787f346bea3e5a3092e266b297eeffb4ce42715c4d11ca6373f60c0d54"
+    },
+    "report_semantics.py": {
+      "bytes": 7037,
+      "sha256": "34ea38d961da69fac90ca137b76bf359c77655e51332a3842558694215671268"
+    },
+    "run_final_delivery.ps1": {
+      "bytes": 4407,
+      "sha256": "491f761d7100968efded87b3ea4d26b25e07dd4c6e18e508b950ea950c74ef00"
+    },
+    "sample_size_results.json": {
+      "bytes": 7971,
+      "sha256": "a8b53578772d5e07b3145d844ad9a55ec7e6683c08e0f2c725e426125ab14a6b"
+    },
+    "sample_size_scenarios.csv": {
+      "bytes": 669,
+      "sha256": "1ef02b820f7b6b4e7d1f7e068aad694e7c8a932b5817ef67588d6db452a2b824"
+    },
+    "semantic_validation.json": {
+      "bytes": 802,
+      "sha256": "d9ead3c7cf102d36520aa7f61ef35d07e65cba70a88b0d982f7518b74226079e"
+    },
+    "validate_experiment_config.py": {
+      "bytes": 2411,
+      "sha256": "aaa3311b774569c2b5798559ab4e546f45b968617ee398882a562b346d66399e"
+    },
+    "verify_final_delivery.py": {
+      "bytes": 10007,
+      "sha256": "eb8fb8df2ef9e5f9cb411f907489acf59e0c94780625c0a71f75e3aecc0f86e9"
+    },
+    "verify_measurement_reference.py": {
+      "bytes": 5767,
+      "sha256": "45cf0c4edb7494a64ef4b99a951d3ba426d38bb1de0cb97f844e244a7e5f2b54"
+    },
+    "verify_planning_calculations.py": {
+      "bytes": 3604,
+      "sha256": "2881c481cc84a7a7079290af5dadb2840d8256ab3fa5a935d3d65ba99e357e33"
+    },
+    "verify_semantic_integrity.py": {
+      "bytes": 3018,
+      "sha256": "41c7dad8976a0102b647100aeb538d5c98f4085526a925be45de9075af11b751"
+    },
+    "workbook_error_scan.json": {
+      "bytes": 60,
+      "sha256": "acc0111e19cf44d2753fc9ecd164bf1b27fbd65597463a25cf48bd1c65e90146"
+    },
+    "workbook_inspection.ndjson": {
+      "bytes": 812,
+      "sha256": "b96b9785d6f032e2cdf510f47984ab0e4cac78bb1b8e5d8af08b94770f77a02e"
+    },
+    "운영_연결과_미확인입력.md": {
+      "bytes": 5487,
+      "sha256": "c5deb5f54a308350426d1dbe16bf0fe0e6e1334077da69cbb5044f6e78ce448c"
+    },
+    "최종_코호트분석_보고서.md": {
+      "bytes": 16052,
+      "sha256": "61202cb3ee3a4d1e0acc49c21c18a7acf8131832db6207311a27f47f1a5523b2"
+    },
+    "최종_행동흐름.png": {
+      "bytes": 132312,
+      "sha256": "5132a13a90e8749dd257174c72cd68ab6b287e54ab7d15a1bc3e8a3c55d9834a"
+    },
+    "측정과_로그_명세.md": {
+      "bytes": 6712,
+      "sha256": "9689bcb119a81ab3c63d504b7cc8beeafb642b479c03c2f2b5507ef83b79b533"
+    },
+    "핵심결론_요약.md": {
+      "bytes": 1956,
+      "sha256": "6e86d979a36d882a40ff01def38d03dfabc362dee20347f0e7c2b622dffb5d4a"
+    }
+  },
+  "project_index_sha256": "cfc30b096ea97673b37b1a15817925577501f6acf0672f22c4438d19c03579c5"
+}

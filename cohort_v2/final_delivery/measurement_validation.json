@@ -1,0 +1,11 @@
+{
+  "synthetic_validation_only": true,
+  "boundary_and_integrity_cases_passed": 38,
+  "actual_experiment_assignments": 0,
+  "actual_experiment_effect_estimated": false,
+  "validated_source_hashes": {
+    "measurement_reference.py": "03e120fdce2105bcde5e2eb0181d05140ca3aa87e45a2c366feaf9f69afb3286",
+    "verify_measurement_reference.py": "45cf0c4edb7494a64ef4b99a951d3ba426d38bb1de0cb97f844e244a7e5f2b54",
+    "experiment_config.json": "65f509e2b3fce9da0e1fbb802891963ec22d311f3ed59afbb1c862824bfb7300"
+  }
+}

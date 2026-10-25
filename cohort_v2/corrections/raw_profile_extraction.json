@@ -1,0 +1,9 @@
+{
+  "raw_sha256": "609b4a602665b1cf5fa693b1ebfcd1d5f9a2b7bad623e3d935436abcc7b74c21",
+  "raw_rows": 12854226,
+  "extreme_users": 104,
+  "baseline_extreme_users": 92,
+  "dedup_removed": 81,
+  "profile_sha256": "471d0dd96b60821ff38198cd3eae9c8464e573821cb12d24dfe691dd9891dab1",
+  "extreme_sha256": "9d65066b73eba50670a4cb2a9a3df9cfa9eff391d3ff31a81d6efdf35fa1bc5c"
+}

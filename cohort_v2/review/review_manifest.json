@@ -1,0 +1,44 @@
+{
+  "review_date": "2026-10-13",
+  "scope": "code, interpretation and eligibility audit; no original analysis modified",
+  "checks": {
+    "independent_date_counts_reconciled": true,
+    "selection_groups_partition_habit_segment": true,
+    "original_reviewed_sources_unchanged": true,
+    "two_measurement_counterexamples_reproduced": true,
+    "report_label_counterexample_reproduced_in_memory": true
+  },
+  "source_hashes": {
+    "behavior_flow\\primary_candidate_eligibility.csv": "7c5c1fefcaee68979776c734c275575981843a13533cb825a874c9d5d215cdc5",
+    "behavior_flow\\primary_candidate_outcomes.csv": "00917c42785bad317bb78e133d79010a2e3022a5bf9424d9a0af61f944fa25e8",
+    "final_delivery\\measurement_reference.py": "796ecf8001a0f4a074f6862bc1f4d276f9584a0ee62ed6bbea025aa6483bcbf2",
+    "final_delivery\\verify_final_delivery.py": "0632b027412f19f47bb125fa670d675cd90a249fcbfe33c5ff341a812701f43e",
+    "final_delivery\\최종_코호트분석_보고서.md": "d3a5c03fc8f718c567ce385c26cff5024591b409aebd30ddddb7e6a65cce062b"
+  },
+  "files": {
+    "a1_date_and_gap_coverage.csv": {
+      "bytes": 654,
+      "sha256": "1a027d3344ff244d00708659f681c9f4561df84a6f1da1faecf9c8a1caf430da"
+    },
+    "a1_observation_profiles.csv": {
+      "bytes": 275,
+      "sha256": "b59a3b06f451932d0aab73f1bdda23d8fb5df37a0363d56ce73269bbe5e33e3f"
+    },
+    "analysis_selection_profiles.csv": {
+      "bytes": 557,
+      "sha256": "8c46b3f7a96cb919ba2c202edfb7245fede42b47547befd956f5c590364b2cf6"
+    },
+    "audit_cohort_review.py": {
+      "bytes": 6843,
+      "sha256": "f96b01e25a266b7f922e3bb1be0d51026e985d6c0110f44d23077fb7e78096de"
+    },
+    "review_diagnostics.json": {
+      "bytes": 7009,
+      "sha256": "eb154b798623592af1210e61f69016c6ed381d4f928712b603db812c80659f6d"
+    },
+    "코호트분석_검토와_보완과제.md": {
+      "bytes": 15732,
+      "sha256": "f4fae45275c6ad383346dae7209245f2635854e92cecce719b0050f9eba21c0c"
+    }
+  }
+}

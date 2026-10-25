@@ -1,0 +1,36 @@
+{
+  "created": "2026-10-14",
+  "inputs_read_only": [
+    "user_retention_cohort.csv",
+    "user_daily_retention.csv",
+    "segment_daily_retention.csv",
+    "overall_daily_retention.csv",
+    "segment_retention_summary.csv",
+    "behavior_flow/primary_candidate_eligibility.csv",
+    "behavior_flow/primary_candidate_outcomes.csv"
+  ],
+  "checks": {
+    "daily_state": "4개 날짜 × (전체+6세그먼트): 활동자 수와 3일 이상 비활동 인원이 기존 결과와 일치, 미분류 0명",
+    "a1_match": "습관 형성형 A1형 4,809명이 primary_candidate 대상자와 동일, D1·D2 결과(미관측 포함) 전원 일치",
+    "a0_a1_habit": {
+      "first_return_date": "2013-03-08",
+      "next_two_days": "토·일",
+      "a0_users": 2799,
+      "a0_rate": 0.4973,
+      "a1_users": 1307,
+      "a1_rate": 0.42,
+      "diff_pp": 7.7275,
+      "diff_ci95_low_pp": 4.4579,
+      "diff_ci95_high_pp": 10.9589,
+      "z": 4.62,
+      "p_two_sided": 0.0
+    },
+    "recency": "세그먼트별 최근성 칸 합계가 기존 세그먼트 인원·2일 이상 학습자와 일치"
+  },
+  "notes": [
+    "A0는 구조상 3/8 첫 후속 학습자에만 존재한다(3/9 이후 첫 학습자는 전날이 추적 기간이라 기록이 없다).",
+    "A0-A1 비교는 같은 날짜(3/8, 다음 두 날 토·일) 안의 탐색적 관측 비교이며 개입 효과가 아니다.",
+    "미관측 결과(3/10·11 첫 학습자의 D1·D2)는 빈 값으로 두었다.",
+    "level 열로 전체 행과 세그먼트 행을 구분한다. 전체를 세그먼트 합으로 다시 더하지 않는다."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "sampled_users_interval_reconstruction": 150,
+  "sampled_metric_rows": 300,
+  "independent_BFGS_models": 5,
+  "max_coefficient_difference": 9.869108377746905e-10,
+  "missing_cv_preserved": true,
+  "source_cohort_unchanged": true,
+  "quartiles_reconciled": true
+}

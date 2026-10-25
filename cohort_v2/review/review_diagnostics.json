@@ -1,0 +1,219 @@
+{
+  "a1": {
+    "candidate_users": 4809,
+    "observed_users": 2880,
+    "observed_share": 0.5988771054273238,
+    "unobserved_users": 1929,
+    "observed_pretrigger_gaps": [
+      1,
+      2
+    ],
+    "unobserved_pretrigger_gaps": [
+      2,
+      3,
+      4
+    ],
+    "date_gap_groups": [
+      {
+        "grouping": "eligibility_date_utc",
+        "value": "2013-03-08",
+        "candidate_users": 1307,
+        "fully_observed_users": 1307,
+        "successes": 549.0,
+        "rate": 0.420045906656465,
+        "d1_observed_users": 1307,
+        "d1_learning_users": 380.0
+      },
+      {
+        "grouping": "eligibility_date_utc",
+        "value": "2013-03-09",
+        "candidate_users": 1573,
+        "fully_observed_users": 1573,
+        "successes": 763.0,
+        "rate": 0.485060394151303,
+        "d1_observed_users": 1573,
+        "d1_learning_users": 500.0
+      },
+      {
+        "grouping": "eligibility_date_utc",
+        "value": "2013-03-10",
+        "candidate_users": 971,
+        "fully_observed_users": 0,
+        "successes": null,
+        "rate": null,
+        "d1_observed_users": 971,
+        "d1_learning_users": 267.0
+      },
+      {
+        "grouping": "eligibility_date_utc",
+        "value": "2013-03-11",
+        "candidate_users": 958,
+        "fully_observed_users": 0,
+        "successes": null,
+        "rate": null,
+        "d1_observed_users": 0,
+        "d1_learning_users": null
+      },
+      {
+        "grouping": "inactive_completed_dates_before_trigger",
+        "value": "1",
+        "candidate_users": 2269,
+        "fully_observed_users": 2269,
+        "successes": 1048.0,
+        "rate": 0.461877479065668,
+        "d1_observed_users": 2269,
+        "d1_learning_users": 709.0
+      },
+      {
+        "grouping": "inactive_completed_dates_before_trigger",
+        "value": "2",
+        "candidate_users": 1187,
+        "fully_observed_users": 611,
+        "successes": 264.0,
+        "rate": 0.432078559738134,
+        "d1_observed_users": 1187,
+        "d1_learning_users": 338.0
+      },
+      {
+        "grouping": "inactive_completed_dates_before_trigger",
+        "value": "3",
+        "candidate_users": 960,
+        "fully_observed_users": 0,
+        "successes": null,
+        "rate": null,
+        "d1_observed_users": 395,
+        "d1_learning_users": 100.0
+      },
+      {
+        "grouping": "inactive_completed_dates_before_trigger",
+        "value": "4",
+        "candidate_users": 393,
+        "fully_observed_users": 0,
+        "successes": null,
+        "rate": null,
+        "d1_observed_users": 0,
+        "d1_learning_users": null
+      }
+    ],
+    "profiles": [
+      {
+        "fully_observed": false,
+        "users": 1929,
+        "baseline_active_days_mean": 2.423017107309487,
+        "baseline_recency_mean": 1.4085018144116122,
+        "baseline_exposure_median": 155.0,
+        "pretrigger_inactive_days_mean": 2.9051321928460343
+      },
+      {
+        "fully_observed": true,
+        "users": 2880,
+        "baseline_active_days_mean": 2.467013888888889,
+        "baseline_recency_mean": 1.6659722222222222,
+        "baseline_exposure_median": 165.0,
+        "pretrigger_inactive_days_mean": 1.2121527777777779
+      }
+    ]
+  },
+  "analysis_selection": [
+    {
+      "analysis": "세션 간격",
+      "eligible": false,
+      "users": 3950,
+      "repeat_users": 675,
+      "repeat_rate": 0.17088607594936708,
+      "baseline_days_mean": 2.1326582278481014,
+      "baseline_exposure_median": 61.0
+    },
+    {
+      "analysis": "세션 간격",
+      "eligible": true,
+      "users": 10633,
+      "repeat_users": 2887,
+      "repeat_rate": 0.271513213580363,
+      "baseline_days_mean": 2.490266152543967,
+      "baseline_exposure_median": 203.0
+    },
+    {
+      "analysis": "전체 정답률",
+      "eligible": false,
+      "users": 9930,
+      "repeat_users": 2360,
+      "repeat_rate": 0.23766364551863042,
+      "baseline_days_mean": 2.293051359516616,
+      "baseline_exposure_median": 127.0
+    },
+    {
+      "analysis": "전체 정답률",
+      "eligible": true,
+      "users": 4653,
+      "repeat_users": 1202,
+      "repeat_rate": 0.25832796045562,
+      "baseline_days_mean": 2.607565011820331,
+      "baseline_exposure_median": 193.0
+    },
+    {
+      "analysis": "같은 단어 개선",
+      "eligible": false,
+      "users": 6229,
+      "repeat_users": 1286,
+      "repeat_rate": 0.20645368437951517,
+      "baseline_days_mean": 2.2430566704125865,
+      "baseline_exposure_median": 81.0
+    },
+    {
+      "analysis": "같은 단어 개선",
+      "eligible": true,
+      "users": 8354,
+      "repeat_users": 2276,
+      "repeat_rate": 0.2724443380416567,
+      "baseline_days_mean": 2.50550634426622,
+      "baseline_exposure_median": 217.0
+    }
+  ],
+  "paired_weight_concentration": {
+    "users": 23019,
+    "pairs": 745195,
+    "last_exposure_weight_total": 2086916,
+    "largest_user_weight_share": 0.001539592393752312,
+    "top_one_percent_users": 231,
+    "top_one_percent_weight_share": 0.0890294578219727
+  },
+  "measurement_counterexamples": {
+    "synthetic_inputs_only": true,
+    "end_of_D2_without_48h_wait": {
+      "returned_fully_observed": true,
+      "returned_y": 0,
+      "required_by_spec": "pending until 2013-03-13T00:00:00Z"
+    },
+    "coverage_checked_after_freeze": {
+      "returned_fully_observed": true,
+      "returned_y": 0,
+      "coverage_checked_at": "2013-03-15T00:00:00Z",
+      "freeze_at": "2013-03-13T00:00:00Z",
+      "required_by_contract": "coverage unavailable at this freeze"
+    }
+  },
+  "report_validation_counterexample": {
+    "original_display_presence_check_passes": true,
+    "mislabelled_in_memory_table_also_passes": true,
+    "actual_report_was_not_modified": true,
+    "conclusion": "substring presence does not verify row identity/metric-period association"
+  },
+  "planning_default": {
+    "p0": 0.45555555555555555,
+    "p1": 0.4855555555555555,
+    "mde": 0.03,
+    "target_power": 0.8,
+    "n_per_arm_unrounded": 4344.18787390814,
+    "n_per_arm": 4346,
+    "n_total": 8692,
+    "achieved_approx_power": 0.8001645322617648
+  },
+  "source_hashes": {
+    "behavior_flow\\primary_candidate_eligibility.csv": "7c5c1fefcaee68979776c734c275575981843a13533cb825a874c9d5d215cdc5",
+    "behavior_flow\\primary_candidate_outcomes.csv": "00917c42785bad317bb78e133d79010a2e3022a5bf9424d9a0af61f944fa25e8",
+    "final_delivery\\measurement_reference.py": "796ecf8001a0f4a074f6862bc1f4d276f9584a0ee62ed6bbea025aa6483bcbf2",
+    "final_delivery\\verify_final_delivery.py": "0632b027412f19f47bb125fa670d675cd90a249fcbfe33c5ff341a812701f43e",
+    "final_delivery\\최종_코호트분석_보고서.md": "d3a5c03fc8f718c567ce385c26cff5024591b409aebd30ddddb7e6a65cce062b"
+  }
+}

@@ -1,0 +1,8 @@
+# 원본 데이터 1.3GB: GitHub 파일 한도(100MB) 초과 → 저장소 제외, README의 출처 링크로 대체
+learning_traces.13m.csv/
+__pycache__/
+*.pyc
+tmp/
+
+# GitHub 100MB 한도 초과 (로컬 보관, 스크립트로 재생성 가능)
+cohort_v2/word_performance/review_word_pairs.csv

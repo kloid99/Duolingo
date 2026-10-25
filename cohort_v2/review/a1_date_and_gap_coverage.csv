@@ -1,0 +1,9 @@
+﻿grouping,value,candidate_users,fully_observed_users,successes,rate,d1_observed_users,d1_learning_users
+eligibility_date_utc,2013-03-08,1307,1307,549.0,0.4200459066564652,1307,380.0
+eligibility_date_utc,2013-03-09,1573,1573,763.0,0.48506039415130325,1573,500.0
+eligibility_date_utc,2013-03-10,971,0,,,971,267.0
+eligibility_date_utc,2013-03-11,958,0,,,0,
+inactive_completed_dates_before_trigger,1,2269,2269,1048.0,0.4618774790656677,2269,709.0
+inactive_completed_dates_before_trigger,2,1187,611,264.0,0.4320785597381342,1187,338.0
+inactive_completed_dates_before_trigger,3,960,0,,,395,100.0
+inactive_completed_dates_before_trigger,4,393,0,,,0,

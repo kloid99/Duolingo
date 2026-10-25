@@ -1,0 +1,749 @@
+<title>듀오링고 현황</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+/* 디자인 토큰: 초록은 강조에만, 바탕은 흰색과 옅은 회녹색. 모든 수치는 아래 DATA JSON에서 렌더링 */
+:root{
+  --bg:#F5F7F2; --surface:#FFFFFF; --surface-2:#F1F4EC; --line:#E2E7DC; --line-strong:#C9D2C0;
+  --ink:#18210F; --ink-2:#454F3E; --ink-3:#717B6A;
+  --green:#58CC02; --green-deep:#2B7000; --green-mid:#89E219; --green-tint:#EFF8E4; --green-line:#CBE8AE; --green-ink:#2B7000;
+  --muted-bar:#C3CCBB; --muted-bar-2:#E4E9DE; --warn:#E58A00; --warn-ink:#9A5500; --warn-tint:#FFF5E6; --warn-line:#F5D6A6;
+  --h1:#B2DF78; --h2:#58CC02; --h3:#2B7000; --hm0:#F1F8E9; --hm1:#2B7000;
+  --font-ui:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --font-num:var(--font-ui);
+  --r:12px; --r-sm:8px;
+  --side-bg:#173A10; --side-ink:#C9DDBB; --side-ink-2:#8FAA7F; --side-line:rgba(255,255,255,.08); --side-hover:rgba(255,255,255,.06); --side-active:rgba(137,226,25,.16);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F140C; --surface:#161D12; --surface-2:#1C2517; --line:#29331F; --line-strong:#3A4731;
+  --ink:#EAF1E3; --ink-2:#C2CCB9; --ink-3:#939F8A;
+  --green:#58CC02; --green-deep:#9BE34A; --green-mid:#6FBF1F; --green-tint:#1B2814; --green-line:#2F4A1C; --green-ink:#9BE34A;
+  --muted-bar:#4D5946; --muted-bar-2:#2A3425; --warn:#F49000; --warn-ink:#FFB04D; --warn-tint:#2E220F; --warn-line:#5A3F14;
+  --h1:#4E7A22; --h2:#58CC02; --h3:#B8F06A; --hm0:#1C2617; --hm1:#89E219; --side-bg:#0B1308; --side-line:rgba(255,255,255,.06); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F140C; --surface:#161D12; --surface-2:#1C2517; --line:#29331F; --line-strong:#3A4731;
+  --ink:#EAF1E3; --ink-2:#C2CCB9; --ink-3:#939F8A;
+  --green:#58CC02; --green-deep:#9BE34A; --green-mid:#6FBF1F; --green-tint:#1B2814; --green-line:#2F4A1C; --green-ink:#9BE34A;
+  --muted-bar:#4D5946; --muted-bar-2:#2A3425; --warn:#F49000; --warn-ink:#FFB04D; --warn-tint:#2E220F; --warn-line:#5A3F14;
+  --h1:#4E7A22; --h2:#58CC02; --h3:#B8F06A; --hm0:#1C2617; --hm1:#89E219; --side-bg:#0B1308; --side-line:rgba(255,255,255,.06); color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-ui);font-size:14px;line-height:1.55;margin:0;font-feature-settings:"tnum";-webkit-font-smoothing:antialiased;word-break:keep-all}
+.wrap{width:100%;max-width:1280px;padding:28px 36px 56px;min-width:0}
+@media (max-width:880px){.wrap{padding:20px max(16px,env(safe-area-inset-right,0px)) 48px max(16px,env(safe-area-inset-left,0px))}}
+
+/* 상단: 제목과 기간 */
+header.top{display:flex;flex-wrap:wrap;gap:12px 16px;align-items:center;justify-content:space-between;padding-bottom:20px;margin-bottom:24px;border-bottom:1px solid var(--line)}
+h1{font-size:26px;font-weight:700;letter-spacing:-.02em;margin:0;line-height:1.3}
+h1 .dot{color:var(--green)}
+.subtitle{margin:0;font-size:13px;color:var(--ink-3)}
+
+/* 좌측 사이드바 */
+.app{display:grid;grid-template-columns:240px minmax(0,1fr);min-height:100vh}
+.side{position:sticky;top:0;height:100vh;overflow-y:auto;background:var(--side-bg);color:var(--side-ink);display:flex;flex-direction:column;padding:22px 14px 18px}
+.brand{display:flex;align-items:center;gap:10px;padding:0 8px 22px;border-bottom:1px solid var(--side-line)}
+.brand .mark{flex:none;width:34px;height:34px;border-radius:9px;background:var(--green);color:#0F2A00;display:grid;place-items:center}
+.brand b{display:block;font-size:16px;font-weight:700;color:#fff;letter-spacing:-.01em;line-height:1.35}
+.brand small{display:block;font-size:12px;color:var(--side-ink-2)}
+.side-label{margin:22px 10px 8px;font-size:12px;color:var(--side-ink-2)}
+nav.tabs{display:flex;flex-direction:column;gap:4px}
+nav.tabs button{display:flex;align-items:center;gap:12px;width:100%;font:inherit;font-size:14px;font-weight:500;color:var(--side-ink);background:none;border:0;border-radius:8px;padding:10px 12px;cursor:pointer;text-align:left;position:relative}
+nav.tabs button .ic{flex:none;width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+nav.tabs button:hover{background:var(--side-hover);color:#fff}
+nav.tabs button[aria-selected="true"]{background:var(--side-active);color:#fff;font-weight:600}
+nav.tabs button[aria-selected="true"]::before{content:"";position:absolute;left:-14px;top:8px;bottom:8px;width:3px;border-radius:0 3px 3px 0;background:var(--green)}
+nav.tabs button[aria-selected="true"] .ic{stroke:var(--green-mid)}
+.side-foot{margin-top:auto;display:grid;gap:4px;padding:14px 12px;border-radius:10px;background:var(--side-hover);font-size:12px}
+.side-foot .sf-t{color:var(--side-ink-2);margin-bottom:2px}
+.side-foot dl{margin:0 0 6px;display:grid;grid-template-columns:auto 1fr;gap:4px 10px}
+.side-foot dt{color:var(--side-ink-2);white-space:nowrap}
+.side-foot dd{margin:0;color:#fff;font-weight:600;white-space:nowrap}
+.side-foot small{color:var(--side-ink-2);font-size:11px;line-height:1.5}
+@media (max-width:880px){
+  .app{grid-template-columns:1fr}
+  .side{position:static;height:auto;padding:14px 16px 0;flex-direction:column}
+  .brand{padding:0 0 12px;border-bottom:0}
+  .side-label{display:none}
+  .side-foot{order:3;margin:0 0 12px;padding:10px 12px}
+  .side-foot dl{margin:0}
+  .side-foot .sf-t,.side-foot small{display:none}
+  nav.tabs{flex-direction:row;overflow-x:auto;gap:4px;padding-bottom:10px;scrollbar-width:none}
+  nav.tabs button{width:auto;flex:none;padding:8px 12px}
+  nav.tabs button[aria-selected="true"]::before{left:12px;right:12px;top:auto;bottom:-4px;width:auto;height:3px;border-radius:3px 3px 0 0}
+}
+:is(nav.tabs button,.seg-pick button,.toggle,summary,.tile,.acard,.toact):focus-visible{outline:2px solid var(--green);outline-offset:2px;border-radius:6px}
+
+/* 공통 블록 */
+.panel{display:grid;gap:24px}
+.head{display:grid;gap:4px}
+.lead{font-size:18px;font-weight:600;letter-spacing:-.01em;max-width:68ch;margin:0;line-height:1.5}
+.lead strong{color:var(--green-ink);font-weight:700}
+.howto{font-size:13px;color:var(--ink-3);margin:0;max-width:80ch}
+.period{font-size:12px;color:var(--ink-3);margin:0}
+.grid{display:grid;gap:12px}
+.g-2{grid-template-columns:1fr 1fr}
+.g-3{grid-template-columns:repeat(3,1fr)}
+.g-kpi5{grid-template-columns:repeat(5,1fr)}
+.g-input{grid-template-columns:1fr 1fr}
+.g-alert{grid-template-columns:1fr repeat(3,1.25fr)}
+@media (max-width:960px){.g-kpi5,.g-alert{grid-template-columns:repeat(2,1fr)}.g-2,.g-3{grid-template-columns:1fr}}
+@media (max-width:560px){.g-kpi5,.g-alert,.g-input{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px 24px;min-width:0}
+@media (max-width:560px){.card{padding:16px}}
+.card h2{font-size:16px;font-weight:700;letter-spacing:-.01em;margin:0 0 4px;line-height:1.4}
+.card .sub{font-size:13px;color:var(--ink-3);margin:0 0 16px}
+.kgroup{display:grid;gap:12px}
+.glabel{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:15px;font-weight:700;color:var(--ink)}
+.chip{display:inline-flex;align-items:center;font-size:12px;font-weight:600;color:var(--green-ink);background:var(--green-tint);border-radius:6px;padding:2px 8px}
+.chip b{font-weight:700}
+
+/* 지표 카드 */
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.kpi .id{font-size:12px;font-weight:600;color:var(--green-ink)}
+.kpi .lab{font-size:13px;font-weight:600;color:var(--ink-2)}
+.kpi .lab small{font-size:12px;font-weight:500;color:var(--ink-3);margin-left:6px}
+.kpi .val{font-size:28px;font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.kpi .val small{font-size:14px;font-weight:600;color:var(--ink-3);margin-left:2px}
+.kpi .foot{font-size:12.5px;color:var(--ink-3)}
+.kpi.hero{background:var(--green-tint);border-color:var(--green-line);padding:20px 24px}
+.kpi.hero .lab{font-size:14px;color:var(--ink)}
+.kpi.hero .val{font-size:44px;color:var(--green-deep);letter-spacing:-.03em}
+.kpi.hero .why{font-size:13px;color:var(--ink-2);margin-top:12px;padding-top:12px;border-top:1px solid var(--green-line);max-width:90ch}
+.kpi.hero .why b{color:var(--ink)}
+.kpi.warn .val{color:var(--warn-ink)}
+.kpi.warn .lab::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--warn);margin-right:6px;vertical-align:1px}
+.delta{display:inline-block;font-weight:600;font-size:12px;border-radius:6px;padding:0 6px;margin-left:4px;white-space:nowrap}
+.delta.good{background:var(--green-tint);color:var(--green-ink)}
+.delta.bad{background:var(--warn-tint);color:var(--warn-ink)}
+.delta.flat{background:var(--surface-2);color:var(--ink-3)}
+.link{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;border-radius:6px;padding:3px 8px;width:max-content;max-width:100%;margin-top:8px}
+.link::before{content:"";width:6px;height:6px;border-radius:50%}
+.link.obs{background:var(--green-tint);color:var(--green-ink)}
+.link.obs::before{background:var(--green)}
+.link.hyp{background:var(--warn-tint);color:var(--warn-ink)}
+.link.hyp::before{background:transparent;border:1.5px solid var(--warn)}
+.role{display:inline-flex;font-size:11.5px;font-weight:600;border-radius:6px;padding:1px 7px;margin-left:6px;background:var(--surface-2);color:var(--ink-2)}
+.tree-stem{position:relative;height:24px}
+.tree-stem::before{content:"";position:absolute;left:50%;top:0;height:12px;border-left:1px solid var(--line-strong)}
+.tree-stem::after{content:"";position:absolute;left:25%;right:25%;top:12px;height:12px;border:1px solid var(--line-strong);border-bottom:0;border-radius:6px 6px 0 0}
+@media (max-width:560px){.tree-stem::after{display:none}.tree-stem::before{height:24px}}
+
+/* 세그먼트 선택: 세그먼트 컨트롤 */
+.seg-pick,.d-pick{display:inline-flex;flex-wrap:wrap;gap:2px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:3px;width:fit-content;max-width:100%}
+.seg-pick button,.d-pick button{font:inherit;font-size:13.5px;font-weight:600;border:0;border-radius:7px;background:none;color:var(--ink-3);padding:6px 12px;cursor:pointer}
+.seg-pick button:hover{color:var(--ink)}
+.seg-pick button[aria-pressed="true"],.d-pick button[aria-pressed="true"]{background:var(--surface);color:var(--green-ink);box-shadow:0 0 0 1px var(--line),0 1px 2px rgba(24,33,15,.06)}
+.selsum{margin:0;font-size:13.5px;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:10px 14px}
+.selsum b{color:var(--ink)}
+.toggle{font:inherit;font-size:13px;font-weight:600;border:1px solid var(--line-strong);border-radius:8px;background:var(--surface);color:var(--ink-2);padding:6px 12px;cursor:pointer}
+.toggle[aria-pressed="true"]{border-color:var(--green);color:var(--green-ink);background:var(--green-tint)}
+
+/* 요약 문장 */
+.insight{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 20px;display:grid;gap:10px}
+.insight p{margin:0;font-size:14px;padding-left:16px;position:relative}
+.insight p::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--green)}
+.toact{color:var(--green-ink);font-weight:600;text-decoration:underline;text-decoration-color:var(--green-line);text-underline-offset:4px;margin-left:4px}
+.toact:hover{text-decoration-color:var(--green)}
+.concl{margin:14px 0 0;font-size:14px;font-weight:600;color:var(--ink);background:var(--green-tint);border-radius:var(--r-sm);padding:10px 14px}
+.note{font-size:12.5px;color:var(--ink-3);margin:10px 0 0}
+.note.caution{color:var(--warn-ink)}
+
+/* 차트 */
+svg{display:block;width:100%;height:auto;overflow:visible}
+svg text{font-family:var(--font-ui);fill:var(--ink-3)}
+svg .num{font-weight:700;fill:var(--ink)}
+svg .axis{stroke:var(--line-strong);stroke-width:1}
+svg .grid{stroke:var(--line);stroke-width:1}
+.hit{cursor:default}
+.hit:hover rect.bar,.hit:hover rect.cell{filter:brightness(1.06)}
+/* 좁은 화면에서는 차트 글씨가 작아지지 않게 가로로 밀어 본다 */
+.card{overflow-x:auto}
+@media (max-width:640px){.card > svg,#hazard > svg{min-width:640px}}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+@media (max-width:760px){.cmp{grid-template-columns:1fr}}
+.cmp .box{border:1px solid var(--line);border-radius:var(--r-sm);padding:14px 16px;display:grid;gap:8px;align-content:start;background:var(--surface)}
+.cmp .box h3{font-size:14px;font-weight:700;margin:0}
+.cmp .box .s{font-size:12px;color:var(--ink-3);margin:0 0 4px}
+
+/* 표 */
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+.tbl{overflow-x:auto}
+th,td{text-align:right;padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-size:12px;color:var(--ink-3);font-weight:600;background:var(--surface-2)}
+th:first-child,td:first-child{text-align:left}
+td.num{font-weight:600}
+tr.prio td:first-child{font-weight:700}
+
+/* 세그먼트 맵 */
+.badge{display:inline-flex;align-items:center;font-weight:700;font-size:11px;border-radius:5px;padding:1px 6px;background:var(--green);color:#fff;margin-left:6px;vertical-align:1px}
+.badge.alt{background:var(--surface-2);color:var(--ink-2)}
+.tiles{display:grid;grid-template-columns:auto repeat(3,1fr);gap:10px;align-items:stretch}
+.tiles .rh{font-size:12.5px;font-weight:600;color:var(--ink-3);display:flex;align-items:center;max-width:92px}
+.tile{border:1px solid var(--line);border-radius:10px;padding:14px;background:var(--surface);display:grid;gap:2px;text-align:left;font:inherit;color:inherit;min-width:0}
+.tile.prio{border-color:var(--green-line);background:var(--green-tint);cursor:pointer}
+.tile.prio:hover{border-color:var(--green)}
+.tile .nm{font-weight:700;font-size:14px}
+.tile .cnt{font-weight:700;font-size:22px;letter-spacing:-.02em}
+.tile .rule{font-size:12px;color:var(--ink-3)}
+.tile .bar{height:4px;border-radius:2px;background:var(--muted-bar-2);overflow:hidden;margin-top:8px}
+.tile .bar i{display:block;height:100%;background:var(--muted-bar)}
+.tile.prio .bar i{background:var(--green)}
+@media (max-width:640px){.tiles{grid-template-columns:repeat(3,1fr)}.tiles .rh{grid-column:1/-1;max-width:none}}
+
+/* 알림 카드 */
+.acard{font:inherit;color:inherit;text-align:left;cursor:pointer}
+.acard:hover{border-color:var(--line-strong)}
+.acard .lab{display:flex;align-items:center;flex-wrap:wrap}
+.acard[aria-pressed="true"]{border-color:var(--green);box-shadow:inset 0 0 0 1px var(--green)}
+.acard .meta,.acard .plan{display:grid;gap:4px;margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-2)}
+.acard .meta b,.acard .plan b{color:var(--ink-3);font-weight:500;margin-right:6px}
+.acard .plan .bv{font-weight:700;color:var(--ink);font-size:13.5px}
+.verdict{display:inline-flex;font-size:12px;font-weight:600;border-radius:6px;padding:2px 8px;width:max-content;margin-top:4px}
+.verdict.ok{background:var(--green-tint);color:var(--green-ink)}
+.verdict.no{background:var(--surface-2);color:var(--ink-3)}
+
+/* 접기 */
+details{border:1px solid var(--line);border-radius:var(--r-sm);padding:10px 14px;background:var(--surface)}
+summary{cursor:pointer;font-weight:600;font-size:13.5px}
+details[open] summary{margin-bottom:10px}
+.more{border:0;padding:0;background:none;border-radius:0;margin-top:12px}
+.more summary{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--green-ink);list-style:none;padding:2px 0}
+.more summary::-webkit-details-marker{display:none}
+.more summary::before{content:"+";font-weight:700;width:16px;height:16px;border-radius:4px;background:var(--green-tint);display:inline-grid;place-items:center;font-size:12px}
+.more[open] summary::before{content:"−"}
+
+footer{margin-top:32px;border-top:1px solid var(--line);padding-top:16px;display:grid;gap:4px;font-size:12px;color:var(--ink-3)}
+footer strong{color:var(--ink-2);font-weight:600;margin-right:4px}
+/* 링크 복사 */
+.copy{font:inherit;font-size:13px;font-weight:600;color:var(--ink-2);background:var(--surface);border:1px solid var(--line-strong);border-radius:8px;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.copy:hover{border-color:var(--green);color:var(--green-ink)}
+.copy:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+/* 세그먼트 이동표 */
+.mig td,.mig th{padding:8px 10px;text-align:center}
+.mig th:first-child,.mig td:first-child{text-align:left}
+.mig td.c{font-weight:600;color:var(--ink)}
+.mig td.c.hi{color:#0F2A00}
+.mig th.goal{color:var(--green-ink)}
+.mig tr.prio td:first-child{font-weight:700}
+.mig td.n{color:var(--ink-3);font-weight:500}
+/* 실험 카드 */
+.xgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media (max-width:960px){.xgrid{grid-template-columns:1fr}}
+.xcard{border:1px solid var(--line);border-radius:var(--r-sm);padding:16px;display:grid;gap:10px;align-content:start}
+.xcard h3{margin:0;font-size:15px;font-weight:700;display:flex;align-items:center}
+.xcard .hyp{margin:0;font-size:13.5px;color:var(--ink);background:var(--surface-2);border-radius:6px;padding:8px 10px}
+.xcard dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:12.5px}
+.xcard dt{color:var(--ink-3)}
+.xcard dd{margin:0;color:var(--ink);font-weight:600}
+.xcard dd small{font-weight:400;color:var(--ink-3)}
+.funnel{display:grid;grid-template-columns:repeat(3,1fr);border:1px dashed var(--line-strong);border-radius:6px;overflow:hidden}
+.funnel div{padding:8px 10px;display:grid;gap:2px;border-right:1px dashed var(--line-strong)}
+.funnel div:last-child{border-right:0}
+.funnel span{font-size:11.5px;color:var(--ink-3)}
+.funnel b{font-size:15px;color:var(--ink-3);font-weight:600}
+/* 데이터 점검 */
+.checks{margin:0;padding:0;list-style:none;display:grid;gap:4px}
+.checks li::before{content:"✓";color:var(--green-ink);font-weight:700;margin-right:6px}
+.checks li.bad::before{content:"✗";color:var(--warn-ink)}
+footer details{border:0;padding:0;background:none}
+footer summary{font-size:12px;font-weight:500;color:var(--ink-3)}
+#tip{position:fixed;z-index:20;pointer-events:none;background:var(--ink);color:var(--surface);font-size:12.5px;line-height:1.5;border-radius:8px;padding:7px 10px;max-width:280px;opacity:0;transition:opacity .08s}
+#tip.on{opacity:1}
+@media (prefers-reduced-motion:reduce){#tip{transition:none}}
+</style>
+
+<div class="app">
+<aside class="side" aria-label="사이트 메뉴">
+  <div class="brand">
+    <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><rect x="4" y="12" width="4" height="8" rx="1.5" fill="currentColor" opacity=".55"/><rect x="10" y="8" width="4" height="12" rx="1.5" fill="currentColor" opacity=".8"/><rect x="16" y="4" width="4" height="16" rx="1.5" fill="currentColor"/></svg></span>
+    <div><b>듀오링고</b><small>학습 유지·이탈 방지 대시보드</small></div>
+  </div>
+  <p class="side-label">메뉴</p>
+  <nav class="tabs" role="tablist" aria-label="대시보드 화면" aria-orientation="vertical" id="tabs"></nav>
+  <div class="side-foot" aria-label="데이터와 분석 기간">
+    <span class="sf-t">데이터와 기간</span>
+    <dl>
+      <dt>기준 주간</dt><dd>2013-03-01 ~ 03-07</dd>
+      <dt>후속 4일</dt><dd>2013-03-08 ~ 03-11</dd>
+      <dt>알림 대상</dt><dd>3월 8일 기준</dd>
+    </dl>
+    <small>출처: Settles &amp; Meeder(2016)</small>
+    <small>기준 주간 학습자 82,467명</small>
+    <small>날짜는 모두 UTC</small>
+  </div>
+</aside>
+<div class="wrap">
+  <header class="top">
+    <div><h1 id="pageTitle">주간 현황</h1>
+    <p class="subtitle" id="pageSub">누가 학습을 이어 가고, 누구에게 언제 알림을 보낼지 보는 대시보드</p></div>
+    <button type="button" class="copy" id="copyLink" title="지금 보고 있는 화면과 선택한 세그먼트를 그대로 여는 링크">현재 화면 링크 복사</button>
+  </header>
+  <main id="main"></main>
+  <footer id="foot"></footer>
+</div>
+</div>
+<div id="tip" role="tooltip"></div>
+
+<script type="application/json" id="data">__DATA__</script>
+<script>
+"use strict";
+const DATA = JSON.parse(document.getElementById("data").textContent);
+
+// 다음날 재학습률은 후속 기간(3/8~3/10) 기준으로 전체와 세그먼트를 같은 정의로 맞춘 값을 쓴다 (DATA.i1_later, segments[].i1_later)
+const RULES = {
+  "꾸준형": "최근 이틀 학습 · 학습일 4일+",
+  "습관 형성형": "최근 이틀 학습 · 학습일 2~3일",
+  "최근 단발형": "최근 이틀 학습 · 학습일 1일",
+  "멈춤-꾸준형": "최근 이틀 미학습 · 학습일 3일+",
+  "멈춤-몰입형": "최근 이틀 미학습 · 1~2일 · " + (DATA.meta.m_edges[3] + 1) + "문항+",
+  "멈춤-저활동형": "최근 이틀 미학습 · 1~2일 · " + DATA.meta.m_edges[3] + "문항 이하"
+};
+const PRIO = {"습관 형성형": 1, "최근 단발형": 2, "멈춤-꾸준형": 3};
+// 오늘 알림 대상: 3월 8일을 알림일로 보고 알림 조건에 맞는 사람만 센다
+const ALERT = {
+  "습관 형성형": {n: DATA.deep["습관 형성형"].target_sub_n, cond: "어제 학습 · 4일까지 하루 남음", split: "다시 돌아오는지, 학습일 3일"},
+  "최근 단발형": {n: DATA.deep["최근 단발형"].target_n, cond: "어제 학습 · 최근 7일 중 학습일 1일", split: "하루를 더 쉬기 전 복귀, 첫날 학습량"},
+  "멈춤-꾸준형": {n: DATA.deep["멈춤-꾸준형"].target_sub_n, cond: "이틀 쉼 · 주 4일 학습 경험 있음", split: "멈춘 기간, 주 4일 학습 경험"}
+};
+// 유형별로 무엇을 보내고 무엇으로 성공을 판단하는지. 기준선은 세그먼트 전체의 지금 값
+const PLAN = {
+  "습관 형성형": {hyp: "학습 다음 날 '4일까지 하루 남음' 알림을 받으면 다음 날 다시 학습하는 비율이 오른다", msg: "4일까지 하루 남음", metric: "다음날 재학습률 (E5)", base: SEG_I1("습관 형성형"), tip: "후속 기간(3/8~3/10) 학습한 날 기준, 습관 형성형 전체"},
+  "최근 단발형": {hyp: "학습 다음 날 '하루 더 쉬기 전에 이어서' 알림을 받으면 다음 날 복귀가 오른다", msg: "하루 더 쉬기 전에 이어서", metric: "다음날 재학습률 (E5)", base: SEG_I1("최근 단발형"), tip: "후속 기간(3/8~3/10) 학습한 날 기준, 최근 단발형 전체"},
+  "멈춤-꾸준형": {hyp: "이틀 쉰 날 '쉬었어도 다시 시작' 알림을 받으면 4일 안 복귀가 오른다", msg: "쉬었어도 다시 시작", metric: "4일 안 복귀율 (E2)", base: DATA.segments.find(s => s.name === "멈춤-꾸준형").ret, tip: "후속 4일(3/8~3/11) 중 하루라도 학습한 비율, 멈춤-꾸준형 전체"}
+};
+function SEG_I1(name) { return DATA.segments.find(s => s.name === name).i1_later; }
+// 탭 3 상세 카드: 알림 시점의 근거 (첫 번째 비교의 배수로 요약)
+const WHY = {
+  "습관 형성형": {title: "왜 학습 다음 날(3/8)에 알림을 보내나", concl: (r, p) => `3/8에 온 사람이 3/9~3/11에도 학습한 비율이 ${r}배 높았다(${p1(p.a)} 대 ${p1(p.b)}) → 학습 다음 날을 놓치지 않게 알림`},
+  "최근 단발형": {title: "왜 하루 더 쉬기 전에(학습 다음 날) 알림을 보내나", concl: (r, p) => `하루만 더 쉬어도 복귀율이 ${r}배 차이 난다(${p1(p.a)} 대 ${p1(p.b)}) → 하루 더 쉬기 전, 학습 다음 날 알림`},
+  "멈춤-꾸준형": {title: "왜 이틀 쉰 날(멈춘 날)에 바로 알림을 보내나", concl: (r, p) => `쉰 날이 짧을수록 ${r}배 더 돌아왔다(${p1(p.a)} 대 ${p1(p.b)}) → 더 멀어지기 전, 멈춘 날 바로 알림. 그중에서도 주 4일 경험자(${n0(DATA.deep["멈춤-꾸준형"].target_n)}명)부터`}
+};
+const ALERT_TOTAL =Object.values(ALERT).reduce((a, b) => a + b.n, 0);
+const SEG = Object.fromEntries(DATA.segments.map(s => [s.name, s]));
+
+// ---------- 공통 도우미
+const n0 = v => Number(v).toLocaleString("ko-KR");
+const p1 = v => Number(v).toFixed(1) + "%";
+const pp = v => (v > 0 ? "+" : "") + Number(v).toFixed(1) + "%p";
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;"}[c]));
+function tipAttr(t) { return ` data-tip="${esc(t)}"`; }
+const more = (label, html) => `<details class="more"><summary>${label}</summary>${html}</details>`;
+const head = (msg, how) => `<div class="head"><p class="lead">${msg}</p><p class="howto">${how}</p></div>`;
+const period = t => `<p class="period">${t}</p>`;
+
+// ---------- 탭
+const ICON = {
+  summary: '<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
+  timing: '<circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/>',
+  segments: '<circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14 15.5c.9-.6 1.9-1 3-1 2.8 0 5 2.2 5 5"/>'
+};
+const TABS = [
+  {id: "summary", name: "주간 현황", sub: "매주 북극성 지표와 Input 지표가 움직였는지 확인하는 화면"},
+  {id: "timing", name: "이탈 시점", sub: "알림을 언제 보낼지 정할 때 보는 화면"},
+  {id: "segments", name: "세그먼트·우선 대상", sub: "매일 오늘 누구에게 무엇을 보낼지 정하는 화면"}
+];
+const tabsEl = document.getElementById("tabs");
+tabsEl.innerHTML = TABS.map(t => `<button role="tab" id="tab-${t.id}" aria-controls="main" data-tab="${t.id}"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true">${ICON[t.id]}</svg><span>${t.name}</span></button>`).join("");
+tabsEl.addEventListener("click", e => { const b = e.target.closest("button[data-tab]"); if (b) show(b.dataset.tab); });
+
+// ---------- 차트: 학습일별 복귀율
+function barsByDays() {
+  const rows = DATA.ret_by_days, W = 1000, H = 300, L = 44, R = 16, T = 34, B = 44;
+  const iw = W - L - R, ih = H - T - B, bw = iw / rows.length;
+  const y = v => T + ih - v / 100 * ih;
+  const jump = rows.map((r, i) => i ? r.ret - rows[i - 1].ret : -Infinity);
+  const jmax = jump.indexOf(Math.max(...jump));
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="기준 주간 학습일별 후속 4일 복귀율">`;
+  [0, 25, 50, 75, 100].forEach(t => { s += `<line class="grid" x1="${L}" x2="${W - R}" y1="${y(t)}" y2="${y(t)}"/><text x="${L - 8}" y="${y(t) + 4}" text-anchor="end" font-size="11">${t}%</text>`; });
+  rows.forEach((r, i) => {
+    const x = L + i * bw + bw * .26, w = bw * .48, hot = i === jmax || i === jmax - 1;
+    s += `<g class="hit"${tipAttr(`학습일 ${r.days}일 · ${n0(r.n)}명 · 후속 4일 복귀율 ${p1(r.ret)}`)}>`;
+    s += `<rect class="bar" x="${x}" y="${y(r.ret)}" width="${w}" height="${Math.max(0, y(0) - y(r.ret))}" rx="4" fill="${hot ? "var(--green)" : "var(--muted-bar)"}"/>`;
+    s += `<rect x="${L + i * bw}" y="${T}" width="${bw}" height="${ih}" fill="transparent"/>`;
+    s += `<text class="num" x="${x + w / 2}" y="${y(r.ret) - 6}" text-anchor="middle" font-size="12.5">${r.ret.toFixed(1)}</text>`;
+    s += `<text x="${x + w / 2}" y="${H - B + 18}" text-anchor="middle" font-size="12">${r.days}일</text></g>`;
+  });
+  const xa = L + (jmax - 1) * bw + bw / 2, xb = L + jmax * bw + bw / 2, ya = y(rows[jmax].ret) - 24;
+  s += `<path d="M${xa} ${ya + 6}V${ya}H${xb}V${ya + 6}" fill="none" stroke="var(--green-deep)" stroke-width="1.5"/>`;
+  s += `<text x="${(xa + xb) / 2}" y="${ya - 6}" text-anchor="middle" font-size="12" font-weight="800" style="fill:var(--green-ink)">${pp(jump[jmax])}</text>`;
+  s += `<line class="axis" x1="${L}" x2="${W - R}" y1="${y(0)}" y2="${y(0)}"/>`;
+  s += `<text x="${L + iw / 2}" y="${H - 6}" text-anchor="middle" font-size="11.5" style="fill:var(--ink-3)">기준 주간 학습일 수</text></svg>`;
+  return {svg: s, from: rows[jmax - 1].days, to: rows[jmax].days, jump: jump[jmax]};
+}
+
+// ---------- 차트: 운영용 북극성 지표 (기준일별 최근 7일, 0부터)
+function opsNsm() {
+  const rows = DATA.ops_nsm, W = 1000, H = 250, L = 52, R = 16, T = 30, B = 48;
+  const iw = W - L - R, ih = H - T - B, bw = iw / rows.length, max = 12000;
+  const y = v => T + ih - v / max * ih;
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="기준일별 최근 7일 북극성 지표">`;
+  [0, 4000, 8000, 12000].forEach(t => { s += `<line class="grid" x1="${L}" x2="${W - R}" y1="${y(t)}" y2="${y(t)}"/><text x="${L - 8}" y="${y(t) + 4}" text-anchor="end" font-size="11">${n0(t)}</text>`; });
+  rows.forEach((r, i) => {
+    const x = L + i * bw + bw * .3, w = bw * .4, first = i === 0;
+    s += `<g class="hit"${tipAttr(`기준일 ${r.d}(${r.dow}) · 최근 7일 ${r.from}~${r.to} 중 4일 이상 학습 ${n0(r.n)}명`)}>`;
+    s += `<rect class="bar" x="${x}" y="${y(r.n)}" width="${w}" height="${y(0) - y(r.n)}" rx="4" fill="${first ? "var(--green)" : "var(--muted-bar)"}"/>`;
+    s += `<rect x="${L + i * bw}" y="${T}" width="${bw}" height="${ih}" fill="transparent"/>`;
+    s += `<text class="num" x="${x + w / 2}" y="${y(r.n) - 6}" text-anchor="middle" font-size="12.5">${n0(r.n)}</text>`;
+    s += `<text x="${x + w / 2}" y="${H - B + 18}" text-anchor="middle" font-size="12">${r.d} (${r.dow})</text>`;
+    s += `<text x="${x + w / 2}" y="${H - B + 33}" text-anchor="middle" font-size="10.5" style="fill:var(--ink-3)">${r.from}~${r.to}</text></g>`;
+  });
+  s += `<line class="axis" x1="${L}" x2="${W - R}" y1="${y(0)}" y2="${y(0)}"/></svg>`;
+  const ns = rows.map(r => r.n);
+  return {svg: s, lo: Math.min(...ns), hi: Math.max(...ns)};
+}
+
+// ---------- 탭 1: 주간 현황
+let curFilter = "전체";
+function linked(name) {
+  const K = DATA.kpi;
+  if (name === "전체") return {n: K.B1, share: 100, ret: K.O1, ret2: K.O2, risk_n: K.O3_n, risk: K.O3, next: DATA.i1_later.all};
+  const s = SEG[name];
+  return {n: s.n, share: s.user_pct, ret: s.ret, ret2: s.ret2, risk_n: s.nonret, risk: s.nonret / s.n * 100, next: s.i1_later};
+}
+function tabSummary() {
+  const K = DATA.kpi, A = barsByDays(), OP = opsNsm(), v = linked(curFilter), all = linked("전체"), isAll = curFilter === "전체";
+  // 전체 대비 차이: higherGood이면 높을수록 초록, 아니면 높을수록 주황
+  const dl = (a, b, higherGood = true) => {
+    if (isAll) return "";
+    const d = a - b, cls = Math.abs(d) < 0.05 ? "flat" : ((d > 0) === higherGood ? "good" : "bad");
+    return `<span class="delta ${cls}">전체 대비 ${pp(d)}</span>`;
+  };
+  const vs = x => isAll ? "" : ` · 전체 ${x}`;
+  const sel = isAll ? "" : `<p class="selsum"><b>${curFilter}</b> ${n0(v.n)}명(전체의 ${p1(v.share)}) · 복귀율 <b>${p1(v.ret)}</b>로 전체보다 ${Math.abs(v.ret - all.ret).toFixed(1)}%p ${v.ret >= all.ret ? "높다" : "낮다"} · 이탈 위험 ${n0(v.risk_n)}명(${p1(v.risk)})</p>`;
+  const A1 = DATA.A1, O = DATA.A1_one_day, F = DATA.funnel;
+  // 주 4일을 고른 이유: 2일 이상은 너무 많고, 6일 이상은 너무 적다 (노션 3-1)
+  const six = DATA.ret_by_days.filter(r => r.days >= 6).reduce((a, r) => a + r.n, 0) / K.B1 * 100;
+  const stopShare = K.I2_n / K.B1 * 100;
+  const hbar = (lab, v, on) => `<div${tipAttr(`${lab} · ${p1(v)}`)} style="display:grid;grid-template-columns:112px 1fr 52px;gap:8px;align-items:center;font-size:12.5px"><span>${lab}</span><span style="height:16px;border-radius:4px;background:var(--surface-2);overflow:hidden"><i style="display:block;height:100%;width:${v}%;background:${on ? "var(--green)" : "var(--muted-bar)"};border-radius:4px"></i></span><b style="font-family:var(--font-num);text-align:right;font-size:14px">${v.toFixed(1)}%</b></div>`;
+  return `
+  <div class="head">
+  <p class="howto">위 지표 트리는 항상 전체 기준이라 세그먼트를 골라도 바뀌지 않습니다. 그 아래에서 세그먼트를 고르면 아래 카드만 그 유형의 값으로 바뀝니다. 카드에 마우스를 올리면 계산 방법이 나옵니다.</p></div>
+  <div class="kgroup">
+    <span class="glabel">지표 트리 <span class="chip">항상 전체 기준</span></span>
+    <div>
+      <div class="kpi hero"${tipAttr(`기준 주간 학습일이 4일 이상인 사용자 수. 공식 값은 사람 수이고 비율은 참고. 세그먼트를 학습일로 나눴기 때문에 세그먼트별 값은 보여 주지 않는다`)}><span class="lab">북극성 지표 · 일주일 중 4일 이상 학습</span><span class="val">${n0(K.N1)}<small>명</small></span><span class="foot">주간 학습자 ${n0(K.B1)}명의 ${p1(K.N1_pct)}</span>
+        <span class="why"><b>왜 4일인가</b> · 2일 이상으로 잡으면 ${p1(K.two_plus)}가 해당돼 한두 번 와 본 사람과 구분되지 않고, 6일 이상은 ${p1(six)}로 너무 적다. 4일은 꾸준한 소수를 가려내면서도 늘릴 여지가 있다.</span></div>
+      <div class="tree-stem" aria-hidden="true"></div>
+      <div class="grid g-input">
+        <div class="kpi"${tipAttr(`기준 주간 3/1~3/6에 학습한 날 ${n0(K.I1_n)}건 중 다음 날에도 학습한 비율. 사람이 아니라 학습한 날 단위로 센다`)}><span class="id">Input 지표 I1</span><span class="lab">다음날 재학습률<small>기준 주간</small></span><span class="val">${K.I1.toFixed(1)}<small>%</small></span><span class="foot">3/1~3/6에 학습한 날 ${n0(K.I1_n)}건 중 다음 날에도 학습한 비율</span>
+          <span class="link obs"${tipAttr(`3/1에 처음 학습한 사람 중 다음 날 다시 온 사람은 ${p1(F.came_4d)}, 안 온 사람은 ${p1(F.not_4d)}가 주 4일을 채웠다(다음 날 하루를 빼도 ${p1(F.came_4d_excl)} 대 ${p1(F.not_4d)}). 관찰된 연관이며 인과는 검증하지 않았다`)}>북극성과의 연결: 데이터에서 관찰됨</span></div>
+        <div class="kpi"${tipAttr(`최근 이틀(3/6·3/7) 학습하지 않은 ${n0(K.I2_n)}명 중 후속 4일(3/8~3/11)에 하루라도 학습한 비율`)}><span class="id">Input 지표 I2</span><span class="lab">멈춤 사용자 복귀율<span class="role">알림 효과 비교 기준</span></span><span class="val">${K.I2.toFixed(1)}<small>%</small></span><span class="foot">3/6~3/7 이틀 동안 학습하지 않은 ${n0(K.I2_n)}명(전체의 ${p1(stopShare)}) 중 3/8~3/11에 돌아온 비율. 알림 전 비교 기준이며, 실제 효과는 실험의 대조군과 비교해 판단한다</span>
+          <span class="link hyp"${tipAttr(`멈춘 사람이 돌아오면 학습일이 다시 쌓인다는 연결은 아직 가정이다. 데이터가 약 12일이라 돌아온 사람이 다시 주 4일을 채우는지는 확인하지 못했다`)}>북극성과의 연결: 관찰 기간이 짧아 아직 가정</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="kgroup">
+    <span class="glabel">세그먼트별로 보기 <span class="chip">선택&nbsp;<b>${curFilter}</b></span></span>
+    <div class="seg-pick" role="group" aria-label="세그먼트 선택">${["전체", ...DATA.segments.map(s => s.name)].map(k => `<button type="button" id="f-${k}" data-filter="${k}" aria-pressed="${k === curFilter}">${k}</button>`).join("")}</div>
+    ${sel}
+    <div class="grid g-kpi5">
+      <div class="kpi"${tipAttr("기준 주간(3/1~3/7)에 하루라도 학습한 사용자 수")}><span class="lab">주간 학습자</span><span class="val">${n0(v.n)}<small>명</small></span><span class="foot">${isAll ? "모든 비율의 분모" : `전체의 ${p1(v.share)}`}</span></div>
+      <div class="kpi"${tipAttr("후속 4일(3/8~3/11) 중 하루라도 다시 학습한 비율")}><span class="lab">복귀율</span><span class="val">${v.ret.toFixed(1)}<small>%</small></span><span class="foot">후속 4일 중 1일 이상${vs(p1(all.ret))}${dl(v.ret, all.ret)}</span></div>
+      <div class="kpi"${tipAttr("후속 4일 중 이틀 이상 학습한 비율. 한 번 들렀다 가는 복귀와 구분한다")}><span class="lab">반복 복귀율</span><span class="val">${v.ret2.toFixed(1)}<small>%</small></span><span class="foot">후속 4일 중 2일 이상${vs(p1(all.ret2))}${dl(v.ret2, all.ret2)}</span></div>
+      <div class="kpi"${tipAttr("후속 4일 동안 다음 날에도 학습한 비율. 3/8~3/10에 학습한 날 기준이며, 전체와 세그먼트를 같은 기간으로 맞췄다. 기준 주간으로 잰 전체 값은 35.8%")}><span class="lab">다음날 재학습률<small>후속 기간 기준</small></span><span class="val">${v.next.toFixed(1)}<small>%</small></span><span class="foot">3/8~3/10 학습한 날 기준${vs(p1(all.next))}${dl(v.next, all.next)} · 위 I1(${p1(K.I1)}, 기준 주간)과 기간이 다름</span></div>
+      <div class="kpi warn"${tipAttr("후속 4일 동안 한 번도 학습하지 않은 사용자. 관측이 짧아 영구 이탈로 보지 않는다")}><span class="lab">이탈 위험</span><span class="val">${n0(v.risk_n)}<small>명</small></span><span class="foot">${isAll ? "" : "이 세그먼트의 "}${p1(v.risk)}${vs(p1(all.risk))}${dl(v.risk, all.risk, false)}</span></div>
+    </div>
+  </div>
+  <div class="card"><h2>기준일을 하루씩 옮겨 봐도 주 4일 이상 학습자는 ${n0(OP.lo)}~${n0(OP.hi)}명으로 거의 같다</h2>
+    <p class="sub">기준일마다 직전 7일 중 4일 이상 학습한 사용자 수 · 전체 기준 · 초록 막대가 위 북극성 지표와 같은 값</p>
+    ${OP.svg}
+    <p class="note">요일 구성에 따라 값이 흔들리므로 추세는 같은 요일끼리 비교한다. 데이터가 약 12일이라 여러 주에 걸친 추세는 아직 볼 수 없다.</p>
+  </div>
+  <div class="card"><h2>왜 북극성을 학습일로 세웠나: 학습량보다 학습일이 복귀를 가른다</h2>
+    <p class="sub">기준 주간 학습일 수별 후속 4일 복귀율 · 전체 기준 · 학습일이 하루 늘 때마다 오르고, ${A.from}일에서 ${A.to}일로 갈 때 가장 크게 오른다(${pp(A.jump)})</p>
+    ${A.svg}
+    <div class="cmp">
+      <div class="box"><h3>학습량이 많아도, 학습일이 늘어야 복귀율이 오른다</h3>
+        <p class="s">멈춘 사용자 중 학습량 상위 40% · 마지막 학습 3월 4~5일 · 후속 4일 복귀율</p>
+        ${hbar("학습일 1일", A1[0].ret, false)}${hbar("학습일 2일", A1[1].ret, true)}${hbar("학습일 3일 이상", A1[2].ret, true)}
+        <p class="note" style="margin:2px 0 0">1일 대비 ${pp(A1[1].ret - A1[0].ret)}, ${pp(A1[2].ret - A1[0].ret)}</p></div>
+      <div class="box"><h3>학습일이 같으면, 학습량 차이는 작다</h3>
+        <p class="s">하루만 학습하고 멈춘 사람 · 마지막 학습 3월 4~5일 · 후속 4일 복귀율</p>
+        ${hbar("학습량 하위 20%", O[0].ret, false)}${hbar("학습량 상위 20%", O[1].ret, false)}
+        <p class="note" style="margin:2px 0 0">차이 ${pp(O[1].ret - O[0].ret)}로, 학습일을 늘릴 때보다 작다</p></div>
+    </div>
+    <p class="note">그래서 북극성 지표는 학습량이 아니라 학습일 수로 세웠다. 주 4일 이상 학습한 사람은 후속 4일에 ${p1(K.nsm_ret)}, 나머지는 ${p1(K.rest_ret)}가 돌아왔다. 모두 관찰된 연관성이다.</p>
+  </div>`;
+}
+
+// ---------- 차트: 날짜별 재학습률 (후속 4일, 주말 음영)
+function dailyChart() {
+  const days = [["3/8", "금"], ["3/9", "토"], ["3/10", "일"], ["3/11", "월"]];
+  const ser = [["습관 형성형", SEG["습관 형성형"].daily, "var(--h3)"], ["최근 단발형", SEG["최근 단발형"].daily, "var(--h2)"],
+               ["멈춤-꾸준형", SEG["멈춤-꾸준형"].daily, "var(--warn)"], ["전체", DATA.daily_all, "var(--muted-bar)"]];
+  const W = 1000, H = 280, L = 48, R = 130, T = 26, B = 46, iw = W - L - R, ih = H - T - B, max = 35;
+  const xs = k => L + k * (iw / 3), y = v => T + ih - v / max * ih;
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="후속 4일 날짜별 재학습률">`;
+  s += `<rect x="${(xs(0) + xs(1)) / 2}" y="${T}" width="${xs(2.5) - xs(0.5)}" height="${ih}" fill="var(--surface-2)"/>`;
+  s += `<text x="${xs(1.5)}" y="${T + 14}" text-anchor="middle" font-size="11.5" font-weight="800" style="fill:var(--ink-3)">주말</text>`;
+  [0, 10, 20, 30].forEach(t => { s += `<line class="grid" x1="${L}" x2="${W - R}" y1="${y(t)}" y2="${y(t)}"/><text x="${L - 8}" y="${y(t) + 4}" text-anchor="end" font-size="11">${t}%</text>`; });
+  ser.forEach(([name, vals, color]) => {
+    s += `<polyline points="${vals.map((v, k) => `${xs(k)},${y(v)}`).join(" ")}" fill="none" stroke="${color}" stroke-width="${name === "전체" ? 2 : 2.75}" ${name === "전체" ? 'stroke-dasharray="5 4"' : ""} stroke-linejoin="round"/>`;
+    vals.forEach((v, k) => { s += `<g class="hit"${tipAttr(`${name} · ${days[k][0]}(${days[k][1]}) 학습 ${p1(v)}`)}><circle cx="${xs(k)}" cy="${y(v)}" r="11" fill="transparent"/><circle cx="${xs(k)}" cy="${y(v)}" r="4.5" fill="${color}" stroke="var(--surface)" stroke-width="2"/></g>`; });
+  });
+  // 끝 라벨이 겹치지 않게 최소 16px 간격으로 밀어 낸다
+  const labs = ser.map(([name, vals]) => ({name, v: vals[3], y: y(vals[3]) + 4})).sort((a, b) => a.y - b.y);
+  labs.forEach((l, i) => { if (i && l.y - labs[i - 1].y < 16) l.y = labs[i - 1].y + 16; });
+  labs.forEach(l => { s += `<text x="${xs(3) + 12}" y="${l.y}" font-size="12" font-weight="800" style="fill:var(--ink)">${l.name} ${l.v.toFixed(1)}</text>`; });
+  days.forEach(([d, w], k) => { s += `<text x="${xs(k)}" y="${H - B + 20}" text-anchor="middle" font-size="12">${d} (${w})</text>`; });
+  s += `<line class="axis" x1="${L}" x2="${W - R}" y1="${y(0)}" y2="${y(0)}"/></svg>`;
+  return s;
+}
+
+// ---------- 탭 2: 이탈 시점
+let showHist = false;
+function hazardChart() {
+  const Hz = DATA.hazard, W = 1000, H = 330, L = 48, R = 130, T = 26, B = 50;
+  const iw = W - L - R, ih = H - T - B, xs = k => L + k * (iw / 3), y = v => T + ih - v / 100 * ih;
+  const lab = ["학습 직후", "1일 쉼", "2일 쉼", "3일 쉼"];
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="쉬는 날 수별 4일 안 복귀율">`;
+  [0, 25, 50, 75, 100].forEach(t => { s += `<line class="grid" x1="${L}" x2="${W - R}" y1="${y(t)}" y2="${y(t)}"/><text x="${L - 8}" y="${y(t) + 4}" text-anchor="end" font-size="11">${t}%</text>`; });
+  s += `<rect x="${xs(0)}" y="${T}" width="${xs(1) - xs(0)}" height="${ih}" fill="var(--warn-tint)"/>`;
+  s += `<text x="${(xs(0) + xs(1)) / 2}" y="${T + 14}" text-anchor="middle" font-size="11.5" font-weight="800" style="fill:var(--warn-ink)">쉬는 첫날</text>`;
+  const line = (pts, color, w) => `<polyline points="${pts.map((p, k) => `${xs(k)},${y(p.within4)}`).join(" ")}" fill="none" stroke="${color}" stroke-width="${w}" stroke-linejoin="round" stroke-linecap="round"/>`;
+  const series = showHist
+    ? [["h1", "이력 1일", "var(--h1)"], ["h2", "이력 2일", "var(--h2)"], ["h3", "이력 3일+", "var(--h3)"]]
+    : [["all", "전체", "var(--green-deep)"]];
+  series.forEach(([key, name, color]) => {
+    const pts = Hz[key];
+    s += line(pts, color, showHist ? 2.5 : 3);
+    pts.forEach((p, k) => {
+      s += `<g class="hit"${tipAttr(`${name} · ${lab[k]} · 그 시점까지 안 온 ${n0(p.risk_n)}건 중 4일 안 복귀 ${p1(p.within4)} · 다음 날 복귀 ${p1(p.next)}`)}><circle cx="${xs(k)}" cy="${y(p.within4)}" r="12" fill="transparent"/><circle cx="${xs(k)}" cy="${y(p.within4)}" r="5" fill="${color}" stroke="var(--surface)" stroke-width="2"/>`;
+      if (!showHist) s += `<text class="num" x="${xs(k)}" y="${y(p.within4) - 12}" text-anchor="middle" font-size="13">${p.within4.toFixed(1)}</text>`;
+      s += `</g>`;
+    });
+    const last = pts[3];
+    s += `<text x="${xs(3) + 12}" y="${y(last.within4) + 4}" font-size="12" font-weight="800" style="fill:var(--ink)">${name} ${showHist ? last.within4.toFixed(1) : ""}</text>`;
+    if (showHist) s += `<text x="${xs(0) - 10}" y="${y(pts[0].within4) + 4}" text-anchor="end" font-size="11.5" class="num">${pts[0].within4.toFixed(1)}</text>`;
+  });
+  if (!showHist) {
+    const a = Hz.all;
+    [1, 2, 3].forEach(k => { s += `<text x="${(xs(k - 1) + xs(k)) / 2}" y="${y((a[k - 1].within4 + a[k].within4) / 2) + 20}" text-anchor="middle" font-size="12" font-weight="700" style="fill:var(--ink-3)">${a[k].chg_within4}%</text>`; });
+  }
+  lab.forEach((t, k) => { s += `<text x="${xs(k)}" y="${H - B + 20}" text-anchor="middle" font-size="12">${t}</text>`; });
+  s += `<line class="axis" x1="${L}" x2="${W - R}" y1="${y(0)}" y2="${y(0)}"/>`;
+  s += `<text x="${L + iw / 2}" y="${H - 6}" text-anchor="middle" font-size="11.5" style="fill:var(--ink-3)">마지막 학습 뒤 쉰 날 수 · 그 시점부터 4일 안에 다시 학습한 비율</text></svg>`;
+  return s;
+}
+function tabTiming() {
+  const Hz = DATA.hazard, a = Hz.all;
+  return `
+  ${head(`쉬는 날이 하루 늘 때마다 다시 돌아올 가능성이 약 4분의 1씩 줄고, 가장 크게 줄어드는 것은 <strong>쉬는 첫날</strong>이다.`,
+    "'학습 이력별 보기'를 누르면 이력 1일·2일·3일 이상 곡선을 나눠 봅니다. 점에 마우스를 올리면 인원과 다음 날 복귀율이 나옵니다.")}
+  <div class="card"><div style="display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:space-between;align-items:flex-start">
+      <div><h2>${showHist ? "학습 이력이 많아도 쉬는 날이 늘면 같은 비율로 떨어진다" : "쉬는 날이 늘수록 돌아오기 어렵다"}</h2>
+      <p class="sub">그 시점부터 4일 안에 다시 학습한 비율</p></div>
+      <button class="toggle" id="histToggle" aria-pressed="${showHist}">학습 이력별 보기</button></div>
+    <div id="hazard">${hazardChart()}</div>
+    ${more("읽는 법과 주의점", `<p class="note" style="margin-top:0">기준 주간 3/1~3/4의 학습 ${n0(Hz.events)}건을 출발점으로, 쉬는 날마다 관측 기간을 4일로 맞췄다. 이력은 3/1부터 그날까지 학습한 날의 수다.</p>
+    <p class="note caution">오래 쉰 쪽에는 원래 잘 안 오는 사람이 많이 남는 효과가 섞여 있다. 쉬어서 멀어진 것인지 원래 그런 사람인지는 나눌 수 없다.</p>`)}</div>
+  <div class="insight">
+    <p>다음 날 복귀는 학습 직후 <b>${p1(a[0].next)}</b>에서 하루 쉬면 <b>${p1(a[1].next)}</b>로, 쉬는 첫날에 <b>${a[1].chg_next}%</b> 줄어 가장 크게 떨어진다. <a class="toact" href="#segments" data-seg="습관 형성형">→ 그래서 학습한 다음 날 알림 (습관 형성형·최근 단발형)</a></p>
+    <p>이력 3일 이상이 이틀 쉰 뒤(<b>${p1(Hz.h3[2].within4)}</b>)는 이력 1일이 방금 학습한 직후(<b>${p1(Hz.h1[0].within4)}</b>)와 비슷하다. <a class="toact" href="#segments" data-seg="멈춤-꾸준형">→ 그래서 이력 많은 사람은 이틀 쉰 날에도 알림 (멈춤-꾸준형)</a></p>
+    <p>이틀째에 특별히 꺾이는 점은 없다. "최근 이틀 학습 없음 = 멈춤"은 다음 날 알림을 놓친 사람을 구분하려고 정한 운영 기준이다.</p>
+  </div>
+  <div class="card"><h2>주말에는 최근에 학습한 사람의 재학습이 내려갔다가 월요일에 다시 오른다</h2>
+    <p class="sub">후속 4일 날짜별로 그날 학습한 비율 · 우선 세 유형과 전체</p>
+    ${dailyChart()}
+    <p class="note">날짜별 하락의 일부는 요일 효과다. 멈춤-꾸준형은 4일 내내 비슷해 돌아오는 시점이 흩어져 있다. 3/8은 세그먼트마다 마지막 학습 후 지난 날이 달라, 높낮이를 세그먼트끼리 직접 비교하지 않고 위 이탈 곡선을 쓴다.</p>
+  </div>
+  ${period("이탈 곡선: 기준 주간 3/1~3/4의 학습 건 기준, 관측 기간 4일 · 날짜별 재학습률: 후속 4일 2013-03-08~11")}`;
+}
+
+// ---------- 탭 3: 세그먼트·우선 대상
+let curSeg = "습관 형성형";
+function tile(name) {
+  const s = SEG[name], max = Math.max(...DATA.segments.map(x => x.n)), pr = PRIO[name];
+  const tag = pr ? "button" : "div";
+  return `<${tag} class="tile${pr ? " prio" : ""}"${pr ? ` data-seg="${name}" type="button" aria-label="${name} 상세 보기"` : ""}${tipAttr(`${name} · ${n0(s.n)}명 · 사용자 ${p1(s.user_pct)} · 학습량 ${p1(s.word_pct)} · 복귀율 ${p1(s.ret)}`)}>
+    <span class="nm">${name}${pr ? `<span class="badge">${pr}순위</span>` : ""}</span>
+    <span class="cnt">${n0(s.n)}<small style="font-size:13px;font-weight:800;color:var(--ink-3)">명</small></span>
+    <span class="rule">${RULES[name]}</span>
+    <span class="bar"><i style="width:${(s.n / max * 100).toFixed(1)}%"></i></span></${tag}>`;
+}
+function pairBars(p) {
+  const row = (lab, v, n, on) => `<div${tipAttr(`${lab} · ${n0(n)}명 · ${p1(v)}`)} style="display:grid;grid-template-columns:78px 1fr 52px;gap:8px;align-items:center;font-size:12.5px"><span>${lab}</span><span style="height:16px;border-radius:4px;background:var(--surface-2);overflow:hidden"><i style="display:block;height:100%;width:${v}%;background:${on ? "var(--green)" : "var(--muted-bar)"};border-radius:4px"></i></span><b style="font-family:var(--font-num);text-align:right;font-size:14px">${v.toFixed(1)}%</b></div>`;
+  return `<div style="display:grid;gap:6px;padding-block:10px;border-top:1px solid var(--line)">
+    <div style="display:flex;justify-content:space-between;gap:8px;font-size:13px;font-weight:700"><span${p.detail ? tipAttr(p.detail) : ""}>${p.label}</span><span style="font-family:var(--font-num);color:var(--green-ink);white-space:nowrap">${pp(p.a - p.b)}</span></div>
+    ${row(p.a_label, p.a, p.a_n, true)}${row(p.b_label, p.b, p.b_n, false)}</div>`;
+}
+function alertCard(name) {
+  const a = ALERT[name], on = name === curSeg;
+  return `<button type="button" class="kpi acard" data-seg="${name}" aria-pressed="${on}">
+    <span class="lab">${name}<span class="badge">${PRIO[name]}순위</span></span>
+    <span class="val">${n0(a.n)}<small>명</small></span>
+    <span class="foot">${a.cond}</span>
+    <span class="meta"><span><b>개입 시점</b> ${DATA.deep[name].timing}</span><span><b>갈리는 지점</b> ${a.split}</span></span>
+    <span class="plan"><span><b>메시지 방향</b> ${PLAN[name].msg}</span><span><b>목표 지표</b> ${PLAN[name].metric}</span><span${tipAttr(PLAN[name].tip)}><b>기준선(세그먼트 전체)</b> <span class="bv">${p1(PLAN[name].base)}</span></span><span class="verdict no">효과 미확인 · 실험 필요</span></span></button>`;
+}
+function shareBars() {
+  const C = DATA.concentration, top = ["꾸준형", "습관 형성형", "멈춤-몰입형"];
+  const order = [...top, ...DATA.segments.map(s => s.name).filter(n => !top.includes(n))];
+  const bar = (key, lab) => `<div style="display:grid;grid-template-columns:88px 1fr;gap:10px;align-items:center;font-size:12.5px"><span style="font-weight:700;color:var(--ink-3)">${lab}</span><span style="display:flex;height:22px;border-radius:6px;overflow:hidden;gap:2px">${order.map(n => { const s = SEG[n], on = top.includes(n); return `<i${tipAttr(`${n} · ${lab} ${p1(s[key])}`)} style="display:block;width:${s[key]}%;background:${on ? "var(--green)" : "var(--muted-bar-2)"}"></i>`; }).join("")}</span></div>`;
+  return `<div style="display:grid;gap:8px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line)">
+    <div style="font-size:14px;font-weight:800">사용자 ${Math.round(C.user_pct)}%가 학습량 ${Math.round(C.word_pct)}%를 만든다 <span style="font-size:12.5px;font-weight:500;color:var(--ink-3)">초록: 꾸준형·습관 형성형·멈춤-몰입형</span></div>
+    ${bar("user_pct", "사용자 비중")}${bar("word_pct", "학습량 비중")}</div>`;
+}
+function tabSegments() {
+  const d = DATA.deep[curSeg];
+  const rowsT = DATA.segments.map(s => `<tr class="${PRIO[s.name] ? "prio" : ""}"><td>${s.name}${PRIO[s.name] ? `<span class="badge">${PRIO[s.name]}</span>` : ""}</td><td class="num">${n0(s.n)}</td><td class="num">${p1(s.user_pct)}</td><td class="num">${p1(s.word_pct)}</td><td class="num">${p1(s.ret)}</td></tr>`).join("");
+  const extra = {
+    "습관 형성형": `<p class="note">3/7 학습자 중 3/6에도 학습한 사람(연속) ${p1(DATA.habit_consec.a)}, 하지 않은 사람 ${p1(DATA.habit_consec.b)}.</p>`,
+    "최근 단발형": `<p class="note">첫날 학습량은 알림 대상을 고르는 기준이 아니라 메시지를 고르는 참고로만 쓴다.</p>`,
+    "멈춤-꾸준형": `<p class="note">돌아오는 시점이 흩어져 있어 다음 날 복귀가 아니라 4일 안 복귀로 본다.</p>`
+  }[curSeg];
+  return `
+  ${head(`우선 대상은 <strong>습관 형성형, 최근 단발형, 멈춤-꾸준형</strong>이며, 오늘 알림 대상은 <strong>${n0(ALERT_TOTAL)}명</strong>이다.`,
+    "초록 타일이나 알림 카드를 누르면 아래에 그 세그먼트의 상세가 열립니다.")}
+  <div class="card"><h2>세그먼트 맵</h2><p class="sub">6개 합계 ${n0(DATA.segments.reduce((a, s) => a + s.n, 0))}명 = 주간 학습자 전체 · 위 줄은 학습일 수로, 아래 줄은 학습일 3일 이상인지와 1~2일이면 학습량(109문항)으로 나눴다 · 막대 길이는 인원</p>
+    <div class="tiles">
+            <span class="rh">최근 이틀 학습</span>${tile("꾸준형")}${tile("습관 형성형")}${tile("최근 단발형")}
+      <span class="rh">최근 이틀 미학습 (멈춤)</span>${tile("멈춤-꾸준형")}${tile("멈춤-몰입형")}${tile("멈춤-저활동형")}
+    </div>
+    ${shareBars()}
+    ${more("세그먼트별 수치 표", `<div class="tbl"><table><thead><tr><th>세그먼트</th><th>인원</th><th>사용자 비중</th><th>학습량 비중</th><th>복귀율</th></tr></thead><tbody>${rowsT}</tbody></table></div>
+      <p class="note">복귀율은 분류가 제대로 됐는지 보는 점검용이며 우선순위 기준이 아니다. "멈춤"은 이탈이 아니다. 멈춤-꾸준형도 ${p1(SEG["멈춤-꾸준형"].ret)}가 후속 4일에 돌아왔다.</p>`)}
+  </div>
+  ${migrationCard()}
+  <div class="kgroup">
+    <span class="glabel">오늘 알림 대상 <span class="chip">3월 8일 기준</span></span>
+    <div class="grid g-alert">
+      <div class="kpi hero"><span class="lab">오늘 알림 대상</span><span class="val">${n0(ALERT_TOTAL)}<small>명</small></span><span class="foot">우선 세 유형 합계 · 3월 8일 기준</span></div>
+      ${Object.keys(ALERT).map(alertCard).join("")}
+    </div>
+    <p class="howto">알림 조건(어제 학습, 이틀 쉼 등)에 오늘 맞는 사람만 셌다. 우선 대상 전체(습관 형성형 학습일 3일 ${n0(DATA.deep["습관 형성형"].target_n)}명, 멈춤-꾸준형 주 4일 경험 ${n0(DATA.deep["멈춤-꾸준형"].target_n)}명)에는 이미 알림일이 지난 사람이 섞여 있다.</p>
+  </div>
+  <div class="card" id="detail"><h2>${WHY[curSeg].title}</h2><p class="sub">${curSeg} 안에서 갈리는 지점 · 같은 세그먼트 안의 비교 · 막대 축 0~100% 고정</p>
+    ${d.pairs.slice(0, 2).map(pairBars).join("")}
+    <p class="concl">${WHY[curSeg].concl((d.pairs[0].a / d.pairs[0].b).toFixed(1), d.pairs[0])}</p>
+    ${more(`비교 ${d.pairs.length - 2}개 더 보기`, d.pairs.slice(2).map(pairBars).join("") + extra)}
+    <p class="note caution">모두 관찰된 연관성이다. "이런 사람이 더 돌아왔다"는 뜻이지 "이렇게 하면 돌아온다"는 뜻은 아니다.</p></div>
+  ${experimentCard()}`;
+}
+
+// ---------- 탭 3: 세그먼트 이동표 (운영용 정의로 3/8과 3/12에 각각 분류)
+function migrationCard() {
+  const M = DATA.migration, goal = M.cols.indexOf("꾸준형");
+  const h = M.rows.find(r => r.from === "습관 형성형");
+  const label = c => c === "최근 7일 학습 없음" ? "최근 7일 학습 없음" : c;
+  const fromLabel = c => c === "최근 7일 학습 없음" ? "새로 등장 (3/1~3/7 기록 없음)" : c;
+  const cell = (v, n, from, to) => {
+    const a = Math.min(85, v * 1.1), hi = v >= 45;
+    return `<td class="c${hi ? " hi" : ""}"${tipAttr(`${fromLabel(from)} → ${label(to)} · ${n0(n)}명 (${p1(v)})`)} style="background:color-mix(in srgb, var(--green) ${a.toFixed(0)}%, transparent)">${v ? v.toFixed(1) : "–"}</td>`;
+  };
+  const rows = M.rows.map(r => `<tr class="${PRIO[r.from] ? "prio" : ""}"><td>${fromLabel(r.from)}${PRIO[r.from] ? `<span class="badge">${PRIO[r.from]}</span>` : ""}</td><td class="n">${n0(r.n)}</td>${r.pct.map((v, k) => cell(v, r.to[k], r.from, M.cols[k])).join("")}</tr>`).join("");
+  return `<div class="card"><h2>4일 뒤 습관 형성형의 ${p1(h.pct[goal])}(${n0(h.to[goal])}명)가 꾸준형으로 올라갔다</h2>
+    <p class="sub">${M.from_d} 기준 세그먼트(최근 7일 3/1~3/7) → ${M.to_d} 기준 세그먼트(최근 7일 3/5~3/11) · 행마다 합계 100% · 알림 없이 일어난 이동</p>
+    <div class="tbl"><table class="mig"><thead><tr><th>${M.from_d} 세그먼트</th><th>인원</th>${M.cols.map((c, k) => `<th class="${k === goal ? "goal" : ""}">${k === goal ? "꾸준형 (북극성)" : label(c)}</th>`).join("")}</tr></thead><tbody>${rows}</tbody></table></div>
+    <p class="note">운영용 정의(노션 4-5)로 기준일마다 최근 7일을 다시 분류했다. 실험에서는 "대조군보다 꾸준형으로 더 많이 올라갔는가"를 보조 지표로 볼 수 있다. 관찰된 이동이며 개입 효과가 아니다.</p></div>`;
+}
+
+// ---------- 탭 3: 실험 카드 (가설, 대상, 성공 지표, 대조군 예상치, 필요 기간, 실험 후 채울 칸)
+function experimentCard() {
+  const E = DATA.exp_plan;
+  const box = r => {
+    const P = PLAN[r.seg];
+    return `<div class="xcard"><h3>${r.seg}<span class="badge">${PRIO[r.seg]}순위</span></h3>
+      <p class="hyp"><b>가설</b> ${P.hyp}</p>
+      <dl>
+        <dt>대상</dt><dd>${r.target} <small>하루 ${n0(r.n)}명</small></dd>
+        <dt>성공 지표</dt><dd>${r.metric}</dd>
+        <dt>대조군 예상치</dt><dd${tipAttr("알림 없이 이 대상 집단에서 관측된 값. 알림 카드의 기준선(세그먼트 전체)과 대상이 달라 값이 다르다")}>${p1(r.base)} <small>실제 알림 대상 기준</small></dd>
+        <dt>하루 치로 구분 가능한 차이</dt><dd${tipAttr("하루 대상만으로 실험했을 때 우연과 구분할 수 있는 최소 차이(검출 가능 최소 효과)")}>${r.mde50.toFixed(1)}%p 이상 <small>50:50 배정 · 대조군 10%면 ${r.mde10.toFixed(1)}%p</small></dd>
+        <dt>+${E.lift}%p 확인 기간</dt><dd>${r.days}일 <small>매일 비슷한 인원이 대상이 된다고 가정</small></dd>
+      </dl>
+      <div class="funnel" aria-label="실험 후 채울 알림 성과">
+        <div><span>발송</span><b>–</b></div><div><span>열람</span><b>–</b></div><div><span>${r.metric.split(" ")[0]} 달성</span><b>–</b></div>
+      </div>
+      <span class="verdict no">실험 전 · 결과는 실행 후 기록</span></div>`;
+  };
+  return `<div class="card"><h2>실험 설계: 알림 효과는 대조군과 비교해 확인한다</h2>
+    <p class="sub">사용자 단위 무작위 배정 · 양측 α ${E.alpha}, 검정력 ${E.power * 100}% · 하루 대상 수가 3월 8일과 비슷하다고 가정</p>
+    <div class="xgrid">${E.rows.map(box).join("")}</div>
+    <p class="note">대조군 예상치는 실제 알림 대상 집단의 값이라 위 알림 카드의 기준선(세그먼트 전체)과 다르다. 효과 판단에는 이 값이 아니라 같은 기간 대조군의 실제 값을 쓴다. 발송·열람 칸은 알림 기록이 생기면 채운다.</p></div>`;
+}
+
+// ---------- 라우팅
+const RENDER = {summary: tabSummary, timing: tabTiming, segments: tabSegments};
+let cur = "summary";
+// 화면 상태(탭, 세그먼트 필터, 탭 3 세그먼트, 이력별 보기)를 URL에 담아 링크로 같은 화면을 연다. 예: #segments?s=멈춤-꾸준형
+function stateHash() {
+  const q = new URLSearchParams();
+  if (curFilter !== "전체") q.set("f", curFilter);
+  if (curSeg !== "습관 형성형") q.set("s", curSeg);
+  if (showHist) q.set("h", "1");
+  const s = q.toString();
+  return "#" + cur + (s ? "?" + s : "");
+}
+function readHash() {
+  const [id, qs] = decodeURIComponent(location.hash.slice(1)).split("?");
+  const q = new URLSearchParams(qs || "");
+  const f = q.get("f"), s = q.get("s");
+  curFilter = f && SEG[f] ? f : "전체";
+  curSeg = s && PRIO[s] ? s : "습관 형성형";
+  showHist = q.get("h") === "1";
+  return RENDER[id] ? id : "summary";
+}
+function show(id) {
+  if (!RENDER[id]) id = "summary";
+  cur = id;
+  document.getElementById("main").innerHTML = `<section class="panel" role="tabpanel" aria-labelledby="tab-${id}">${RENDER[id]()}</section>`;
+  tabsEl.querySelectorAll("button").forEach(b => b.setAttribute("aria-selected", String(b.dataset.tab === id)));
+  const T = TABS.find(x => x.id === id);
+  document.getElementById("pageTitle").textContent = T.name;
+  document.getElementById("pageSub").textContent = T.sub;
+  document.title = T.name + " | 듀오링고 학습 유지 현황";
+  try { history.replaceState(null, "", stateHash()); } catch (e) {}
+}
+document.getElementById("copyLink").addEventListener("click", e => {
+  const btn = e.currentTarget, url = location.href, done = t => { btn.textContent = t; setTimeout(() => { btn.textContent = "현재 화면 링크 복사"; }, 1800); };
+  const fallback = () => { const ta = document.createElement("textarea"); ta.value = url; document.body.appendChild(ta); ta.select(); let ok = false; try { ok = document.execCommand("copy"); } catch (x) {} ta.remove(); done(ok ? "복사했습니다" : "주소창의 링크를 복사하세요"); };
+  if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(url).then(() => done("복사했습니다"), fallback); else fallback();
+});
+document.getElementById("main").addEventListener("click", e => {
+  const f = e.target.closest("[data-filter]"); if (f) { curFilter = f.dataset.filter; show("summary"); document.getElementById("f-" + curFilter)?.focus(); return; }
+  const s = e.target.closest("[data-seg]");
+  if (s) {
+    const fromTile = s.classList.contains("tile"), fromLink = s.tagName === "A";
+    if (fromLink) e.preventDefault();
+    curSeg = s.dataset.seg; show("segments");
+    if (fromLink) window.scrollTo({top: 0, behavior: "auto"});
+    if (fromTile) document.getElementById("detail")?.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start"});
+    return;
+  }
+  if (e.target.closest("#histToggle")) { showHist = !showHist; show("timing"); }
+});
+// ---------- 툴팁
+const tip = document.getElementById("tip");
+document.addEventListener("pointermove", e => {
+  const el = e.target.closest && e.target.closest("[data-tip]");
+  if (!el) { tip.classList.remove("on"); return; }
+  tip.textContent = el.getAttribute("data-tip");
+  const x = Math.min(e.clientX + 14, window.innerWidth - tip.offsetWidth - 8), y = Math.min(e.clientY + 14, window.innerHeight - tip.offsetHeight - 8);
+  tip.style.left = x + "px"; tip.style.top = y + "px"; tip.classList.add("on");
+});
+document.addEventListener("pointerleave", () => tip.classList.remove("on"));
+
+// 화면에 쓰는 숫자끼리 서로 맞는지 브라우저에서 다시 확인한다 (컬리의 주문·배송·출고 건수 대조와 같은 방식)
+function checksHtml() {
+  const K = DATA.kpi, sum = a => a.reduce((x, y) => x + y, 0);
+  const C = [
+    ["6개 세그먼트 인원 합계 = 주간 학습자", sum(DATA.segments.map(s => s.n)) === K.B1],
+    ["학습일 1~7일 인원 합계 = 주간 학습자", sum(DATA.ret_by_days.map(r => r.n)) === K.B1],
+    ["학습일 4일 이상 인원 합계 = 북극성 지표", sum(DATA.ret_by_days.filter(r => r.days >= 4).map(r => r.n)) === K.N1],
+    ["복귀자 + 이탈 위험 = 주간 학습자 (복귀율 일치)", Math.abs((K.B1 - K.O3_n) / K.B1 * 100 - K.O1) < 0.05],
+    ["운영용 3/8 북극성 = 분석용 북극성", DATA.ops_nsm[0].n === K.N1],
+    ["이동표 행 합계 = 3/8 세그먼트 인원", DATA.migration.rows.slice(0, 6).every((r, i) => sum(r.to) === r.n && r.n === DATA.segments[i].n)],
+    ["실험 대상 인원 = 오늘 알림 대상 카드", DATA.exp_plan.rows.every(r => r.n === ALERT[r.seg].n)]
+  ];
+  const ok = C.filter(c => c[1]).length;
+  return `<details><summary><strong>점검</strong> 화면 숫자 대조 ${ok}/${C.length} 통과${ok === C.length ? "" : " · 확인 필요"}</summary><ul class="checks">${C.map(([t, v]) => `<li class="${v ? "" : "bad"}">${t}</li>`).join("")}</ul></details>`;
+}
+document.getElementById("foot").innerHTML = `
+  <span><strong>데이터</strong> Settles &amp; Meeder(2016) 듀오링고 학습 기록, 2013-02-28~03-12. 중복 81행 제거. 가입일·유입·결제·알림 정보 없음. 날짜는 UTC 기준.</span>
+  <span><strong>빌드</strong> ${DATA.meta.built || ""} · 노션 「듀오링고 이탈 방지 분석」(${DATA.meta.notion_edited || ""} 수정본)과 ${DATA.checks}개 항목 대조 통과</span>
+  ${checksHtml()}
+  <span><strong>해석</strong> 모든 결과는 관찰된 연관성이다. "멈춤"과 "이탈 위험"은 영구 이탈이 아니다. 알림 대상은 실제 발송 기록이 아니라 알림 조건에 맞는 인원이다.</span>`;
+
+window.addEventListener("hashchange", () => { if (decodeURIComponent(location.hash) !== decodeURIComponent(stateHash())) show(readHash()); });
+show(readHash());
+</script>

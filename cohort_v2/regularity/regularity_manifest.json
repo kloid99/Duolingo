@@ -1,0 +1,84 @@
+{
+  "analysis_date": "2026-10-13",
+  "workbook_validation": {
+    "model_rows_verified": 5,
+    "quartile_rows_verified": 4,
+    "stratified_comparison_verified": true,
+    "coverage_rows_verified": 12,
+    "formula_errors": 0,
+    "both_sheets_visually_reviewed": true
+  },
+  "analysis_validation": {
+    "sampled_users_interval_reconstruction": 150,
+    "sampled_metric_rows": 300,
+    "independent_BFGS_models": 5,
+    "max_coefficient_difference": 9.869108377746905e-10,
+    "missing_cv_preserved": true,
+    "source_cohort_unchanged": true,
+    "quartiles_reconciled": true
+  },
+  "source_hashes": {
+    "user_retention_cohort.csv": "1070c769c8f1d6bc1914e223c19469b9ceb127c929257ba05a2ba1d80fc57bb7",
+    "baseline_unique_timestamps.csv": "0f33a2c0bd55fa1a2bc193c404f1b16f6a5f1cb99fbda901f4d8e2c06f5b8d00",
+    "raw_csv": "609b4a602665b1cf5fa693b1ebfcd1d5f9a2b7bad623e3d935436abcc7b74c21"
+  },
+  "files": {
+    "adjusted_models.csv": {
+      "bytes": 1267,
+      "sha256": "3d7bd49b411dd2dc99a6248bde040b0c79bf11fb57efd5e1a13d9801e1645d45"
+    },
+    "analysis_validation.json": {
+      "bytes": 274,
+      "sha256": "4bcc7ec03671ffe0cbdfe8047deb9075d473f738cdbce2dd7038afc4e2d68ff7"
+    },
+    "baseline_unique_timestamps.csv": {
+      "bytes": 10220769,
+      "sha256": "0f33a2c0bd55fa1a2bc193c404f1b16f6a5f1cb99fbda901f4d8e2c06f5b8d00"
+    },
+    "build_regularity_workbook.mjs": {
+      "bytes": 7828,
+      "sha256": "6aac06eb339081cd54af0b7e7ecd01b60311f7be5276681036b7aac12f94f557"
+    },
+    "coverage.csv": {
+      "bytes": 538,
+      "sha256": "3bb8478555c3fcedc682b0fc26e962295ebaf922b864d22a3ee147563bcb2377"
+    },
+    "habit_quartiles.csv": {
+      "bytes": 522,
+      "sha256": "62f05bbb786be130e3d2776e5799e6fea9fbf69ef7aa668f50d626a015213995"
+    },
+    "regularity_results.json": {
+      "bytes": 11364,
+      "sha256": "ea109b68c7a7f7c8c91d42b6b47f28fa048e44f9b1729235aea1b774b60caff4"
+    },
+    "user_regularity.csv": {
+      "bytes": 17640093,
+      "sha256": "c2978b680d76e2e4a65b29b0f107e7002fe95ab1407c16a0baaa87609a2a20e8"
+    },
+    "verify_regularity.py": {
+      "bytes": 3201,
+      "sha256": "f621c9d6ac6cbb6a62435dc838d838140e8022537cb7292ae90b15531cba3149"
+    },
+    "verify_regularity_workbook.py": {
+      "bytes": 3040,
+      "sha256": "3ad105237599d50898783e27893ad62043fc33bc042b05ef0b76f353e35a9225"
+    },
+    "within_strata_comparison.csv": {
+      "bytes": 6533,
+      "sha256": "884fbb534c7d7645156a6da9e917b35e6564797cceacc8b4e4c844c80336446e"
+    },
+    "workbook_error_scan.json": {
+      "bytes": 60,
+      "sha256": "acc0111e19cf44d2753fc9ecd164bf1b27fbd65597463a25cf48bd1c65e90146"
+    },
+    "복습_규칙성_분석_결과와해석.md": {
+      "bytes": 8646,
+      "sha256": "0f0905eb914db2ce21515776e9a0095cc4f76a097b6108dd0ee504ea187c32fb"
+    },
+    "복습_규칙성과_반복학습.xlsx": {
+      "bytes": 10337,
+      "sha256": "6d215897d6fed2f2711aa75b025f1fa7cf12eb2dbdade68dd06ffb5cfe560949"
+    }
+  },
+  "analysis_script_sha256": "1e253316975baf3fa67a7ca65ac30277f44fedbe260eb1b4b974492fe8fd0a9a"
+}

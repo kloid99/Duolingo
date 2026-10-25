@@ -1,0 +1,42 @@
+[
+  {
+    "gap_bin": "1분~1시간 미만",
+    "records": 3005790,
+    "users": 49812,
+    "attempts": 5420208,
+    "correct": 4973481,
+    "accuracy": 0.917581207215664
+  },
+  {
+    "gap_bin": "1시간~1일 미만",
+    "records": 1117783,
+    "users": 32595,
+    "attempts": 2030597,
+    "correct": 1832830,
+    "accuracy": 0.90260647484459
+  },
+  {
+    "gap_bin": "1~3일 미만",
+    "records": 1118675,
+    "users": 34430,
+    "attempts": 2071636,
+    "correct": 1866562,
+    "accuracy": 0.9010086714075253
+  },
+  {
+    "gap_bin": "3~7일 미만",
+    "records": 930512,
+    "users": 34220,
+    "attempts": 1745966,
+    "correct": 1568332,
+    "accuracy": 0.8982603326754358
+  },
+  {
+    "gap_bin": "7일 이상",
+    "records": 1583286,
+    "users": 49286,
+    "attempts": 2769595,
+    "correct": 2462568,
+    "accuracy": 0.8891437195691066
+  }
+]

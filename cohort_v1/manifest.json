@@ -1,0 +1,47 @@
+{
+  "stage_scope": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "data_checks_passed": 22,
+  "data_checks_total": 22,
+  "saved_csv_reconciliation": "passed",
+  "saved_xlsx_formula_errors": 0,
+  "saved_xlsx_formula_count": 111,
+  "files": {
+    "코호트_분석_1-4단계_정여진기준.xlsx": {
+      "bytes": 11548,
+      "sha256": "48d79771bb999c5064cb653ca25318d5254212f3ac35d6744c544e37203f6e2f"
+    },
+    "user_cohort.csv": {
+      "bytes": 10428464,
+      "sha256": "59cdad804a71ccd3013880baf904da5801e5359d592ee47c54e510ce60fcec1f"
+    },
+    "user_daily_activity.csv": {
+      "bytes": 22020571,
+      "sha256": "6cbe8d7c9d53bd755ff261baa7f1bfb3d70380113b325341bd135134ec7e5592"
+    },
+    "segment_cohort_summary.csv": {
+      "bytes": 1857,
+      "sha256": "9064796696904f3e03aaaedf0fd002f189f8c1531e0d20431a7e301b1203256a"
+    },
+    "segment_daily_activity.csv": {
+      "bytes": 1562,
+      "sha256": "19380535a093fc156da8f2c4d4c76c5dff1a4a092be7a687f4389c7743d53a93"
+    },
+    "reference_reproduction.csv": {
+      "bytes": 503,
+      "sha256": "e957e6541d5607f55563f1763aa2d4f9444bdcd7f9d97a5ef51f3e71cfdf56ad"
+    },
+    "results.json": {
+      "bytes": 12952,
+      "sha256": "74313cdaff23dccb4ca84c5556e4119bd4241b1e55560d3d4019155c19f9ad15"
+    },
+    "analyze_cohort.py": {
+      "bytes": 16334,
+      "sha256": "77a093eec9dedd7b5d7ec10e8320e3e9250dad716535a5eb3dd6fea0389cfb69"
+    }
+  }
+}

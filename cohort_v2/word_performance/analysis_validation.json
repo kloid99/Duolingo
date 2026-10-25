@@ -1,0 +1,13 @@
+{
+  "sample_users": 200,
+  "independent_pair_rows": 3216,
+  "user_formula_reconciled": true,
+  "missing_scores_preserved": true,
+  "logistic_models_BFGS": 4,
+  "logistic_max_error": 1.199288874806359e-08,
+  "paired_models_SVD": 2,
+  "paired_coefficient_max_error": 1.0084294510548375e-13,
+  "cluster_se_max_error": 1.5027042110649091e-16,
+  "coverage_reconciled": true,
+  "source_cohort_unchanged": true
+}

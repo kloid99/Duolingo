@@ -1,0 +1,401 @@
+{
+  "baseline": "2013-03-01..07 UTC",
+  "followup": "2013-03-08..11 UTC",
+  "outcome": "4일 중 2일 이상 학습",
+  "metric": "간격의 표본 표준편차 / 평균; 낮을수록 간격 변동이 작음",
+  "source_hashes": {
+    "user_retention_cohort.csv": "1070c769c8f1d6bc1914e223c19469b9ceb127c929257ba05a2ba1d80fc57bb7",
+    "baseline_unique_timestamps.csv": "0f33a2c0bd55fa1a2bc193c404f1b16f6a5f1cb99fbda901f4d8e2c06f5b8d00",
+    "raw_csv": "609b4a602665b1cf5fa693b1ebfcd1d5f9a2b7bad623e3d935436abcc7b74c21"
+  },
+  "coverage": [
+    {
+      "definition": "30min",
+      "segment": "꾸준형",
+      "users": 8882,
+      "eligible_users": 8844,
+      "excluded_users": 38
+    },
+    {
+      "definition": "30min",
+      "segment": "멈춤-꾸준형",
+      "users": 3627,
+      "eligible_users": 2405,
+      "excluded_users": 1222
+    },
+    {
+      "definition": "30min",
+      "segment": "멈춤-몰입형",
+      "users": 9303,
+      "eligible_users": 860,
+      "excluded_users": 8443
+    },
+    {
+      "definition": "30min",
+      "segment": "멈춤-저활동형",
+      "users": 30670,
+      "eligible_users": 121,
+      "excluded_users": 30549
+    },
+    {
+      "definition": "30min",
+      "segment": "습관 형성형",
+      "users": 14583,
+      "eligible_users": 4100,
+      "excluded_users": 10483
+    },
+    {
+      "definition": "30min",
+      "segment": "최근 단발형",
+      "users": 15402,
+      "eligible_users": 0,
+      "excluded_users": 15402
+    },
+    {
+      "definition": "timestamp",
+      "segment": "꾸준형",
+      "users": 8882,
+      "eligible_users": 8882,
+      "excluded_users": 0
+    },
+    {
+      "definition": "timestamp",
+      "segment": "멈춤-꾸준형",
+      "users": 3627,
+      "eligible_users": 3391,
+      "excluded_users": 236
+    },
+    {
+      "definition": "timestamp",
+      "segment": "멈춤-몰입형",
+      "users": 9303,
+      "eligible_users": 3930,
+      "excluded_users": 5373
+    },
+    {
+      "definition": "timestamp",
+      "segment": "멈춤-저활동형",
+      "users": 30670,
+      "eligible_users": 1019,
+      "excluded_users": 29651
+    },
+    {
+      "definition": "timestamp",
+      "segment": "습관 형성형",
+      "users": 14583,
+      "eligible_users": 10633,
+      "excluded_users": 3950
+    },
+    {
+      "definition": "timestamp",
+      "segment": "최근 단발형",
+      "users": 15402,
+      "eligible_users": 0,
+      "excluded_users": 15402
+    }
+  ],
+  "quartiles": [
+    {
+      "cv_group": "Q1 낮은 변동",
+      "users": 2659,
+      "repeat_users": 731,
+      "cv_min": 0.052004237588689946,
+      "cv_max": 1.6367400041754958,
+      "active_days_mean": 2.7450169236555095,
+      "words_median": 141.0,
+      "sessions_median": 5.0,
+      "repeat_rate": 0.27491538172245206
+    },
+    {
+      "cv_group": "Q2",
+      "users": 2658,
+      "repeat_users": 647,
+      "cv_min": 1.63771041829829,
+      "cv_max": 1.9871608218081462,
+      "active_days_mean": 2.3615500376222722,
+      "words_median": 153.0,
+      "sessions_median": 5.0,
+      "repeat_rate": 0.24341610233258087
+    },
+    {
+      "cv_group": "Q3",
+      "users": 2658,
+      "repeat_users": 726,
+      "cv_min": 1.987262577274376,
+      "cv_max": 2.5710556845282606,
+      "active_days_mean": 2.4345372460496613,
+      "words_median": 230.0,
+      "sessions_median": 8.0,
+      "repeat_rate": 0.27313769751693
+    },
+    {
+      "cv_group": "Q4 높은 변동",
+      "users": 2658,
+      "repeat_users": 783,
+      "cv_min": 2.571204542269904,
+      "cv_max": 10.48294757346756,
+      "active_days_mean": 2.419864559819413,
+      "words_median": 387.0,
+      "sessions_median": 15.0,
+      "repeat_rate": 0.2945823927765237
+    }
+  ],
+  "models": [
+    {
+      "model": "고유 시각 4회 이상 · 미보정",
+      "n": 10633,
+      "events": 2887,
+      "adjusted": false,
+      "odds_ratio": 1.0890554753784372,
+      "ci_low": 1.0425509765643626,
+      "ci_high": 1.1376343748295676,
+      "p": 0.00012738109296578544,
+      "logcv_sd": 0.25181794248879746,
+      "cv_q25": 1.6367400041754956,
+      "cv_q75": 2.571055684528261,
+      "iterations": 5,
+      "condition_number": 1.0000000000000004,
+      "coefficients": [
+        {
+          "term": "intercept",
+          "beta": -0.9886144599598846,
+          "robust_se": 0.021842852209568647
+        },
+        {
+          "term": "log1p_cv_per_sd",
+          "beta": 0.08531078423134084,
+          "robust_se": 0.02226582360551338
+        }
+      ]
+    },
+    {
+      "model": "고유 시각 4회 이상 · 보정",
+      "n": 10633,
+      "events": 2887,
+      "adjusted": true,
+      "odds_ratio": 0.7048511382291108,
+      "ci_low": 0.6476533167464993,
+      "ci_high": 0.7671004134721874,
+      "p": 5.484080210950751e-16,
+      "logcv_sd": 0.25181794248879746,
+      "cv_q25": 1.6367400041754956,
+      "cv_q75": 2.571055684528261,
+      "iterations": 6,
+      "condition_number": 6.346876988855524,
+      "coefficients": [
+        {
+          "term": "intercept",
+          "beta": -0.8681431769165707,
+          "robust_se": 0.044873639996751535
+        },
+        {
+          "term": "log1p_cv_per_sd",
+          "beta": -0.34976864991354367,
+          "robust_se": 0.043179916350997334
+        },
+        {
+          "term": "active_days_3",
+          "beta": 0.11506290367015644,
+          "robust_se": 0.06424161831949994
+        },
+        {
+          "term": "recency_2",
+          "beta": -0.580589252685186,
+          "robust_se": 0.049249570431351794
+        },
+        {
+          "term": "log1p_words_seen",
+          "beta": -0.014900741460506354,
+          "robust_se": 0.037249177020242316
+        },
+        {
+          "term": "log1p_n_sessions",
+          "beta": 0.5738474949918053,
+          "robust_se": 0.05256194227930169
+        },
+        {
+          "term": "first_hour",
+          "beta": 0.05302844859175731,
+          "robust_se": 0.027264786541739368
+        }
+      ],
+      "p_holm": 2.1936320843803006e-15
+    },
+    {
+      "model": "고유 시각 6회 이상 · 보정",
+      "n": 7391,
+      "events": 2218,
+      "adjusted": true,
+      "odds_ratio": 0.6880700423209282,
+      "ci_low": 0.6280241685764988,
+      "ci_high": 0.7538569482328048,
+      "p": 1.0168430334495921e-15,
+      "logcv_sd": 0.2259951476038411,
+      "cv_q25": 1.8688768322671545,
+      "cv_q75": 2.8116541268053363,
+      "iterations": 5,
+      "condition_number": 5.909205298962501,
+      "coefficients": [
+        {
+          "term": "intercept",
+          "beta": -0.6739065557493382,
+          "robust_se": 0.05460325823425039
+        },
+        {
+          "term": "log1p_cv_per_sd",
+          "beta": -0.3738646405316184,
+          "robust_se": 0.046588604917581884
+        },
+        {
+          "term": "active_days_3",
+          "beta": 0.03716244030784267,
+          "robust_se": 0.07366976843891544
+        },
+        {
+          "term": "recency_2",
+          "beta": -0.6329766594340344,
+          "robust_se": 0.058021845026091645
+        },
+        {
+          "term": "log1p_words_seen",
+          "beta": -0.09154458759109438,
+          "robust_se": 0.040579031412655876
+        },
+        {
+          "term": "log1p_n_sessions",
+          "beta": 0.5905311727763066,
+          "robust_se": 0.05562233142533877
+        },
+        {
+          "term": "first_hour",
+          "beta": 0.024923556236971803,
+          "robust_se": 0.03204905408904542
+        }
+      ],
+      "p_holm": 3.0505291003487764e-15
+    },
+    {
+      "model": "30분 세션 4회 이상 · 보정",
+      "n": 4100,
+      "events": 1478,
+      "adjusted": true,
+      "odds_ratio": 0.8917976522003153,
+      "ci_low": 0.8250024363782689,
+      "ci_high": 0.9640008530900179,
+      "p": 0.003939507250779499,
+      "logcv_sd": 0.17563541506514982,
+      "cv_q25": 0.842266849358327,
+      "cv_q75": 1.3447257526591354,
+      "iterations": 5,
+      "condition_number": 5.23147379054554,
+      "coefficients": [
+        {
+          "term": "intercept",
+          "beta": -0.3564895155247854,
+          "robust_se": 0.08361809366056712
+        },
+        {
+          "term": "log1p_cv_per_sd",
+          "beta": -0.11451601944493396,
+          "robust_se": 0.03972160745564629
+        },
+        {
+          "term": "active_days_3",
+          "beta": -0.06233085554434131,
+          "robust_se": 0.09436333445479093
+        },
+        {
+          "term": "recency_2",
+          "beta": -0.5530669825814148,
+          "robust_se": 0.07492516605168906
+        },
+        {
+          "term": "log1p_words_seen",
+          "beta": 0.12752752404692008,
+          "robust_se": 0.03656857263933424
+        },
+        {
+          "term": "log1p_n_sessions",
+          "beta": 0.29540367358951974,
+          "robust_se": 0.03883100059182262
+        },
+        {
+          "term": "first_hour",
+          "beta": 0.04272276018560116,
+          "robust_se": 0.04226967697436353
+        }
+      ],
+      "p_holm": 0.003939507250779499
+    },
+    {
+      "model": "30분 세션 대상과 동일인 · 고유 시각 보정",
+      "n": 4100,
+      "events": 1478,
+      "adjusted": true,
+      "odds_ratio": 0.6739363999172124,
+      "ci_low": 0.5840883957166564,
+      "ci_high": 0.7776053666947057,
+      "p": 6.462104539490384e-08,
+      "logcv_sd": 0.2751684742989729,
+      "cv_q25": 1.5246703886854283,
+      "cv_q75": 2.643719735118439,
+      "iterations": 5,
+      "condition_number": 6.900363895310655,
+      "coefficients": [
+        {
+          "term": "intercept",
+          "beta": -0.31568338673004986,
+          "robust_se": 0.0833319820537733
+        },
+        {
+          "term": "log1p_cv_per_sd",
+          "beta": -0.3946195346628512,
+          "robust_se": 0.0730030814572701
+        },
+        {
+          "term": "active_days_3",
+          "beta": -0.10469202779591819,
+          "robust_se": 0.09402944526100039
+        },
+        {
+          "term": "recency_2",
+          "beta": -0.5790864687448838,
+          "robust_se": 0.07487117659035439
+        },
+        {
+          "term": "log1p_words_seen",
+          "beta": 0.07082533483290789,
+          "robust_se": 0.060797571904933324
+        },
+        {
+          "term": "log1p_n_sessions",
+          "beta": 0.5343734666713928,
+          "robust_se": 0.08750364736495149
+        },
+        {
+          "term": "first_hour",
+          "beta": 0.010892848867532966,
+          "robust_se": 0.04256100543531988
+        }
+      ],
+      "p_holm": 1.292420907898077e-07
+    }
+  ],
+  "checks": {
+    "unique_timestamps": true,
+    "baseline_only": true,
+    "baseline_user_count": true,
+    "session_counts_match": true,
+    "active_days_match": true,
+    "first_last_dates_match": true,
+    "all_models_full_rank_and_converged": true,
+    "model_score_near_zero": true
+  },
+  "within_strata": {
+    "strata": 120,
+    "users": 9568,
+    "low_rate": 0.28627441341742316,
+    "high_rate": 0.23381995431146432,
+    "difference_pp": -5.245445910595883
+  }
+}

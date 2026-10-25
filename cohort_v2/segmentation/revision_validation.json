@@ -1,0 +1,71 @@
+{
+  "provided_code_executed": true,
+  "only_supplied_code_change": "source CSV path",
+  "m_quantile_edges": [
+    1.0,
+    24.0,
+    53.0,
+    108.0,
+    239.0,
+    11501.0
+  ],
+  "segment_order": [
+    "꾸준형",
+    "습관 형성형",
+    "최근 단발형",
+    "멈춤-꾸준형",
+    "멈춤-몰입형",
+    "멈춤-저활동형"
+  ],
+  "baseline_users": 82467,
+  "all_previous_baseline_values_match": true,
+  "equal_amount_equal_M": true,
+  "membership_changes_after_name_mapping": 56,
+  "M_score_changed_users": 914,
+  "selected_k": 3,
+  "ARI": 0.6064745610767174,
+  "packages": {
+    "pandas": "3.0.1",
+    "numpy": "2.3.5",
+    "sklearn": "1.9.1"
+  },
+  "source_sha256": "609b4a602665b1cf5fa693b1ebfcd1d5f9a2b7bad623e3d935436abcc7b74c21",
+  "segment_summary": [
+    {
+      "segment": "꾸준형",
+      "users": 8882,
+      "returned_4d_users": 7135.0,
+      "returned_2plus_days_users": 4963.0
+    },
+    {
+      "segment": "습관 형성형",
+      "users": 14583,
+      "returned_4d_users": 7608.0,
+      "returned_2plus_days_users": 3562.0
+    },
+    {
+      "segment": "최근 단발형",
+      "users": 15402,
+      "returned_4d_users": 5006.0,
+      "returned_2plus_days_users": 1862.0
+    },
+    {
+      "segment": "멈춤-꾸준형",
+      "users": 3627,
+      "returned_4d_users": 1658.0,
+      "returned_2plus_days_users": 808.0
+    },
+    {
+      "segment": "멈춤-몰입형",
+      "users": 9303,
+      "returned_4d_users": 2456.0,
+      "returned_2plus_days_users": 841.0
+    },
+    {
+      "segment": "멈춤-저활동형",
+      "users": 30670,
+      "returned_4d_users": 5377.0,
+      "returned_2plus_days_users": 1430.0
+    }
+  ]
+}

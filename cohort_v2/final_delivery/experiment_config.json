@@ -1,0 +1,58 @@
+{
+  "experiment_id": "a1_next_learning_plan_v1",
+  "status": "designed_launch_blocked_pending_validation",
+  "hypothesis": "재개 직후 다음 학습일을 정하는 앱 안 안내가 D1·D2 중 추가 학습 비율을 높이는가",
+  "cohort_rule": "기준 주간 7개 완전 UTC 날짜에 활동 2~3일, 마지막 학습이 그 주간 마지막 두 날짜 중 하나인 고정 습관 형성형",
+  "trigger": "고정 기준 시점 이후 최초 learning_recorded 이벤트, 직전 완전 UTC 날짜 비활동 수 1일 이상",
+  "randomization": "사용자 단위 1:1, 서버의 무작위 순열 블록 4명, 배정 영구 저장, 실험당 최초 1회",
+  "control": "기존 학습 화면",
+  "treatment": "첫 후속 학습 이벤트 확인 뒤 안전한 다음 화면의 다음 학습일 계획 카드 1회. 푸시·메일 추가 없음",
+  "primary_metric": "추가 학습자 / 모든 배정자. D0 다음 두 완전 UTC 날짜 D1·D2에 learning_recorded가 1회 이상",
+  "alpha_two_sided": 0.05,
+  "target_power": 0.8,
+  "planning_mde_absolute": 0.03,
+  "mde_status": "제안서 작성 가정. 사업적 최소 의미 효과로 합의된 값은 아님",
+  "minimum_enrollment_utc_days": 14,
+  "maximum_enrollment_utc_days": 28,
+  "data_lateness_allowance_days": 2,
+  "actual_new_eligible_users_per_day": null,
+  "actual_launch_date": null,
+  "historical_baseline_successes": 1312,
+  "historical_baseline_n": 2880,
+  "outcome_day_offsets": [
+    1,
+    2
+  ],
+  "inference": "양측 pooled 두 비율 z 검정, Newcombe-Wilson 개별 95% 차이 구간, ITT",
+  "decision_rule": "데이터 품질 통과 후 양측 p<0.05 및 양의 차이이면 통계적 개선. 추정 차이>=제안 MDE이고 가드레일 악화 없음이면 후속 확대 검토. 최소 MDE 이상의 효과가 입증된 것은 아님",
+  "reference_method_url": "https://www.statsmodels.org/stable/generated/statsmodels.stats.proportion.power_proportions_2indep.html",
+  "historical_baseline_scope": "2013-03-08/09 최초 재개·직전 비활동 1~2일의 완전 관측 표본 한정",
+  "inactivity_gap_strata": [
+    1,
+    2,
+    "3+"
+  ],
+  "secondary_day_offsets": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "secondary_minimum_active_days": 4,
+  "secondary_metric": "D1~D7 중 4일 이상 유효 서비스 학습 날짜 / 모든 배정자. [D1 00:00,D8 00:00), D8+지연 대기 후 판정",
+  "guardrail_investigation_absolute": 0.01,
+  "guardrail_status": "작성 가정·사업 승인 미확인",
+  "launch_gates": {
+    "service_event_contract_verified": null,
+    "coverage_and_identity_verified": null,
+    "target_baseline_recalibrated": null,
+    "business_mde_approved": null,
+    "guardrail_thresholds_approved": null,
+    "actual_pool_and_inflow_verified": null,
+    "card_usability_and_date_choices_verified": null,
+    "assignment_and_exposure_integration_verified": null
+  }
+}

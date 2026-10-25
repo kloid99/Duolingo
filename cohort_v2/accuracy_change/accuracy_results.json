@@ -1,0 +1,835 @@
+{
+  "analysis_date": "2026-10-13",
+  "early_window": "2013-03-01..03 UTC",
+  "late_window": "2013-03-05..07 UTC",
+  "followup": "2013-03-08..11 UTC",
+  "excluded_middle_day": "2013-03-04",
+  "minimum_attempts_each_window": 20,
+  "coverage": [
+    {
+      "segment": "전체",
+      "baseline_users": 82467,
+      "eligible_users": 15216,
+      "missing_window_users": 63999,
+      "low_volume_users": 3252,
+      "eligible_50_users": 9971
+    },
+    {
+      "segment": "멈춤-몰입형",
+      "baseline_users": 9303,
+      "eligible_users": 733,
+      "missing_window_users": 8487,
+      "low_volume_users": 83,
+      "eligible_50_users": 446
+    },
+    {
+      "segment": "꾸준형",
+      "baseline_users": 8882,
+      "eligible_users": 7769,
+      "missing_window_users": 560,
+      "low_volume_users": 553,
+      "eligible_50_users": 6330
+    },
+    {
+      "segment": "멈춤-꾸준형",
+      "baseline_users": 3627,
+      "eligible_users": 1647,
+      "missing_window_users": 1531,
+      "low_volume_users": 449,
+      "eligible_50_users": 866
+    },
+    {
+      "segment": "멈춤-저활동형",
+      "baseline_users": 30670,
+      "eligible_users": 414,
+      "missing_window_users": 29763,
+      "low_volume_users": 493,
+      "eligible_50_users": 9
+    },
+    {
+      "segment": "습관 형성형",
+      "baseline_users": 14583,
+      "eligible_users": 4653,
+      "missing_window_users": 8256,
+      "low_volume_users": 1674,
+      "eligible_50_users": 2320
+    },
+    {
+      "segment": "최근 단발형",
+      "baseline_users": 15402,
+      "eligible_users": 0,
+      "missing_window_users": 15402,
+      "low_volume_users": 0,
+      "eligible_50_users": 0
+    }
+  ],
+  "groups": [
+    {
+      "segment": "전체",
+      "change_group": "5%p 초과 하락",
+      "n": 2733,
+      "returned": 1644,
+      "repeated": 949,
+      "return_rate": 0.601536772777168,
+      "repeat_rate": 0.3472374679839005,
+      "early_accuracy_mean": 0.9314629351300531,
+      "late_accuracy_mean": 0.8352608884985367,
+      "early_seen_median": 93.0,
+      "late_seen_median": 82.0
+    },
+    {
+      "segment": "전체",
+      "change_group": "±5%p 이내",
+      "n": 9738,
+      "returned": 6812,
+      "repeated": 4365,
+      "return_rate": 0.6995276237420415,
+      "repeat_rate": 0.44824399260628467,
+      "early_accuracy_mean": 0.9155116108568626,
+      "late_accuracy_mean": 0.9160897124220609,
+      "early_seen_median": 144.0,
+      "late_seen_median": 140.0
+    },
+    {
+      "segment": "전체",
+      "change_group": "5%p 초과 상승",
+      "n": 2745,
+      "returned": 1692,
+      "repeated": 950,
+      "return_rate": 0.6163934426229508,
+      "repeat_rate": 0.3460837887067395,
+      "early_accuracy_mean": 0.8385191682106583,
+      "late_accuracy_mean": 0.9332772243087405,
+      "early_seen_median": 85.0,
+      "late_seen_median": 88.0
+    },
+    {
+      "segment": "멈춤-몰입형",
+      "change_group": "5%p 초과 하락",
+      "n": 149,
+      "returned": 51,
+      "repeated": 14,
+      "return_rate": 0.3422818791946309,
+      "repeat_rate": 0.09395973154362416,
+      "early_accuracy_mean": 0.9342576718650518,
+      "late_accuracy_mean": 0.828870302100067,
+      "early_seen_median": 102.0,
+      "late_seen_median": 71.0
+    },
+    {
+      "segment": "멈춤-몰입형",
+      "change_group": "±5%p 이내",
+      "n": 425,
+      "returned": 170,
+      "repeated": 66,
+      "return_rate": 0.4,
+      "repeat_rate": 0.15529411764705883,
+      "early_accuracy_mean": 0.9163149626396232,
+      "late_accuracy_mean": 0.9148973304515675,
+      "early_seen_median": 103.0,
+      "late_seen_median": 96.0
+    },
+    {
+      "segment": "멈춤-몰입형",
+      "change_group": "5%p 초과 상승",
+      "n": 159,
+      "returned": 65,
+      "repeated": 17,
+      "return_rate": 0.4088050314465409,
+      "repeat_rate": 0.1069182389937107,
+      "early_accuracy_mean": 0.8511855487886711,
+      "late_accuracy_mean": 0.9427093101852017,
+      "early_seen_median": 90.0,
+      "late_seen_median": 82.0
+    },
+    {
+      "segment": "꾸준형",
+      "change_group": "5%p 초과 하락",
+      "n": 1139,
+      "returned": 866,
+      "repeated": 578,
+      "return_rate": 0.7603160667251976,
+      "repeat_rate": 0.5074626865671642,
+      "early_accuracy_mean": 0.9267250738079207,
+      "late_accuracy_mean": 0.8377853860353407,
+      "early_seen_median": 135.0,
+      "late_seen_median": 134.0
+    },
+    {
+      "segment": "꾸준형",
+      "change_group": "±5%p 이내",
+      "n": 5481,
+      "returned": 4546,
+      "repeated": 3296,
+      "return_rate": 0.829410691479657,
+      "repeat_rate": 0.6013501185914979,
+      "early_accuracy_mean": 0.9156221084196732,
+      "late_accuracy_mean": 0.9162452458366599,
+      "early_seen_median": 198.0,
+      "late_seen_median": 202.0
+    },
+    {
+      "segment": "꾸준형",
+      "change_group": "5%p 초과 상승",
+      "n": 1149,
+      "returned": 899,
+      "repeated": 601,
+      "return_rate": 0.7824194952132288,
+      "repeat_rate": 0.5230635335073978,
+      "early_accuracy_mean": 0.8357951327848444,
+      "late_accuracy_mean": 0.9254191926726864,
+      "early_seen_median": 128.0,
+      "late_seen_median": 147.0
+    },
+    {
+      "segment": "멈춤-꾸준형",
+      "change_group": "5%p 초과 하락",
+      "n": 369,
+      "returned": 194,
+      "repeated": 98,
+      "return_rate": 0.5257452574525745,
+      "repeat_rate": 0.26558265582655827,
+      "early_accuracy_mean": 0.9208537649628797,
+      "late_accuracy_mean": 0.8196571682337876,
+      "early_seen_median": 117.0,
+      "late_seen_median": 53.0
+    },
+    {
+      "segment": "멈춤-꾸준형",
+      "change_group": "±5%p 이내",
+      "n": 977,
+      "returned": 507,
+      "repeated": 263,
+      "return_rate": 0.518935516888434,
+      "repeat_rate": 0.2691914022517912,
+      "early_accuracy_mean": 0.9178794320795944,
+      "late_accuracy_mean": 0.9188482297150355,
+      "early_seen_median": 151.0,
+      "late_seen_median": 71.0
+    },
+    {
+      "segment": "멈춤-꾸준형",
+      "change_group": "5%p 초과 상승",
+      "n": 301,
+      "returned": 154,
+      "repeated": 85,
+      "return_rate": 0.5116279069767442,
+      "repeat_rate": 0.2823920265780731,
+      "early_accuracy_mean": 0.8476707746763095,
+      "late_accuracy_mean": 0.9454871339169788,
+      "early_seen_median": 116.0,
+      "late_seen_median": 56.0
+    },
+    {
+      "segment": "멈춤-저활동형",
+      "change_group": "5%p 초과 하락",
+      "n": 105,
+      "returned": 30,
+      "repeated": 12,
+      "return_rate": 0.2857142857142857,
+      "repeat_rate": 0.11428571428571428,
+      "early_accuracy_mean": 0.9405737202894946,
+      "late_accuracy_mean": 0.8291246999728695,
+      "early_seen_median": 37.0,
+      "late_seen_median": 33.0
+    },
+    {
+      "segment": "멈춤-저활동형",
+      "change_group": "±5%p 이내",
+      "n": 182,
+      "returned": 66,
+      "repeated": 17,
+      "return_rate": 0.3626373626373626,
+      "repeat_rate": 0.09340659340659341,
+      "early_accuracy_mean": 0.9203202413051537,
+      "late_accuracy_mean": 0.918800360090615,
+      "early_seen_median": 39.5,
+      "late_seen_median": 35.5
+    },
+    {
+      "segment": "멈춤-저활동형",
+      "change_group": "5%p 초과 상승",
+      "n": 127,
+      "returned": 42,
+      "repeated": 15,
+      "return_rate": 0.33070866141732286,
+      "repeat_rate": 0.11811023622047244,
+      "early_accuracy_mean": 0.8325494248246049,
+      "late_accuracy_mean": 0.9419877264968403,
+      "early_seen_median": 40.0,
+      "late_seen_median": 37.0
+    },
+    {
+      "segment": "습관 형성형",
+      "change_group": "5%p 초과 하락",
+      "n": 971,
+      "returned": 503,
+      "repeated": 247,
+      "return_rate": 0.518022657054583,
+      "repeat_rate": 0.25437693099897013,
+      "early_accuracy_mean": 0.9396381767596509,
+      "late_accuracy_mean": 0.83987352212556,
+      "early_seen_median": 64.0,
+      "late_seen_median": 67.0
+    },
+    {
+      "segment": "습관 형성형",
+      "change_group": "±5%p 이내",
+      "n": 2673,
+      "returned": 1523,
+      "repeated": 723,
+      "return_rate": 0.5697717919940142,
+      "repeat_rate": 0.27048260381593714,
+      "early_accuracy_mean": 0.9139644377458871,
+      "late_accuracy_mean": 0.9147675554527867,
+      "early_seen_median": 87.0,
+      "late_seen_median": 91.0
+    },
+    {
+      "segment": "습관 형성형",
+      "change_group": "5%p 초과 상승",
+      "n": 1009,
+      "returned": 532,
+      "repeated": 232,
+      "return_rate": 0.5272547076313181,
+      "repeat_rate": 0.22993062438057482,
+      "early_accuracy_mean": 0.8376465082069162,
+      "late_accuracy_mean": 0.9360004751764316,
+      "early_seen_median": 61.0,
+      "late_seen_median": 68.0
+    },
+    {
+      "segment": "최근 단발형",
+      "change_group": "5%p 초과 하락",
+      "n": 0,
+      "returned": 0,
+      "repeated": 0,
+      "return_rate": null,
+      "repeat_rate": null,
+      "early_accuracy_mean": null,
+      "late_accuracy_mean": null,
+      "early_seen_median": null,
+      "late_seen_median": null
+    },
+    {
+      "segment": "최근 단발형",
+      "change_group": "±5%p 이내",
+      "n": 0,
+      "returned": 0,
+      "repeated": 0,
+      "return_rate": null,
+      "repeat_rate": null,
+      "early_accuracy_mean": null,
+      "late_accuracy_mean": null,
+      "early_seen_median": null,
+      "late_seen_median": null
+    },
+    {
+      "segment": "최근 단발형",
+      "change_group": "5%p 초과 상승",
+      "n": 0,
+      "returned": 0,
+      "repeated": 0,
+      "return_rate": null,
+      "repeat_rate": null,
+      "early_accuracy_mean": null,
+      "late_accuracy_mean": null,
+      "early_seen_median": null,
+      "late_seen_median": null
+    }
+  ],
+  "models": [
+    {
+      "model": "습관 형성형 · 반복학습 · 미보정",
+      "outcome": "returned_2plus_days",
+      "adjusted": false,
+      "categorical": false,
+      "term": "change_per_10pp",
+      "n": 4653,
+      "events": 1202,
+      "odds_ratio": 0.9916911045673326,
+      "ci_low": 0.9121271076409588,
+      "ci_high": 1.0781953947421685,
+      "p": 0.8449729885454299,
+      "condition_number": 1.3396850239788254,
+      "iterations": 5,
+      "coefficients": [
+        {
+          "term": "intercept",
+          "beta": -1.05460563539584,
+          "robust_se": 0.033501062590616706
+        },
+        {
+          "term": "change_per_10pp",
+          "beta": -0.008343606712981108,
+          "robust_se": 0.04267033483911357
+        }
+      ]
+    },
+    {
+      "model": "습관 형성형 · 반복학습 · 보정",
+      "outcome": "returned_2plus_days",
+      "adjusted": true,
+      "categorical": false,
+      "term": "change_per_10pp",
+      "n": 4653,
+      "events": 1202,
+      "odds_ratio": 1.069018531430067,
+      "ci_low": 0.9570851751781012,
+      "ci_high": 1.1940427562554574,
+      "p": 0.23693268461213926,
+      "condition_number": 117.40179259655521,
+      "iterations": 6,
+      "coefficients": [
+        {
+          "term": "intercept",
+          "beta": -1.1922649085871657,
+          "robust_se": 0.07124757501328147
+        },
+        {
+          "term": "change_per_10pp",
+          "beta": 0.06674096718738426,
+          "robust_se": 0.056431575923587884
+        },
+        {
+          "term": "early_accuracy_centered",
+          "beta": 1.4707971726124751,
+          "robust_se": 0.7235574823681974
+        },
+        {
+          "term": "early_accuracy_squared",
+          "beta": 0.6953937426929774,
+          "robust_se": 2.566570696817537
+        },
+        {
+          "term": "active_days_3",
+          "beta": 0.4715330637903262,
+          "robust_se": 0.07778819848409915
+        },
+        {
+          "term": "recency_2",
+          "beta": -0.3956676643594569,
+          "robust_se": 0.0690421036825076
+        },
+        {
+          "term": "log1p_early_seen",
+          "beta": -0.018576200259037414,
+          "robust_se": 0.04616457223461523
+        },
+        {
+          "term": "log1p_late_seen",
+          "beta": 0.0480805044081551,
+          "robust_se": 0.0467458864084177
+        },
+        {
+          "term": "log1p_sessions",
+          "beta": 0.16665607594407725,
+          "robust_se": 0.0612222135514911
+        },
+        {
+          "term": "first_observed_day",
+          "beta": 0.08489654325697119,
+          "robust_se": 0.03391777759131832
+        }
+      ],
+      "p_holm": 1.0
+    },
+    {
+      "model": "전체 분석 가능자 · 반복학습 · 보정",
+      "outcome": "returned_2plus_days",
+      "adjusted": true,
+      "categorical": false,
+      "term": "change_per_10pp",
+      "n": 15216,
+      "events": 6264,
+      "odds_ratio": 1.0310324813171081,
+      "ci_low": 0.9682855297406769,
+      "ci_high": 1.0978455681513795,
+      "p": 0.34010616241239183,
+      "condition_number": 144.47742527588815,
+      "iterations": 6,
+      "coefficients": [
+        {
+          "term": "intercept",
+          "beta": -1.1562376450074465,
+          "robust_se": 0.06274804836556837
+        },
+        {
+          "term": "change_per_10pp",
+          "beta": 0.03056070921082893,
+          "robust_se": 0.03203578033373032
+        },
+        {
+          "term": "early_accuracy_centered",
+          "beta": 0.5898446448112451,
+          "robust_se": 0.39461630295360267
+        },
+        {
+          "term": "early_accuracy_squared",
+          "beta": 0.7475673472007948,
+          "robust_se": 1.6344227579327366
+        },
+        {
+          "term": "active_days_3",
+          "beta": 0.53164440245598,
+          "robust_se": 0.0636786769614011
+        },
+        {
+          "term": "active_days_4",
+          "beta": 0.9468118678545827,
+          "robust_se": 0.06778596250092998
+        },
+        {
+          "term": "active_days_5",
+          "beta": 1.4408804663020531,
+          "robust_se": 0.07605872687168859
+        },
+        {
+          "term": "active_days_6",
+          "beta": 1.9701917698728575,
+          "robust_se": 0.09238115336132839
+        },
+        {
+          "term": "active_days_7",
+          "beta": 2.7417807358446145,
+          "robust_se": 0.13022719179727135
+        },
+        {
+          "term": "recency_2",
+          "beta": -0.3351635548063831,
+          "robust_se": 0.04406613935904465
+        },
+        {
+          "term": "recency_3",
+          "beta": -0.5462018585946894,
+          "robust_se": 0.05909298758998974
+        },
+        {
+          "term": "log1p_early_seen",
+          "beta": -0.015450392026661954,
+          "robust_se": 0.027996972430251187
+        },
+        {
+          "term": "log1p_late_seen",
+          "beta": 0.09726031077759542,
+          "robust_se": 0.028248213685633867
+        },
+        {
+          "term": "log1p_sessions",
+          "beta": 0.16933953087484876,
+          "robust_se": 0.04040026517484651
+        },
+        {
+          "term": "first_observed_day",
+          "beta": 0.06249945085403521,
+          "robust_se": 0.019644121000708684
+        }
+      ],
+      "p_holm": 1.0
+    },
+    {
+      "model": "습관 형성형 · 재학습 · 보정",
+      "outcome": "returned_4d",
+      "adjusted": true,
+      "categorical": false,
+      "term": "change_per_10pp",
+      "n": 4653,
+      "events": 2558,
+      "odds_ratio": 1.1163324587030032,
+      "ci_low": 1.0132459888760699,
+      "ci_high": 1.2299068262152433,
+      "p": 0.02600376319770636,
+      "condition_number": 117.40179259655521,
+      "iterations": 5,
+      "coefficients": [
+        {
+          "term": "intercept",
+          "beta": 0.08829586232966793,
+          "robust_se": 0.06099994475929553
+        },
+        {
+          "term": "change_per_10pp",
+          "beta": 0.11004872165873301,
+          "robust_se": 0.049434425620101356
+        },
+        {
+          "term": "early_accuracy_centered",
+          "beta": 1.2582641856502297,
+          "robust_se": 0.6330981058950497
+        },
+        {
+          "term": "early_accuracy_squared",
+          "beta": 2.832366326560111,
+          "robust_se": 2.6969360363509383
+        },
+        {
+          "term": "active_days_3",
+          "beta": 0.45499927513041505,
+          "robust_se": 0.06580089274443145
+        },
+        {
+          "term": "recency_2",
+          "beta": -0.34650267256534195,
+          "robust_se": 0.06069736365767542
+        },
+        {
+          "term": "log1p_early_seen",
+          "beta": -0.040827513049964397,
+          "robust_se": 0.041466082191231136
+        },
+        {
+          "term": "log1p_late_seen",
+          "beta": 0.034585522790557224,
+          "robust_se": 0.04195364243231731
+        },
+        {
+          "term": "log1p_sessions",
+          "beta": 0.20490455488358542,
+          "robust_se": 0.05388585024768659
+        },
+        {
+          "term": "first_observed_day",
+          "beta": -0.008338485850534372,
+          "robust_se": 0.03030507796525016
+        }
+      ],
+      "p_holm": 0.15602257918623816
+    },
+    {
+      "model": "습관 형성형 · 양쪽 50문항 · 반복학습 보정",
+      "outcome": "returned_2plus_days",
+      "adjusted": true,
+      "categorical": false,
+      "term": "change_per_10pp",
+      "n": 2320,
+      "events": 647,
+      "odds_ratio": 1.0854757245210616,
+      "ci_low": 0.9123386725586065,
+      "ci_high": 1.29146947725033,
+      "p": 0.3548975716251356,
+      "condition_number": 166.8410739762391,
+      "iterations": 6,
+      "coefficients": [
+        {
+          "term": "intercept",
+          "beta": -1.1783319843205813,
+          "robust_se": 0.10727388691980463
+        },
+        {
+          "term": "change_per_10pp",
+          "beta": 0.08201834667855518,
+          "robust_se": 0.08865589082308657
+        },
+        {
+          "term": "early_accuracy_centered",
+          "beta": 2.126714283397008,
+          "robust_se": 1.082250405605206
+        },
+        {
+          "term": "early_accuracy_squared",
+          "beta": 7.772932017894055,
+          "robust_se": 4.833370378143381
+        },
+        {
+          "term": "active_days_3",
+          "beta": 0.6094682024600246,
+          "robust_se": 0.11317871456696223
+        },
+        {
+          "term": "recency_2",
+          "beta": -0.5718489397787195,
+          "robust_se": 0.09768989665409679
+        },
+        {
+          "term": "log1p_early_seen",
+          "beta": 0.008506843074459423,
+          "robust_se": 0.06283869083849934
+        },
+        {
+          "term": "log1p_late_seen",
+          "beta": 0.08963481943327817,
+          "robust_se": 0.06322211354361787
+        },
+        {
+          "term": "log1p_sessions",
+          "beta": 0.1257119761103538,
+          "robust_se": 0.08214903475975202
+        },
+        {
+          "term": "first_observed_day",
+          "beta": 0.1319832967042099,
+          "robust_se": 0.0474908220191367
+        }
+      ],
+      "p_holm": 1.0
+    },
+    {
+      "model": "습관 형성형 · 하락 vs 유지 · 반복학습",
+      "outcome": "returned_2plus_days",
+      "adjusted": true,
+      "categorical": true,
+      "term": "decline_vs_stable",
+      "n": 4653,
+      "events": 1202,
+      "odds_ratio": 0.9864667442539113,
+      "ci_low": 0.8258472016766869,
+      "ci_high": 1.1783252828649526,
+      "p": 0.8805522593094934,
+      "condition_number": 119.16185833822234,
+      "iterations": 6,
+      "coefficients": [
+        {
+          "term": "intercept",
+          "beta": -1.1727831750795188,
+          "robust_se": 0.07742959302179966
+        },
+        {
+          "term": "decline_vs_stable",
+          "beta": -0.013625664930152123,
+          "robust_se": 0.09067505571960179
+        },
+        {
+          "term": "rise_vs_stable",
+          "beta": -0.06626907727409376,
+          "robust_se": 0.10114978092655272
+        },
+        {
+          "term": "early_accuracy_centered",
+          "beta": 0.8168167569926572,
+          "robust_se": 0.7097132092819546
+        },
+        {
+          "term": "early_accuracy_squared",
+          "beta": 0.35601453169398467,
+          "robust_se": 2.5829494405585627
+        },
+        {
+          "term": "active_days_3",
+          "beta": 0.4716686517631069,
+          "robust_se": 0.0778644944911923
+        },
+        {
+          "term": "recency_2",
+          "beta": -0.3955725848107207,
+          "robust_se": 0.0690246973228211
+        },
+        {
+          "term": "log1p_early_seen",
+          "beta": -0.018144768388065783,
+          "robust_se": 0.04613810212939603
+        },
+        {
+          "term": "log1p_late_seen",
+          "beta": 0.05040680017397124,
+          "robust_se": 0.04673732859913418
+        },
+        {
+          "term": "log1p_sessions",
+          "beta": 0.1601946296398795,
+          "robust_se": 0.06129301599867491
+        },
+        {
+          "term": "first_observed_day",
+          "beta": 0.0865270455224412,
+          "robust_se": 0.03395375095369002
+        }
+      ],
+      "p_holm": 1.0
+    },
+    {
+      "model": "습관 형성형 · 상승 vs 유지 · 반복학습",
+      "outcome": "returned_2plus_days",
+      "adjusted": true,
+      "categorical": true,
+      "term": "rise_vs_stable",
+      "n": 4653,
+      "events": 1202,
+      "odds_ratio": 0.9358790066365654,
+      "ci_low": 0.7675750610153876,
+      "ci_high": 1.1410864676926833,
+      "p": 0.512366101845638,
+      "condition_number": 119.16185833822234,
+      "iterations": 6,
+      "coefficients": [
+        {
+          "term": "intercept",
+          "beta": -1.1727831750795188,
+          "robust_se": 0.07742959302179966
+        },
+        {
+          "term": "decline_vs_stable",
+          "beta": -0.013625664930152123,
+          "robust_se": 0.09067505571960179
+        },
+        {
+          "term": "rise_vs_stable",
+          "beta": -0.06626907727409376,
+          "robust_se": 0.10114978092655272
+        },
+        {
+          "term": "early_accuracy_centered",
+          "beta": 0.8168167569926572,
+          "robust_se": 0.7097132092819546
+        },
+        {
+          "term": "early_accuracy_squared",
+          "beta": 0.35601453169398467,
+          "robust_se": 2.5829494405585627
+        },
+        {
+          "term": "active_days_3",
+          "beta": 0.4716686517631069,
+          "robust_se": 0.0778644944911923
+        },
+        {
+          "term": "recency_2",
+          "beta": -0.3955725848107207,
+          "robust_se": 0.0690246973228211
+        },
+        {
+          "term": "log1p_early_seen",
+          "beta": -0.018144768388065783,
+          "robust_se": 0.04613810212939603
+        },
+        {
+          "term": "log1p_late_seen",
+          "beta": 0.05040680017397124,
+          "robust_se": 0.04673732859913418
+        },
+        {
+          "term": "log1p_sessions",
+          "beta": 0.1601946296398795,
+          "robust_se": 0.06129301599867491
+        },
+        {
+          "term": "first_observed_day",
+          "beta": 0.0865270455224412,
+          "robust_se": 0.03395375095369002
+        }
+      ],
+      "p_holm": 1.0
+    }
+  ],
+  "extraction": {
+    "raw_rows": 12854226,
+    "baseline_rows_before_dedup": 7782123,
+    "baseline_duplicates_removed": 81,
+    "raw_sha256": "609b4a602665b1cf5fa693b1ebfcd1d5f9a2b7bad623e3d935436abcc7b74c21",
+    "daily_sha256": "1a57507c4d6784d78f0f4d988cd0c2b66b77ccd377d02cf11d10d5d817195d9f",
+    "dedup": "64-bit full-row pandas hash; existing user totals crosschecked"
+  },
+  "source_hashes": {
+    "raw_csv": "609b4a602665b1cf5fa693b1ebfcd1d5f9a2b7bad623e3d935436abcc7b74c21",
+    "user_retention_cohort.csv": "1070c769c8f1d6bc1914e223c19469b9ceb127c929257ba05a2ba1d80fc57bb7",
+    "baseline_daily_accuracy.csv": "1a57507c4d6784d78f0f4d988cd0c2b66b77ccd377d02cf11d10d5d817195d9f"
+  },
+  "checks": {
+    "all_user_words_seen_match": true,
+    "all_user_words_correct_match": true,
+    "all_user_sessions_match": true,
+    "all_user_active_days_match": true,
+    "baseline_only": true,
+    "models_full_rank_converged": true,
+    "model_score_near_zero": true
+  }
+}

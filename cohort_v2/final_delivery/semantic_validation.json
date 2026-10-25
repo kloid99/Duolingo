@@ -1,0 +1,13 @@
+{
+  "negative_mutations_rejected": 15,
+  "valid_report_and_fresh_config_accepted": true,
+  "launch_blocked_on_missing_external_inputs": true,
+  "validated_source_hashes": {
+    "verify_semantic_integrity.py": "41c7dad8976a0102b647100aeb538d5c98f4085526a925be45de9075af11b751",
+    "report_semantics.py": "34ea38d961da69fac90ca137b76bf359c77655e51332a3842558694215671268",
+    "validate_experiment_config.py": "aaa3311b774569c2b5798559ab4e546f45b968617ee398882a562b346d66399e",
+    "verify_final_delivery.py": "eb8fb8df2ef9e5f9cb411f907489acf59e0c94780625c0a71f75e3aecc0f86e9",
+    "experiment_config.json": "65f509e2b3fce9da0e1fbb802891963ec22d311f3ed59afbb1c862824bfb7300",
+    "최종_코호트분석_보고서.md": "61202cb3ee3a4d1e0acc49c21c18a7acf8131832db6207311a27f47f1a5523b2"
+  }
+}

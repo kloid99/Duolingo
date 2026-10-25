@@ -1,0 +1,15 @@
+{
+  "raw_rows": 12854226,
+  "baseline_rows_before_dedup": 7782123,
+  "duplicates_removed": 81,
+  "raw_sha256": "609b4a602665b1cf5fa693b1ebfcd1d5f9a2b7bad623e3d935436abcc7b74c21",
+  "all_baseline_totals_match": true,
+  "ambiguous_matched_words": 7,
+  "ambiguous_review_pairs": 0,
+  "cache_hashes": {
+    "matched_word_pairs.csv": "b365e35a212612c7abd720bff47b6b3ed2789ca2e405e5e721f03f823c0caf1c",
+    "review_word_pairs.csv": "02c6cc23de2b8882ad1e3b936974687f16b5229b454c78bac9cbae992f67f00b",
+    "validation_sample_rows.csv": "1516ac141c950f87c1ac70669182e2ed60c2e53a85e7262126b3c47a28588e3c",
+    "gap_bins.json": "f6d5330cb98d76d17294d3be0edf5492e01a503fe9d69257e70a92a3ab033096"
+  }
+}

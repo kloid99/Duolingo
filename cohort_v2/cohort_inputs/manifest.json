@@ -1,0 +1,16 @@
+{
+  "files": {
+    "user_cohort.csv": {
+      "sha256": "60c2c7781ef1b0ba3f76eb4e9d27773170122636ff99aeb141f9f8376889bef7",
+      "rows": 82467
+    },
+    "user_daily_activity.csv": {
+      "sha256": "e2ac731e056c1bc26c2d5534d566ac1c9b99d63decb4fcef3f5ee6deac122dc6",
+      "rows": 329868
+    },
+    "segment_cohort_summary.csv": {
+      "sha256": "02d4f596bf3ce3ef140378eb36cb8e4711d63f136a8f7ce049ee49018408fa22",
+      "rows": 6
+    }
+  }
+}

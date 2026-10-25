@@ -1,0 +1,83 @@
+{
+  "analysis_date": "2026-10-13",
+  "workbook_validation": {
+    "model_effect_rows_verified": 7,
+    "habit_group_rows_verified": 3,
+    "coverage_rows_verified": 7,
+    "all_group_rows_verified": 21,
+    "zero_denominator_rows_blank": 3,
+    "formula_errors": 0,
+    "both_sheets_visually_reviewed": true
+  },
+  "analysis_validation": {
+    "unique_users": 82467,
+    "independent_window_aggregation_users": 200,
+    "missing_window_accuracy_preserved": true,
+    "exact_fraction_category_checks": 15216,
+    "independent_BFGS_effect_rows": 7,
+    "distinct_models": 6,
+    "max_coefficient_difference": 4.454028179612379e-08,
+    "coverage_reconciled": true,
+    "source_cohort_unchanged": true
+  },
+  "source_hashes": {
+    "raw_csv": "609b4a602665b1cf5fa693b1ebfcd1d5f9a2b7bad623e3d935436abcc7b74c21",
+    "user_retention_cohort.csv": "1070c769c8f1d6bc1914e223c19469b9ceb127c929257ba05a2ba1d80fc57bb7",
+    "baseline_daily_accuracy.csv": "1a57507c4d6784d78f0f4d988cd0c2b66b77ccd377d02cf11d10d5d817195d9f"
+  },
+  "files": {
+    "accuracy_results.json": {
+      "bytes": 24819,
+      "sha256": "ab443e45fd0ba2638d7c0784d7984e9fe8113a12e53aad5ea2333f95de387aed"
+    },
+    "adjusted_models.csv": {
+      "bytes": 1573,
+      "sha256": "104d43d71cbe8bf61532bf94e2cba1b982a5f61965a9da869f24cbc4935ae018"
+    },
+    "analysis_validation.json": {
+      "bytes": 354,
+      "sha256": "30a613be1eb6b3520dc16c21114f3ebf1243f1c9b21c0e2eb60cc89955d45391"
+    },
+    "baseline_daily_accuracy.csv": {
+      "bytes": 2834463,
+      "sha256": "1a57507c4d6784d78f0f4d988cd0c2b66b77ccd377d02cf11d10d5d817195d9f"
+    },
+    "build_accuracy_workbook.mjs": {
+      "bytes": 8256,
+      "sha256": "e080edb1054996dea4b9e1ee26d9590a719f6ea94975192e246a882988152a8a"
+    },
+    "change_groups.csv": {
+      "bytes": 2622,
+      "sha256": "09c87c6c66e7a02cf8327253450b3e0c51431b83f74f798a58b1e012cc33f6d5"
+    },
+    "coverage.csv": {
+      "bytes": 368,
+      "sha256": "1d8c67ef6d1f96fbcec798dfedf37270edf38645246b28649ac0dd2a3c0e38b9"
+    },
+    "extraction.json": {
+      "bytes": 358,
+      "sha256": "b44aec356a3cd83e177dc64cb4b15ce89fa3b4610eba45b772422c14af2b4f8d"
+    },
+    "user_accuracy_change.csv": {
+      "bytes": 10964834,
+      "sha256": "3c92007b04d0f1c6d74b67b6ba3f57ebdf04c383ef804a1b0ac4b838d449645c"
+    },
+    "verify_accuracy_workbook.py": {
+      "bytes": 3587,
+      "sha256": "c09c8de66eb505323b9a112a6b1dd0baecbeadaf85a2b8385dad36d53103d736"
+    },
+    "workbook_error_scan.json": {
+      "bytes": 60,
+      "sha256": "acc0111e19cf44d2753fc9ecd164bf1b27fbd65597463a25cf48bd1c65e90146"
+    },
+    "정답률_변화와_재학습.xlsx": {
+      "bytes": 11083,
+      "sha256": "95556890e33b67fe557ff0ada35127dbb7364bef2e16a55539ce3ec98cda11fa"
+    },
+    "정답률_변화와_재학습_결과와해석.md": {
+      "bytes": 8642,
+      "sha256": "602ab58fa8b3104f902b4b081dcdcacaf3a06287f7ae24b6ab970857c5494648"
+    }
+  },
+  "analysis_script_sha256": "bedd1208cddff26a8a83c4e73a1853fc224b34ec14ea79746dc6a2f4cbee02da"
+}

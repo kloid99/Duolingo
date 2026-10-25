@@ -1,0 +1,42 @@
+{
+  "analysis_date": "2026-10-13",
+  "validation": {
+    "saved_workbook_verified": true,
+    "baseline_rate_rows": 14,
+    "return_date_rows": 112,
+    "unobserved_rows_preserved": 56,
+    "pairwise_tests_verified": 150,
+    "formula_errors": 0,
+    "source_hashes_unchanged": true
+  },
+  "files": {
+    "pairwise_tests_holm.csv": {
+      "bytes": 49501,
+      "sha256": "f06a3421ec4f5d13a137cda8008db9bc7e8ee9a0474618259c2ce1cb8cd0d93b"
+    },
+    "proportions_with_ci.csv": {
+      "bytes": 14165,
+      "sha256": "a7df438e3018f99b8b55d73be95a9687866464bf30cfabd22c2dc51d17559d45"
+    },
+    "same_return_date_with_ci.csv": {
+      "bytes": 12399,
+      "sha256": "9386c876fc463b78e3c57f334de5583401076d9e1285a17fc9aa695f3adb4946"
+    },
+    "statistics_results.json": {
+      "bytes": 186976,
+      "sha256": "42199f408d0eff45c21dd29fd796b94e973ddfabc85fdd335b3d3c412c0a06ae"
+    },
+    "workbook_error_scan.json": {
+      "bytes": 60,
+      "sha256": "acc0111e19cf44d2753fc9ecd164bf1b27fbd65597463a25cf48bd1c65e90146"
+    },
+    "코호트_복귀일비교_통계검증.xlsx": {
+      "bytes": 40102,
+      "sha256": "8b74eb7e1ff2ab3644b64a11335fe9da5c92d31f9bf407ddf7eac5bc682b1590"
+    },
+    "코호트_통계검증_결과와해석.md": {
+      "bytes": 9507,
+      "sha256": "1cf48dd6a90ccf53b52d6c693a1fe120d2773794eea451b2cc4f8bec646a89ac"
+    }
+  }
+}

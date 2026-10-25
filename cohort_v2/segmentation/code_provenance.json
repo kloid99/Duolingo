@@ -1,0 +1,13 @@
+{
+  "provided_path": "C:\\Users\\user\\.codex\\attachments\\f2e6b60f-9c66-4404-894d-e898b1bb64fc\\붙여넣은 텍스트.txt",
+  "provided_sha256": "ca99f9f6e415df7d0e31d09a2454b32eeec234c053d832d1adc7c3d7f51c7860",
+  "only_code_adaptation": "source CSV path replaced with actual local file",
+  "local_sha256": "7928ccbe55e779feec0f2b5c75d08da60090b4a65e87da8741f09a6f5a2df939",
+  "current_path_adaptation": {
+    "date": "2026-10-13",
+    "workspace": "C:\\Users\\USER\\OneDrive\\마케팅",
+    "change": "Import pathlib and resolve the source CSV relative to the script; analysis logic unchanged",
+    "local_sha256": "b95bdeb6ba3fbb3c764ec4841df4f2a67e2f8db9e74ac3d0317892fb3e8ae7c6",
+    "analysis_rerun": false
+  }
+}

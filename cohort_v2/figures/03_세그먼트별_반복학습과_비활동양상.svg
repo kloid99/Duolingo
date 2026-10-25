@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1008pt" height="554.4pt" viewBox="0 0 1008 554.4" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-12T23:37:36.121299</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 554.4 
+L 1008 554.4 
+L 1008 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 272.16 426.888 
+L 967.68 426.888 
+L 967.68 155.232 
+L 272.16 155.232 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 272.16 167.58 
+L 408.961783 167.58 
+L 408.961783 195.991327 
+L 272.16 195.991327 
+z
+" clip-path="url(#p4c3a0eb3a3)" style="fill: #e7ebef"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 272.16 211.289735 
+L 604.824884 211.289735 
+L 604.824884 239.701062 
+L 272.16 239.701062 
+z
+" clip-path="url(#p4c3a0eb3a3)" style="fill: #e7ebef"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 272.16 254.999469 
+L 649.738958 254.999469 
+L 649.738958 283.410796 
+L 272.16 283.410796 
+z
+" clip-path="url(#p4c3a0eb3a3)" style="fill: #e7ebef"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 272.16 298.709204 
+L 741.620195 298.709204 
+L 741.620195 327.120531 
+L 272.16 327.120531 
+z
+" clip-path="url(#p4c3a0eb3a3)" style="fill: #e7ebef"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 272.16 342.418938 
+L 784.062122 342.418938 
+L 784.062122 370.830265 
+L 272.16 370.830265 
+z
+" clip-path="url(#p4c3a0eb3a3)" style="fill: #e7ebef"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 272.16 386.128673 
+L 845.742894 386.128673 
+L 845.742894 414.54 
+L 272.16 414.54 
+z
+" clip-path="url(#p4c3a0eb3a3)" style="fill: #e7ebef"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 408.961783 167.58 
+L 472.546814 167.58 
+L 472.546814 195.991327 
+L 408.961783 195.991327 
+z
+" clip-path="url(#p4c3a0eb3a3)" style="fill: #cb8b54"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 604.824884 211.289735 
+L 679.895067 211.289735 
+L 679.895067 239.701062 
+L 604.824884 239.701062 
+z
+" clip-path="url(#p4c3a0eb3a3)" style="fill: #cb8b54"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 649.738958 254.999469 
+L 695.378263 254.999469 
+L 695.378263 283.410796 
+L 649.738958 283.410796 
+z
+" clip-path="url(#p4c3a0eb3a3)" style="fill: #cb8b54"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 741.620195 298.709204 
+L 802.041293 298.709204 
+L 802.041293 327.120531 
+L 741.620195 327.120531 
+z
+" clip-path="url(#p4c3a0eb3a3)" style="fill: #cb8b54"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 784.062122 342.418938 
+L 818.90167 342.418938 
+L 818.90167 370.830265 
+L 784.062122 370.830265 
+z
+" clip-path="url(#p4c3a0eb3a3)" style="fill: #cb8b54"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 845.742894 386.128673 
+L 870.756215 386.128673 
+L 870.756215 414.54 
+L 845.742894 414.54 
+z
+" clip-path="url(#p4c3a0eb3a3)" style="fill: #cb8b54"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 472.546814 167.58 
+L 579.043909 167.58 
+L 579.043909 195.991327 
+L 472.546814 195.991327 
+z
+" clip-path="url(#p4c3a0eb3a3)" style="fill: #9eb9d1"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 679.895067 211.289735 
+L 797.794363 211.289735 
+L 797.794363 239.701062 
+L 679.895067 239.701062 
+z
+" clip-path="url(#p4c3a0eb3a3)" style="fill: #9eb9d1"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 695.378263 254.999469 
+L 812.736476 254.999469 
+L 812.736476 283.410796 
+L 695.378263 283.410796 
+z
+" clip-path="url(#p4c3a0eb3a3)" style="fill: #9eb9d1"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 802.041293 298.709204 
+L 883.596229 298.709204 
+L 883.596229 327.120531 
+L 802.041293 327.120531 
+z
+" clip-path="url(#p4c3a0eb3a3)" style="fill: #9eb9d1"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 818.90167 342.418938 
+L 904.804334 342.418938 
+L 904.804334 370.830265 
+L 818.90167 370.830265 
+z
+" clip-path="url(#p4c3a0eb3a3)" style="fill: #9eb9d1"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 870.756215 386.128673 
+L 935.251125 386.128673 
+L 935.251125 414.54 
+L 870.756215 414.54 
+z
+" clip-path="url(#p4c3a0eb3a3)" style="fill: #9eb9d1"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 579.043909 167.58 
+L 967.68 167.58 
+L 967.68 195.991327 
+L 579.043909 195.991327 
+z
+" clip-path="url(#p4c3a0eb3a3)" style="fill: #285780"/>
+   </g>
+   <g id="patch_22">
+    <path d="M 797.794363 211.289735 
+L 967.68 211.289735 
+L 967.68 239.701062 
+L 797.794363 239.701062 
+z
+" clip-path="url(#p4c3a0eb3a3)" style="fill: #285780"/>
+   </g>
+   <g id="patch_23">
+    <path d="M 812.736476 254.999469 
+L 967.68 254.999469 
+L 967.68 283.410796 
+L 812.736476 283.410796 
+z
+" clip-path="url(#p4c3a0eb3a3)" style="fill: #285780"/>
+   </g>
+   <g id="patch_24">
+    <path d="M 883.596229 298.709204 
+L 967.68 298.709204 
+L 967.68 327.120531 
+L 883.596229 327.120531 
+z
+" clip-path="url(#p4c3a0eb3a3)" style="fill: #285780"/>
+   </g>
+   <g id="patch_25">
+    <path d="M 904.804334 342.418938 
+L 967.68 342.418938 
+L 967.68 370.830265 
+L 904.804334 370.830265 
+z
+" clip-path="url(#p4c3a0eb3a3)" style="fill: #285780"/>
+   </g>
+   <g id="patch_26">
+    <path d="M 935.251125 386.128673 
+L 967.68 386.128673 
+L 967.68 414.54 
+L 935.251125 414.54 
+z
+" clip-path="url(#p4c3a0eb3a3)" style="fill: #285780"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="font-size: 11px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #526175" x="272.16" y="443.685852" transform="rotate(-0 272.16 443.685852)">0%</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="font-size: 11px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #526175" x="411.264" y="443.685852" transform="rotate(-0 411.264 443.685852)">20%</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      <text style="font-size: 11px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #526175" x="550.368" y="443.685852" transform="rotate(-0 550.368 443.685852)">40%</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4"/>
+     <g id="text_4">
+      <text style="font-size: 11px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #526175" x="689.472" y="443.685852" transform="rotate(-0 689.472 443.685852)">60%</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5"/>
+     <g id="text_5">
+      <text style="font-size: 11px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #526175" x="828.576" y="443.685852" transform="rotate(-0 828.576 443.685852)">80%</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6"/>
+     <g id="text_6">
+      <text style="font-size: 11px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #526175" x="967.68" y="443.685852" transform="rotate(-0 967.68 443.685852)">100%</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_7"/>
+     <g id="text_7">
+      <text style="font-size: 11px; font-family: 'Malgun Gothic'; text-anchor: end; fill: #24364b" x="264.16" y="186.509648" transform="rotate(-0 264.16 186.509648)">꾸준형 (n=8,882)</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_8"/>
+     <g id="text_8">
+      <text style="font-size: 11px; font-family: 'Malgun Gothic'; text-anchor: end; fill: #24364b" x="264.16" y="230.219383" transform="rotate(-0 264.16 230.219383)">습관 형성형 (n=14,583)</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_9"/>
+     <g id="text_9">
+      <text style="font-size: 11px; font-family: 'Malgun Gothic'; text-anchor: end; fill: #24364b" x="264.16" y="273.945445" transform="rotate(-0 264.16 273.945445)">멈춤-꾸준형 (n=3,627)</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_10"/>
+     <g id="text_10">
+      <text style="font-size: 11px; font-family: 'Malgun Gothic'; text-anchor: end; fill: #24364b" x="264.16" y="317.638852" transform="rotate(-0 264.16 317.638852)">최근 단발형 (n=15,402)</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_11"/>
+     <g id="text_11">
+      <text style="font-size: 11px; font-family: 'Malgun Gothic'; text-anchor: end; fill: #24364b" x="264.16" y="361.364914" transform="rotate(-0 264.16 361.364914)">멈춤-몰입형 (n=9,303)</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_12"/>
+     <g id="text_12">
+      <text style="font-size: 11px; font-family: 'Malgun Gothic'; text-anchor: end; fill: #24364b" x="264.16" y="405.084961" transform="rotate(-0 264.16 405.084961)">멈춤-저활동형 (n=30,670)</text>
+     </g>
+    </g>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 10px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #24364b" x="340.560892" y="184.783711" transform="rotate(-0 340.560892 184.783711)">19.7%</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 10px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #24364b" x="438.492442" y="228.493445" transform="rotate(-0 438.492442 228.493445)">47.8%</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 10px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #24364b" x="460.949479" y="272.20318" transform="rotate(-0 460.949479 272.20318)">54.3%</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 10px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #24364b" x="506.890097" y="315.912914" transform="rotate(-0 506.890097 315.912914)">67.5%</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 10px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #24364b" x="528.111061" y="359.622649" transform="rotate(-0 528.111061 359.622649)">73.6%</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 10px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #24364b" x="558.951447" y="403.332383" transform="rotate(-0 558.951447 403.332383)">82.5%</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 10px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #24364b" x="440.754299" y="184.783711" transform="rotate(-0 440.754299 184.783711)">9.1%</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 10px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #24364b" x="642.359975" y="228.493445" transform="rotate(-0 642.359975 228.493445)">10.8%</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 10px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #24364b" x="672.55861" y="272.20318" transform="rotate(-0 672.55861 272.20318)">6.6%</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 10px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #24364b" x="771.830744" y="315.912914" transform="rotate(-0 771.830744 315.912914)">8.7%</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 10px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #24364b" x="801.481896" y="359.622649" transform="rotate(-0 801.481896 359.622649)">5.0%</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 10px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #24364b" x="525.795361" y="184.783711" transform="rotate(-0 525.795361 184.783711)">15.3%</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 10px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #24364b" x="738.844715" y="228.493445" transform="rotate(-0 738.844715 228.493445)">17.0%</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 10px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #24364b" x="754.05737" y="272.20318" transform="rotate(-0 754.05737 272.20318)">16.9%</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 10px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #24364b" x="842.818761" y="315.912914" transform="rotate(-0 842.818761 315.912914)">11.7%</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 10px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #24364b" x="861.853002" y="359.622649" transform="rotate(-0 861.853002 359.622649)">12.4%</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 10px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #24364b" x="903.00367" y="403.332383" transform="rotate(-0 903.00367 403.332383)">9.3%</text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 10px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #ffffff" x="773.361955" y="184.783711" transform="rotate(-0 773.361955 184.783711)">55.9%</text>
+   </g>
+   <g id="text_31">
+    <text style="font-size: 10px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #ffffff" x="882.737182" y="228.493445" transform="rotate(-0 882.737182 228.493445)">24.4%</text>
+   </g>
+   <g id="text_32">
+    <text style="font-size: 10px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #ffffff" x="890.208238" y="272.20318" transform="rotate(-0 890.208238 272.20318)">22.3%</text>
+   </g>
+   <g id="text_33">
+    <text style="font-size: 10px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #ffffff" x="925.638115" y="315.912914" transform="rotate(-0 925.638115 315.912914)">12.1%</text>
+   </g>
+   <g id="text_34">
+    <text style="font-size: 10px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #ffffff" x="936.242167" y="359.622649" transform="rotate(-0 936.242167 359.622649)">9.0%</text>
+   </g>
+   <g id="text_35">
+    <text style="font-size: 10px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #ffffff" x="951.465562" y="403.332383" transform="rotate(-0 951.465562 403.332383)">4.7%</text>
+   </g>
+   <g id="legend_1">
+    <g id="patch_27">
+     <path d="M 72.504 115.007794 
+L 92.504 115.007794 
+L 92.504 108.007794 
+L 72.504 108.007794 
+z
+" style="fill: #e7ebef"/>
+    </g>
+    <g id="text_36">
+     <text style="font-size: 10px; font-family: 'Malgun Gothic'; text-anchor: start; fill: #24364b" x="100.504" y="115.007794" transform="rotate(-0 100.504 115.007794)">관측기간 미복귀</text>
+    </g>
+    <g id="patch_28">
+     <path d="M 72.504 130.647247 
+L 92.504 130.647247 
+L 92.504 123.647247 
+L 72.504 123.647247 
+z
+" style="fill: #cb8b54"/>
+    </g>
+    <g id="text_37">
+     <text style="font-size: 10px; font-family: 'Malgun Gothic'; text-anchor: start; fill: #24364b" x="100.504" y="130.647247" transform="rotate(-0 100.504 130.647247)">1회 재학습 후 3일 비활동</text>
+    </g>
+    <g id="patch_29">
+     <path d="M 235.582125 115.007794 
+L 255.582125 115.007794 
+L 255.582125 108.007794 
+L 235.582125 108.007794 
+z
+" style="fill: #9eb9d1"/>
+    </g>
+    <g id="text_38">
+     <text style="font-size: 10px; font-family: 'Malgun Gothic'; text-anchor: start; fill: #24364b" x="263.582125" y="115.007794" transform="rotate(-0 263.582125 115.007794)">1회 재학습·추적 종료</text>
+    </g>
+    <g id="patch_30">
+     <path d="M 235.582125 130.598809 
+L 255.582125 130.598809 
+L 255.582125 123.598809 
+L 235.582125 123.598809 
+z
+" style="fill: #285780"/>
+    </g>
+    <g id="text_39">
+     <text style="font-size: 10px; font-family: 'Malgun Gothic'; text-anchor: start; fill: #24364b" x="263.582125" y="130.598809" transform="rotate(-0 263.582125 130.598809)">2일 이상 재학습</text>
+    </g>
+   </g>
+  </g>
+  <g id="text_40">
+   <text style="font-weight: 700; font-size: 19px; font-family: 'Malgun Gothic'; text-anchor: start; fill: #24364b" x="35.28" y="33.264" transform="rotate(-0 35.28 33.264)">복귀에 그친 사용자와 반복 학습자를 구분한다</text>
+  </g>
+  <g id="text_41">
+   <text style="font-size: 10.5px; font-family: 'Malgun Gothic'; text-anchor: start; fill: #526175" x="35.28" y="63.756" transform="rotate(-0 35.28 63.756)">정여진 세그먼트 고정: 3/1~7  |  추적: 2013.03.08~11  |  UTC · 사용자 기준</text>
+  </g>
+  <g id="text_42">
+   <text style="font-size: 11px; font-family: 'Malgun Gothic'; text-anchor: start; fill: #24364b" x="35.28" y="471.24" transform="rotate(-0 35.28 471.24)">4일 중 2일 이상 재학습한 비율은 꾸준형 55.9%, 습관 형성형 24.4%, 멈춤-꾸준형 22.3%입니다.</text>
+  </g>
+  <g id="text_43">
+   <text style="font-size: 10.5px; font-family: 'Malgun Gothic'; text-anchor: start; fill: #526175" x="35.28" y="498.96" transform="rotate(-0 35.28 498.96)">3일 비활동은 3/8에 한 번 재학습한 뒤 3/9~11에 기록이 없는 경우입니다. 장기 이탈 확정은 아닙니다.</text>
+  </g>
+  <g id="text_44">
+   <text style="font-size: 10.5px; font-family: 'Malgun Gothic'; text-anchor: start; fill: #526175" x="35.28" y="526.68" transform="rotate(-0 35.28 526.68)">1회 재학습·추적 종료에는 늦게 복귀해 추가 학습을 관찰할 시간이 짧은 사용자도 포함됩니다.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p4c3a0eb3a3">
+   <rect x="272.16" y="155.232" width="695.52" height="271.656"/>
+  </clipPath>
+ </defs>
+</svg>

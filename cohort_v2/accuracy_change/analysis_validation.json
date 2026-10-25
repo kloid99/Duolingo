@@ -1,0 +1,11 @@
+{
+  "unique_users": 82467,
+  "independent_window_aggregation_users": 200,
+  "missing_window_accuracy_preserved": true,
+  "exact_fraction_category_checks": 15216,
+  "independent_BFGS_effect_rows": 7,
+  "distinct_models": 6,
+  "max_coefficient_difference": 4.454028179612379e-08,
+  "coverage_reconciled": true,
+  "source_cohort_unchanged": true
+}

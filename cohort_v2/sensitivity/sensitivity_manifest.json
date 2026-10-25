@@ -1,0 +1,65 @@
+{
+  "analysis_date": "2026-10-13",
+  "validation": {
+    "saved_workbook_verified": true,
+    "analysis_checks_passed": 15,
+    "summary_rows": 7,
+    "rank_rows": 6,
+    "operating_pool_rows": 2,
+    "daily_rows": 28,
+    "nextday_rows": 56,
+    "unobserved_rows_preserved": 14,
+    "zero_denominator_rates_blank": 9,
+    "candidate_users_verified": 4798,
+    "formula_errors": 0,
+    "source_hashes_unchanged": true
+  },
+  "source_hashes": {
+    "user_retention_cohort.csv": "1070c769c8f1d6bc1914e223c19469b9ceb127c929257ba05a2ba1d80fc57bb7",
+    "user_daily_retention.csv": "59021e29f6caab88b2e750547d366a99660bbf8b0c0ba763c8c13ad9a6f5f1dd",
+    "segment_daily_retention.csv": "3d8f58415c89e24bfc02a206f13d2b1ed57698080e56dc579062fe6f211e3ca3",
+    "overall_daily_retention.csv": "c66876570540b0e2495554539a45ff08007b1e143405367cdb8e74eb586153bf"
+  },
+  "files": {
+    "additional_2day_candidates.csv": {
+      "bytes": 609320,
+      "sha256": "f3f80a84006c3edf743e9cb0ff91e37249f0de9d01a363cab2b369f22a909743"
+    },
+    "build_sensitivity_workbook.mjs": {
+      "bytes": 10382,
+      "sha256": "e9aa34997dfff9f6bef436aac666b63248a510fb3d6e8c60276c1279bc9948fb"
+    },
+    "daily_threshold_comparison.csv": {
+      "bytes": 4861,
+      "sha256": "82abcd71e488430372586aad9a8a8b1bd9a979d2a4b9c78d2272872550df89b2"
+    },
+    "final_threshold_comparison.csv": {
+      "bytes": 1648,
+      "sha256": "490008c68169821ffc92ba94309871a72ca28dbb73f955b4c24e36af820f8bcc"
+    },
+    "nextday_relearning_by_gap.csv": {
+      "bytes": 4686,
+      "sha256": "5744d710980497583f69218e071ed8a4c1ff5ff640d6a118eda331b9c838d5ee"
+    },
+    "sensitivity_results.json": {
+      "bytes": 53363,
+      "sha256": "34264aef44128814b9958ddf46d0e934445780039194eb9972d6e104921d6809"
+    },
+    "verify_sensitivity_workbook.py": {
+      "bytes": 5141,
+      "sha256": "13ace03036ccd53e3e62ff5dff7d07788f1acb512399a0dc6b0135dbd9cb8f3a"
+    },
+    "workbook_error_scan.json": {
+      "bytes": 60,
+      "sha256": "acc0111e19cf44d2753fc9ecd164bf1b27fbd65597463a25cf48bd1c65e90146"
+    },
+    "비활동_2일3일_민감도분석.xlsx": {
+      "bytes": 17132,
+      "sha256": "95c79327384c7c854e5da202756329fa06d5ff793557bc274f0ac7a4ef122b64"
+    },
+    "비활동_기준_민감도_결과와해석.md": {
+      "bytes": 7720,
+      "sha256": "e9d867a9ee5357acb201bbcf1cf178f1f0a080ecd092ff3b5356fb9282e83453"
+    }
+  }
+}

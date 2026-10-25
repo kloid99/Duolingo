@@ -1,0 +1,426 @@
+{
+  "overall_baseline_users": {
+    "metric_id": "overall_baseline_users",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/0/baseline_users",
+    "value": 82467,
+    "unit": "users",
+    "display": "82,467"
+  },
+  "overall_no_learning_users": {
+    "metric_id": "overall_no_learning_users",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/0/no_learning_users",
+    "value": 53227,
+    "unit": "users",
+    "display": "53,227"
+  },
+  "overall_one_learning_day_users": {
+    "metric_id": "overall_one_learning_day_users",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/0/one_learning_day_users",
+    "value": 15774,
+    "unit": "users",
+    "display": "15,774"
+  },
+  "overall_two_plus_learning_days_users": {
+    "metric_id": "overall_two_plus_learning_days_users",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/0/two_plus_learning_days_users",
+    "value": 13466,
+    "unit": "users",
+    "display": "13,466"
+  },
+  "overall_repeat_rate": {
+    "metric_id": "overall_repeat_rate",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/0/two_plus_learning_days_share",
+    "value": 0.16328955824754143,
+    "unit": "proportion",
+    "display": "16.3%"
+  },
+  "steady_baseline_users": {
+    "metric_id": "steady_baseline_users",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/1/baseline_users",
+    "value": 8882,
+    "unit": "users",
+    "display": "8,882"
+  },
+  "steady_no_learning_users": {
+    "metric_id": "steady_no_learning_users",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/1/no_learning_users",
+    "value": 1747,
+    "unit": "users",
+    "display": "1,747"
+  },
+  "steady_one_learning_day_users": {
+    "metric_id": "steady_one_learning_day_users",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/1/one_learning_day_users",
+    "value": 2172,
+    "unit": "users",
+    "display": "2,172"
+  },
+  "steady_two_plus_learning_days_users": {
+    "metric_id": "steady_two_plus_learning_days_users",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/1/two_plus_learning_days_users",
+    "value": 4963,
+    "unit": "users",
+    "display": "4,963"
+  },
+  "steady_repeat_rate": {
+    "metric_id": "steady_repeat_rate",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/1/two_plus_learning_days_share",
+    "value": 0.5587705471740599,
+    "unit": "proportion",
+    "display": "55.9%"
+  },
+  "habit_baseline_users": {
+    "metric_id": "habit_baseline_users",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/2/baseline_users",
+    "value": 14583,
+    "unit": "users",
+    "display": "14,583"
+  },
+  "habit_no_learning_users": {
+    "metric_id": "habit_no_learning_users",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/2/no_learning_users",
+    "value": 6975,
+    "unit": "users",
+    "display": "6,975"
+  },
+  "habit_one_learning_day_users": {
+    "metric_id": "habit_one_learning_day_users",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/2/one_learning_day_users",
+    "value": 4046,
+    "unit": "users",
+    "display": "4,046"
+  },
+  "habit_two_plus_learning_days_users": {
+    "metric_id": "habit_two_plus_learning_days_users",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/2/two_plus_learning_days_users",
+    "value": 3562,
+    "unit": "users",
+    "display": "3,562"
+  },
+  "habit_repeat_rate": {
+    "metric_id": "habit_repeat_rate",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/2/two_plus_learning_days_share",
+    "value": 0.2442570115888363,
+    "unit": "proportion",
+    "display": "24.4%"
+  },
+  "recent_baseline_users": {
+    "metric_id": "recent_baseline_users",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/3/baseline_users",
+    "value": 15402,
+    "unit": "users",
+    "display": "15,402"
+  },
+  "recent_no_learning_users": {
+    "metric_id": "recent_no_learning_users",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/3/no_learning_users",
+    "value": 10396,
+    "unit": "users",
+    "display": "10,396"
+  },
+  "recent_one_learning_day_users": {
+    "metric_id": "recent_one_learning_day_users",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/3/one_learning_day_users",
+    "value": 3144,
+    "unit": "users",
+    "display": "3,144"
+  },
+  "recent_two_plus_learning_days_users": {
+    "metric_id": "recent_two_plus_learning_days_users",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/3/two_plus_learning_days_users",
+    "value": 1862,
+    "unit": "users",
+    "display": "1,862"
+  },
+  "recent_repeat_rate": {
+    "metric_id": "recent_repeat_rate",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/3/two_plus_learning_days_share",
+    "value": 0.12089339046877029,
+    "unit": "proportion",
+    "display": "12.1%"
+  },
+  "paused_steady_baseline_users": {
+    "metric_id": "paused_steady_baseline_users",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/4/baseline_users",
+    "value": 3627,
+    "unit": "users",
+    "display": "3,627"
+  },
+  "paused_steady_no_learning_users": {
+    "metric_id": "paused_steady_no_learning_users",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/4/no_learning_users",
+    "value": 1969,
+    "unit": "users",
+    "display": "1,969"
+  },
+  "paused_steady_one_learning_day_users": {
+    "metric_id": "paused_steady_one_learning_day_users",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/4/one_learning_day_users",
+    "value": 850,
+    "unit": "users",
+    "display": "850"
+  },
+  "paused_steady_two_plus_learning_days_users": {
+    "metric_id": "paused_steady_two_plus_learning_days_users",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/4/two_plus_learning_days_users",
+    "value": 808,
+    "unit": "users",
+    "display": "808"
+  },
+  "paused_steady_repeat_rate": {
+    "metric_id": "paused_steady_repeat_rate",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/4/two_plus_learning_days_share",
+    "value": 0.22277364212848083,
+    "unit": "proportion",
+    "display": "22.3%"
+  },
+  "paused_intense_baseline_users": {
+    "metric_id": "paused_intense_baseline_users",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/5/baseline_users",
+    "value": 9303,
+    "unit": "users",
+    "display": "9,303"
+  },
+  "paused_intense_no_learning_users": {
+    "metric_id": "paused_intense_no_learning_users",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/5/no_learning_users",
+    "value": 6847,
+    "unit": "users",
+    "display": "6,847"
+  },
+  "paused_intense_one_learning_day_users": {
+    "metric_id": "paused_intense_one_learning_day_users",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/5/one_learning_day_users",
+    "value": 1615,
+    "unit": "users",
+    "display": "1,615"
+  },
+  "paused_intense_two_plus_learning_days_users": {
+    "metric_id": "paused_intense_two_plus_learning_days_users",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/5/two_plus_learning_days_users",
+    "value": 841,
+    "unit": "users",
+    "display": "841"
+  },
+  "paused_intense_repeat_rate": {
+    "metric_id": "paused_intense_repeat_rate",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/5/two_plus_learning_days_share",
+    "value": 0.09040094593141997,
+    "unit": "proportion",
+    "display": "9.0%"
+  },
+  "paused_low_baseline_users": {
+    "metric_id": "paused_low_baseline_users",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/6/baseline_users",
+    "value": 30670,
+    "unit": "users",
+    "display": "30,670"
+  },
+  "paused_low_no_learning_users": {
+    "metric_id": "paused_low_no_learning_users",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/6/no_learning_users",
+    "value": 25293,
+    "unit": "users",
+    "display": "25,293"
+  },
+  "paused_low_one_learning_day_users": {
+    "metric_id": "paused_low_one_learning_day_users",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/6/one_learning_day_users",
+    "value": 3947,
+    "unit": "users",
+    "display": "3,947"
+  },
+  "paused_low_two_plus_learning_days_users": {
+    "metric_id": "paused_low_two_plus_learning_days_users",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/6/two_plus_learning_days_users",
+    "value": 1430,
+    "unit": "users",
+    "display": "1,430"
+  },
+  "paused_low_repeat_rate": {
+    "metric_id": "paused_low_repeat_rate",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "flow/6/two_plus_learning_days_share",
+    "value": 0.046625366807955655,
+    "unit": "proportion",
+    "display": "4.7%"
+  },
+  "a1_candidates": {
+    "metric_id": "a1_candidates",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "candidates/6/eligible_users",
+    "value": 4809,
+    "unit": "users",
+    "display": "4,809"
+  },
+  "a1_observed": {
+    "metric_id": "a1_observed",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "candidates/6/fully_observed_users",
+    "value": 2880,
+    "unit": "users",
+    "display": "2,880"
+  },
+  "a1_successes": {
+    "metric_id": "a1_successes",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "candidates/6/learning_users",
+    "value": 1312,
+    "unit": "users",
+    "display": "1,312"
+  },
+  "a1_rate": {
+    "metric_id": "a1_rate",
+    "source": "behavior_flow/behavior_flow_results.json",
+    "json_pointer": "candidates/6/rate",
+    "value": 0.45555555555555555,
+    "unit": "proportion",
+    "display": "45.6%"
+  },
+  "cv_or": {
+    "metric_id": "cv_or",
+    "source": "regularity/regularity_results.json",
+    "json_pointer": "models/1/odds_ratio",
+    "value": 0.7048511382291108,
+    "unit": "OR",
+    "display": "0.705"
+  },
+  "cv_low": {
+    "metric_id": "cv_low",
+    "source": "regularity/regularity_results.json",
+    "json_pointer": "models/1/ci_low",
+    "value": 0.6476533167464993,
+    "unit": "OR",
+    "display": "0.648"
+  },
+  "cv_high": {
+    "metric_id": "cv_high",
+    "source": "regularity/regularity_results.json",
+    "json_pointer": "models/1/ci_high",
+    "value": 0.7671004134721874,
+    "unit": "OR",
+    "display": "0.767"
+  },
+  "cv30_or": {
+    "metric_id": "cv30_or",
+    "source": "regularity/regularity_results.json",
+    "json_pointer": "models/3/odds_ratio",
+    "value": 0.8917976522003153,
+    "unit": "OR",
+    "display": "0.892"
+  },
+  "allacc_or": {
+    "metric_id": "allacc_or",
+    "source": "accuracy_change/accuracy_results.json",
+    "json_pointer": "models/1/odds_ratio",
+    "value": 1.069018531430067,
+    "unit": "OR",
+    "display": "1.069"
+  },
+  "word_or": {
+    "metric_id": "word_or",
+    "source": "word_performance/word_performance_results.json",
+    "json_pointer": "models/0/estimate",
+    "value": 1.0203195123286979,
+    "unit": "OR",
+    "display": "1.020"
+  },
+  "word_low": {
+    "metric_id": "word_low",
+    "source": "word_performance/word_performance_results.json",
+    "json_pointer": "models/0/ci_low",
+    "value": 0.9581346486218386,
+    "unit": "OR",
+    "display": "0.958"
+  },
+  "word_high": {
+    "metric_id": "word_high",
+    "source": "word_performance/word_performance_results.json",
+    "json_pointer": "models/0/ci_high",
+    "value": 1.0865402986272334,
+    "unit": "OR",
+    "display": "1.087"
+  },
+  "gap_weighted": {
+    "metric_id": "gap_weighted",
+    "source": "word_performance/word_performance_results.json",
+    "json_pointer": "models/4/estimate",
+    "value": 0.08807528057495859,
+    "unit": "percentage_points",
+    "display": "0.088"
+  },
+  "gap_unweighted": {
+    "metric_id": "gap_unweighted",
+    "source": "word_performance/word_performance_results.json",
+    "json_pointer": "models/5/estimate",
+    "value": 0.006612576386629238,
+    "unit": "percentage_points",
+    "display": "0.007"
+  },
+  "baseline_nsm": {
+    "metric_id": "baseline_nsm",
+    "source": "user_retention_cohort.csv",
+    "json_pointer": "derived:active_days>=4",
+    "value": 9834,
+    "unit": "users",
+    "display": "9,834"
+  },
+  "inactive_2day_users": {
+    "metric_id": "inactive_2day_users",
+    "source": "sensitivity/sensitivity_results.json",
+    "json_pointer": "final/0/inactive_2day_users",
+    "value": 63556,
+    "unit": "users",
+    "display": "63,556"
+  },
+  "inactive_3day_users": {
+    "metric_id": "inactive_3day_users",
+    "source": "sensitivity/sensitivity_results.json",
+    "json_pointer": "final/0/inactive_3day_users",
+    "value": 58758,
+    "unit": "users",
+    "display": "58,758"
+  },
+  "added_exact2_users": {
+    "metric_id": "added_exact2_users",
+    "source": "sensitivity/sensitivity_results.json",
+    "json_pointer": "final/0/added_exact2_users",
+    "value": 4798,
+    "unit": "users",
+    "display": "4,798"
+  }
+}

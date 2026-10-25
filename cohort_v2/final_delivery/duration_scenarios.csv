@@ -1,0 +1,4 @@
+﻿assumed_daily_new_eligible,required_enrollment_days,within_proposed_maximum,enrollment_days,final_primary_result_days_from_start,assumption_not_actual
+100,87,False,28,32,True
+500,18,True,18,22,True
+1000,14,True,14,18,True

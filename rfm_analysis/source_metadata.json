@@ -1,0 +1,258 @@
+{
+  "status": "OK",
+  "data": {
+    "id": 3091086,
+    "identifier": "DVN/N8XJME",
+    "persistentUrl": "https://doi.org/10.7910/DVN/N8XJME",
+    "protocol": "doi",
+    "authority": "10.7910",
+    "separator": "/",
+    "publisher": "Harvard Dataverse",
+    "publicationDate": "2017-12-14",
+    "storageIdentifier": "s3://10.7910/DVN/N8XJME",
+    "effectiveDatasetFileCountLimit": 1000,
+    "datasetFileUploadsAvailable": 999,
+    "datasetType": "dataset",
+    "locks": [],
+    "latestVersion": {
+      "id": 131448,
+      "datasetId": 3091086,
+      "datasetPersistentId": "doi:10.7910/DVN/N8XJME",
+      "datasetType": "dataset",
+      "storageIdentifier": "s3://10.7910/DVN/N8XJME",
+      "versionNumber": 1,
+      "internalVersionNumber": 12,
+      "versionMinorNumber": 0,
+      "versionState": "RELEASED",
+      "latestVersionPublishingState": "RELEASED",
+      "deaccessionLink": "",
+      "distributionDate": "2016-06-07",
+      "lastUpdateTime": "2017-12-14T19:47:13Z",
+      "releaseTime": "2017-12-14T19:47:13Z",
+      "createTime": "2017-12-14T19:24:13Z",
+      "publicationDate": "2017-12-14",
+      "citationDate": "2017-12-14",
+      "effectiveDatasetFileCountLimit": 1000,
+      "datasetFileUploadsAvailable": 999,
+      "termsOfUse": "This work is released under the <a href=\"https://creativecommons.org/licenses/by-nc/4.0/\">Creative Commons Attribution-NonCommercial 4.0 International License</a> (CC BY-NC 4.0).",
+      "fileAccessRequest": false,
+      "metadataBlocks": {
+        "citation": {
+          "displayName": "Citation Metadata",
+          "name": "citation",
+          "fields": [
+            {
+              "typeName": "title",
+              "multiple": false,
+              "typeClass": "primitive",
+              "value": "Replication Data for: A Trainable Spaced Repetition Model for Language Learning"
+            },
+            {
+              "typeName": "author",
+              "multiple": true,
+              "typeClass": "compound",
+              "value": [
+                {
+                  "authorName": {
+                    "typeName": "authorName",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Settles, Burr"
+                  },
+                  "authorAffiliation": {
+                    "typeName": "authorAffiliation",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Duolingo"
+                  }
+                }
+              ]
+            },
+            {
+              "typeName": "datasetContact",
+              "multiple": true,
+              "typeClass": "compound",
+              "value": [
+                {
+                  "datasetContactName": {
+                    "typeName": "datasetContactName",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Settles, Burr"
+                  },
+                  "datasetContactAffiliation": {
+                    "typeName": "datasetContactAffiliation",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Duolingo"
+                  },
+                  "datasetContactEmail": {
+                    "typeName": "datasetContactEmail",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "burr@duolingo.com"
+                  }
+                }
+              ]
+            },
+            {
+              "typeName": "dsDescription",
+              "multiple": true,
+              "typeClass": "compound",
+              "value": [
+                {
+                  "dsDescriptionValue": {
+                    "typeName": "dsDescriptionValue",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "This is a gzipped CSV file containing the 13 million Duolingo student learning traces used in experiments by Settles & Meeder (2016).\r\n\r\nFor more details and replication source code, visit:\r\n<a href=\"https://github.com/duolingo/halflife-regression\">https://github.com/duolingo/halflife-regression</a>"
+                  },
+                  "dsDescriptionDate": {
+                    "typeName": "dsDescriptionDate",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "2016-06-07"
+                  }
+                }
+              ]
+            },
+            {
+              "typeName": "subject",
+              "multiple": true,
+              "typeClass": "controlledVocabulary",
+              "value": [
+                "Computer and Information Science",
+                "Social Sciences"
+              ]
+            },
+            {
+              "typeName": "keyword",
+              "multiple": true,
+              "typeClass": "compound",
+              "value": [
+                {
+                  "keywordValue": {
+                    "typeName": "keywordValue",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Duolingo"
+                  }
+                },
+                {
+                  "keywordValue": {
+                    "typeName": "keywordValue",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Machine Learning"
+                  }
+                },
+                {
+                  "keywordValue": {
+                    "typeName": "keywordValue",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Memory"
+                  }
+                },
+                {
+                  "keywordValue": {
+                    "typeName": "keywordValue",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Spaced Repetition"
+                  }
+                }
+              ]
+            },
+            {
+              "typeName": "publication",
+              "multiple": true,
+              "typeClass": "compound",
+              "value": [
+                {
+                  "publicationCitation": {
+                    "typeName": "publicationCitation",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "B. Settles and B. Meeder. 2016. A Trainable Spaced Repetition Model for Language Learning. Proceedings of the Association of Computational Linguistics (ACL), pages 1848-1858."
+                  },
+                  "publicationIDType": {
+                    "typeName": "publicationIDType",
+                    "multiple": false,
+                    "typeClass": "controlledVocabulary",
+                    "value": "doi"
+                  },
+                  "publicationIDNumber": {
+                    "typeName": "publicationIDNumber",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "10.18653/v1/P16-1174"
+                  },
+                  "publicationURL": {
+                    "typeName": "publicationURL",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "http://www.aclweb.org/anthology/P16-1174"
+                  }
+                }
+              ]
+            },
+            {
+              "typeName": "notesText",
+              "multiple": false,
+              "typeClass": "primitive",
+              "value": "This work is released under the <a href=\"https://creativecommons.org/licenses/by-nc/4.0/\">Creative Commons Attribution-NonCommercial 4.0 International License</a> (CC BY-NC 4.0)."
+            },
+            {
+              "typeName": "distributionDate",
+              "multiple": false,
+              "typeClass": "primitive",
+              "value": "2016-06-07"
+            },
+            {
+              "typeName": "depositor",
+              "multiple": false,
+              "typeClass": "primitive",
+              "value": "Settles, Burr"
+            }
+          ]
+        }
+      },
+      "files": [
+        {
+          "label": "settles.acl16.learning_traces.13m.csv.gz",
+          "restricted": false,
+          "version": 1,
+          "datasetVersionId": 131448,
+          "categories": [
+            "Data"
+          ],
+          "dataFile": {
+            "id": 3091087,
+            "persistentId": "doi:10.7910/DVN/N8XJME/UEPJVH",
+            "pidURL": "https://doi.org/10.7910/DVN/N8XJME/UEPJVH",
+            "filename": "settles.acl16.learning_traces.13m.csv.gz",
+            "contentType": "application/x-gzip",
+            "friendlyType": "Gzip Archive",
+            "filesize": 379004009,
+            "categories": [
+              "Data"
+            ],
+            "storageIdentifier": "s3://dvn-cloud:160567b4d98-7d583abf872e",
+            "rootDataFileId": -1,
+            "md5": "0a1cae5eb7ad4b0bd9c0de91d74fcced",
+            "checksum": {
+              "type": "MD5",
+              "value": "0a1cae5eb7ad4b0bd9c0de91d74fcced"
+            },
+            "tabularData": false,
+            "creationDate": "2017-12-14",
+            "publicationDate": "2017-12-14",
+            "lastUpdateTime": "2017-12-14T19:47:13Z",
+            "fileAccessRequest": false
+          }
+        }
+      ]
+    }
+  }
+}

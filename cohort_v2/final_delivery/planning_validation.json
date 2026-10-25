@@ -1,0 +1,18 @@
+{
+  "power_scenarios_verified": 9,
+  "independent_integer_search": true,
+  "monte_carlo_simulations": 100000,
+  "monte_carlo_is_synthetic_validation_only": true,
+  "monte_carlo_power": 0.7986,
+  "monte_carlo_type1": 0.04974,
+  "report_source_values_verified": 53,
+  "duration_scenarios_verified": 3,
+  "actual_launch_and_inflow_unavailable_preserved": true,
+  "validated_source_hashes": {
+    "verify_planning_calculations.py": "2881c481cc84a7a7079290af5dadb2840d8256ab3fa5a935d3d65ba99e357e33",
+    "prepare_final_delivery.py": "02a27cc5d4063dc31b60f2b07abee629dafea1f862c408157e558acff88a93e6",
+    "sample_size_results.json": "a8b53578772d5e07b3145d844ad9a55ec7e6683c08e0f2c725e426125ab14a6b",
+    "report_claims.csv": "3d3567b105611fabafa54fe5f809bd003e35c2601b443df74d7ff78443e8fb59",
+    "experiment_config.json": "65f509e2b3fce9da0e1fbb802891963ec22d311f3ed59afbb1c862824bfb7300"
+  }
+}

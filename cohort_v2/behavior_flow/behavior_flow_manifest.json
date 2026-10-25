@@ -1,0 +1,105 @@
+{
+  "analysis_date": "2026-10-13",
+  "workbook_validation": {
+    "baseline_flow_rows_verified": 7,
+    "aligned_pattern_rows_verified": 7,
+    "first_learning_rows_verified": 4,
+    "candidate_summary_rows_verified": 12,
+    "formula_errors": 0,
+    "unobserved_result_counts_and_rates_blank": true,
+    "two_sheets_visually_reviewed": true,
+    "count_change_recalculation_verified": true
+  },
+  "analysis_validation": {
+    "all_users_recomputed": 82467,
+    "candidate_events_verified": 19288,
+    "date_prefixes_without_future_activity_verified": 4,
+    "baseline_flows_verified": 7,
+    "aligned_patterns_verified": 28,
+    "candidate_summary_rows_verified": 12,
+    "unobserved_results_blank": true,
+    "eligibility_has_no_outcome_columns": true,
+    "source_hashes_unchanged": true
+  },
+  "source_hashes": {
+    "user_retention_cohort.csv": "1070c769c8f1d6bc1914e223c19469b9ceb127c929257ba05a2ba1d80fc57bb7",
+    "user_daily_retention.csv": "59021e29f6caab88b2e750547d366a99660bbf8b0c0ba763c8c13ad9a6f5f1dd",
+    "first_return_cohorts.csv": "c2d693d3e6ed292b792e275edd16dbd201ae1c3b5023566303a62af3ef22fc5a",
+    "cohort_inputs/user_daily_activity.csv": "e2ac731e056c1bc26c2d5534d566ac1c9b99d63decb4fcef3f5ee6deac122dc6"
+  },
+  "files": {
+    "aligned_behavior_patterns.csv": {
+      "bytes": 3336,
+      "sha256": "989bcf89e0b03a42692c026c52eefd16ea52f51a0739a1784393a44da7f01ebc"
+    },
+    "aligned_behavior_summary.csv": {
+      "bytes": 853,
+      "sha256": "72ccef13c6cf03585359f11f096664c34ab29556b2e4662c3b811cd7d067141c"
+    },
+    "analysis_validation.json": {
+      "bytes": 363,
+      "sha256": "5026e6365b35f5ef006a74e1415560e10a3c14f839c3c7f8957a431bd4cb6e8e"
+    },
+    "baseline_behavior_flow.csv": {
+      "bytes": 885,
+      "sha256": "733132ab720461076dcb77cb304ff945dddbfd01a22e5b25ebcbb4e845d830fe"
+    },
+    "behavior_flow_results.json": {
+      "bytes": 21548,
+      "sha256": "9721e7e3e04bb3e900fce9accc553af07595804c283d2c8a0f721f17c494cdab"
+    },
+    "build_behavior_workbook.mjs": {
+      "bytes": 8397,
+      "sha256": "c1a680c212dd8beab665a64501c21240305262fdb5b40419bda7f74ee7b30b14"
+    },
+    "candidate_eligibility.csv": {
+      "bytes": 4013103,
+      "sha256": "8fe24e753e1f75cfae1b49a5add3ca9e9bb1a458932a3c157dac0b3b345df4d3"
+    },
+    "candidate_outcomes.csv": {
+      "bytes": 1344493,
+      "sha256": "be4f35bed851ac25656b8da998fc29f899714ae9020f90e719af4f1e8332db3e"
+    },
+    "candidate_summary.csv": {
+      "bytes": 1231,
+      "sha256": "e19d4b491f449d5a82c5158262208873c12643681db6b9625d53237b9cbe7492"
+    },
+    "first_learning_followup.csv": {
+      "bytes": 2669,
+      "sha256": "028275f4593ff5987bd0180b01a10372de712cd556d50b1d0c6c43b387a7ccab"
+    },
+    "primary_candidate_eligibility.csv": {
+      "bytes": 995277,
+      "sha256": "7c5c1fefcaee68979776c734c275575981843a13533cb825a874c9d5d215cdc5"
+    },
+    "primary_candidate_outcomes.csv": {
+      "bytes": 328619,
+      "sha256": "00917c42785bad317bb78e133d79010a2e3022a5bf9424d9a0af61f944fa25e8"
+    },
+    "verify_behavior_flow.py": {
+      "bytes": 5694,
+      "sha256": "6cde26a985df6163bf894c3edb8c54e9f17e44d067d87169e30529b057c2b437"
+    },
+    "verify_behavior_workbook.py": {
+      "bytes": 3716,
+      "sha256": "dfa8f3d9f0e815465ff6c521e1e2afe98a8750a9c929a061f4eefe675dd298e9"
+    },
+    "workbook_error_scan.json": {
+      "bytes": 60,
+      "sha256": "acc0111e19cf44d2753fc9ecd164bf1b27fbd65597463a25cf48bd1c65e90146"
+    },
+    "개입대상과_시점_정의서.md": {
+      "bytes": 7332,
+      "sha256": "e089b3c6953ece839decc5173266fcb6fe786694ed277157a65ad0e08373156b"
+    },
+    "행동흐름_요약.md": {
+      "bytes": 2731,
+      "sha256": "b6b03579904fed728802b2191b7707edc65099a512850b1e43adcafd97c61ac2"
+    },
+    "행동흐름과_개입대상.xlsx": {
+      "bytes": 10151,
+      "sha256": "d92a090e6cae193d5a0765d34f528e5d6227ce0cc8bc3a6aa9927a2a5eb4a6e7"
+    }
+  },
+  "analysis_script_sha256": "5006f7ae5f0d6b7d54007783446642c1f75c905408b74735465143feeca493b2"
+}

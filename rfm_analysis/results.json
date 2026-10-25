@@ -1,0 +1,339 @@
+{
+  "quality": {
+    "raw_rows": 12854226,
+    "exact_duplicates_removed": 81,
+    "clean_rows": 12854145,
+    "missing_rows": 0,
+    "invalid_rows": 0,
+    "unique_users": 115222,
+    "session_proxy_count": 901059,
+    "min_timestamp": 1362076081,
+    "max_timestamp": 1363104897,
+    "min_utc": "2013-02-28 18:28:01+00:00",
+    "max_utc": "2013-03-12 16:14:57+00:00",
+    "sha256": "26cf9b33f2e9b2e8aa9a8f262a017b30699ca2f625c56a12ce699d4ea7076873"
+  },
+  "reference_utc": "2013-03-13 00:00:00+00:00",
+  "thresholds": {
+    "R": [
+      1.263962962962963,
+      3.193275462962963,
+      5.761671296296295,
+      8.499238425925926
+    ],
+    "F": [
+      1.0,
+      2.0,
+      4.0,
+      10.0
+    ],
+    "M": [
+      25.0,
+      55.0,
+      118.0,
+      276.0
+    ]
+  },
+  "baseline_thresholds": {
+    "R": [
+      0.6031296296296298,
+      1.4818611111111113,
+      2.9513125,
+      4.812291666666667
+    ],
+    "F": [
+      1.0,
+      2.0,
+      4.0,
+      9.0
+    ],
+    "M": [
+      24.0,
+      53.0,
+      108.0,
+      239.0
+    ]
+  },
+  "score_distribution": {
+    "R_score": {
+      "1": 23045,
+      "2": 23044,
+      "3": 23044,
+      "4": 23044,
+      "5": 23045
+    },
+    "F_score": {
+      "1": 33874,
+      "2": 16883,
+      "3": 19239,
+      "4": 22729,
+      "5": 22497
+    },
+    "M_score": {
+      "1": 23554,
+      "2": 22700,
+      "3": 22980,
+      "4": 22986,
+      "5": 23002
+    }
+  },
+  "RFM_F_M_pearson": 0.9085053232174304,
+  "total_exposures": 23364844,
+  "weekly_active": 83325,
+  "weekly_sustained": 9838,
+  "next_day_return_pct": 35.13409788694239,
+  "kmeans_candidates": [
+    {
+      "k": 3,
+      "inertia": 131061.12548624206,
+      "silhouette_2000": 0.35834227370435384,
+      "iterations_best_start": 17
+    },
+    {
+      "k": 4,
+      "inertia": 95114.17782899612,
+      "silhouette_2000": 0.37339334745254094,
+      "iterations_best_start": 39
+    },
+    {
+      "k": 5,
+      "inertia": 79608.69319709629,
+      "silhouette_2000": 0.34431671368107325,
+      "iterations_best_start": 80
+    }
+  ],
+  "selected_k": 4,
+  "adjusted_rand_index": 0.44920308253293206,
+  "segment_summary": [
+    {
+      "segment": "핵심 학습형",
+      "users": 23353,
+      "exposures": 13457559,
+      "correct": 12188223,
+      "R_median": 1.1592476852,
+      "F_median": 14.0,
+      "M_median": 375.0,
+      "active_days_median": 4.0,
+      "user_pct": 20.2678307962,
+      "exposure_pct": 57.5974699424,
+      "weighted_recall_pct": 90.5678585544,
+      "revenue_pct": null,
+      "weekly_active": 22691,
+      "weekly_sustained": 8741,
+      "d1_eligible": 58979.0,
+      "d1_return": 33094.0,
+      "weekly_sustained_pct_among_weekly_active": 38.521880922,
+      "next_day_return_pct": 56.1114973126
+    },
+    {
+      "segment": "반복 학습형",
+      "users": 11014,
+      "exposures": 3345926,
+      "correct": 3023445,
+      "R_median": 4.1379224537,
+      "F_median": 8.0,
+      "M_median": 210.0,
+      "active_days_median": 3.0,
+      "user_pct": 9.5589383972,
+      "exposure_pct": 14.3203438465,
+      "weighted_recall_pct": 90.36198051,
+      "revenue_pct": null,
+      "weekly_active": 10883,
+      "weekly_sustained": 1030,
+      "d1_eligible": 22316.0,
+      "d1_return": 8021.0,
+      "weekly_sustained_pct_among_weekly_active": 9.4643021226,
+      "next_day_return_pct": 35.9428212941
+    },
+    {
+      "segment": "집중 성장형",
+      "users": 8171,
+      "exposures": 798286,
+      "correct": 722253,
+      "R_median": 1.3720717593,
+      "F_median": 3.0,
+      "M_median": 89.0,
+      "active_days_median": 2.0,
+      "user_pct": 7.0915276596,
+      "exposure_pct": 3.4166117266,
+      "weighted_recall_pct": 90.4754686917,
+      "revenue_pct": null,
+      "weekly_active": 6908,
+      "weekly_sustained": 31,
+      "d1_eligible": 6466.0,
+      "d1_return": 1151.0,
+      "weekly_sustained_pct_among_weekly_active": 0.4487550666,
+      "next_day_return_pct": 17.8008042066
+    },
+    {
+      "segment": "최근 저강도형",
+      "users": 12535,
+      "exposures": 337680,
+      "correct": 301119,
+      "R_median": 1.4863773148,
+      "F_median": 1.0,
+      "M_median": 25.0,
+      "active_days_median": 1.0,
+      "user_pct": 10.8789988023,
+      "exposure_pct": 1.4452482542,
+      "weighted_recall_pct": 89.1728855721,
+      "revenue_pct": null,
+      "weekly_active": 9834,
+      "weekly_sustained": 18,
+      "d1_eligible": 6585.0,
+      "d1_return": 600.0,
+      "weekly_sustained_pct_among_weekly_active": 0.1830384381,
+      "next_day_return_pct": 9.1116173121
+    },
+    {
+      "segment": "관심 유지형",
+      "users": 14060,
+      "exposures": 723954,
+      "correct": 651050,
+      "R_median": 4.4425752315,
+      "F_median": 2.0,
+      "M_median": 42.0,
+      "active_days_median": 1.0,
+      "user_pct": 12.2025307667,
+      "exposure_pct": 3.0984756414,
+      "weighted_recall_pct": 89.9297469176,
+      "revenue_pct": null,
+      "weekly_active": 14060,
+      "weekly_sustained": 18,
+      "d1_eligible": 16877.0,
+      "d1_return": 1407.0,
+      "weekly_sustained_pct_among_weekly_active": 0.1280227596,
+      "next_day_return_pct": 8.3367897138
+    },
+    {
+      "segment": "우선 복귀형",
+      "users": 23912,
+      "exposures": 4140358,
+      "correct": 3747121,
+      "R_median": 8.1543865741,
+      "F_median": 4.0,
+      "M_median": 115.0,
+      "active_days_median": 1.0,
+      "user_pct": 20.7529812015,
+      "exposure_pct": 17.7204607058,
+      "weighted_recall_pct": 90.5023430341,
+      "revenue_pct": null,
+      "weekly_active": 11069,
+      "weekly_sustained": 0,
+      "d1_eligible": 13626.0,
+      "d1_return": 2284.0,
+      "weekly_sustained_pct_among_weekly_active": 0.0,
+      "next_day_return_pct": 16.7620725084
+    },
+    {
+      "segment": "저활동·휴면형",
+      "users": 22177,
+      "exposures": 561081,
+      "correct": 500791,
+      "R_median": 8.998587963,
+      "F_median": 1.0,
+      "M_median": 23.0,
+      "active_days_median": 1.0,
+      "user_pct": 19.2471923765,
+      "exposure_pct": 2.401389883,
+      "weighted_recall_pct": 89.2546708942,
+      "revenue_pct": null,
+      "weekly_active": 7880,
+      "weekly_sustained": 0,
+      "d1_eligible": 8039.0,
+      "d1_return": 132.0,
+      "weekly_sustained_pct_among_weekly_active": 0.0,
+      "next_day_return_pct": 1.641995273
+    }
+  ],
+  "cluster_summary": [
+    {
+      "cluster": "C1",
+      "users": 38219,
+      "exposures": 1193119,
+      "R_median": 7.8610532407,
+      "F_median": 1.0,
+      "M_median": 28.0,
+      "weekly_sustained": 0,
+      "user_pct": 33.1698807519,
+      "exposure_pct": 5.1064710725
+    },
+    {
+      "cluster": "C2",
+      "users": 25225,
+      "exposures": 1686704,
+      "R_median": 1.3849768519,
+      "F_median": 2.0,
+      "M_median": 54.0,
+      "weekly_sustained": 326,
+      "user_pct": 21.8925205256,
+      "exposure_pct": 7.2189825021
+    },
+    {
+      "cluster": "C3",
+      "users": 29189,
+      "exposures": 5452682,
+      "R_median": 6.2356365741,
+      "F_median": 5.0,
+      "M_median": 153.0,
+      "weekly_sustained": 429,
+      "user_pct": 25.3328357432,
+      "exposure_pct": 23.3371213606
+    },
+    {
+      "cluster": "C4",
+      "users": 22589,
+      "exposures": 15032339,
+      "R_median": 1.2253009259,
+      "F_median": 18.0,
+      "M_median": 471.0,
+      "weekly_sustained": 9083,
+      "user_pct": 19.6047629793,
+      "exposure_pct": 64.3374250648
+    }
+  ],
+  "forward_validation": [
+    {
+      "segment": "핵심 학습형",
+      "baseline_users": 16004,
+      "returned_users": 11253,
+      "subsequent_4day_return_pct": 70.3136715821
+    },
+    {
+      "segment": "반복 학습형",
+      "baseline_users": 7051,
+      "returned_users": 3365,
+      "subsequent_4day_return_pct": 47.7237271309
+    },
+    {
+      "segment": "집중 성장형",
+      "baseline_users": 6669,
+      "returned_users": 2835,
+      "subsequent_4day_return_pct": 42.5101214575
+    },
+    {
+      "segment": "최근 저강도형",
+      "baseline_users": 9120,
+      "returned_users": 2797,
+      "subsequent_4day_return_pct": 30.6688596491
+    },
+    {
+      "segment": "관심 유지형",
+      "baseline_users": 10636,
+      "returned_users": 2677,
+      "subsequent_4day_return_pct": 25.1692365551
+    },
+    {
+      "segment": "우선 복귀형",
+      "baseline_users": 16849,
+      "returned_users": 3961,
+      "subsequent_4day_return_pct": 23.5088135794
+    },
+    {
+      "segment": "저활동·휴면형",
+      "baseline_users": 16138,
+      "returned_users": 2352,
+      "subsequent_4day_return_pct": 14.574296691
+    }
+  ]
+}

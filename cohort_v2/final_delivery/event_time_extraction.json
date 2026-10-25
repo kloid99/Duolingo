@@ -1,0 +1,14 @@
+{
+  "raw_rows": 12854226,
+  "candidate_users": 4809,
+  "raw_sha256": "609b4a602665b1cf5fa693b1ebfcd1d5f9a2b7bad623e3d935436abcc7b74c21",
+  "candidate_sha256": "7c5c1fefcaee68979776c734c275575981843a13533cb825a874c9d5d215cdc5",
+  "output_sha256": "8cbab44e1b99fddb27a7bfa686d7d6ec5ec66bf9b13d0e4d6d8e3fc38980c5f1",
+  "checks": {
+    "all_candidate_ids_resolved": true,
+    "first_event_dates_match": true,
+    "previous_event_dates_match": true,
+    "previous_events_before_trigger": true
+  },
+  "timestamp_semantics": "minimum raw learning timestamp within fixed followup, not lesson completion or assignment"
+}

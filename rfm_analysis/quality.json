@@ -1,0 +1,14 @@
+{
+  "raw_rows": 12854226,
+  "exact_duplicates_removed": 81,
+  "clean_rows": 12854145,
+  "missing_rows": 0,
+  "invalid_rows": 0,
+  "unique_users": 115222,
+  "session_proxy_count": 901059,
+  "min_timestamp": 1362076081,
+  "max_timestamp": 1363104897,
+  "min_utc": "2013-02-28 18:28:01+00:00",
+  "max_utc": "2013-03-12 16:14:57+00:00",
+  "sha256": "26cf9b33f2e9b2e8aa9a8f262a017b30699ca2f625c56a12ce699d4ea7076873"
+}
